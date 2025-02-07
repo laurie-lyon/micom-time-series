@@ -8,6 +8,7 @@ using time series data to test micom's ability to predict growth
   - [ ] Update documentation 
 
 # Workflow
+![Alt text](./images/lucid-chart-workflow.png)
 
 ## time_series_data_wrangling_w_parser.py
 - This script processes OTU tables and metadata for microbiome analysis by:
