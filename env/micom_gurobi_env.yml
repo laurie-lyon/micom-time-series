@@ -1,0 +1,11 @@
+name: micom_gurobi
+channels:
+  - conda-forge
+dependencies:
+  - python == 3.12
+  - pip:
+    - micom
+    - gurobipy == 11
+    - ipykernel
+    - ipywidgets
+    - biom-format
