@@ -1,0 +1,155 @@
+reaction,metabolite,description,flux
+EX_12dgr180_m,12dgr180_m,"1,2-Diacyl-sn-glycerol (dioctadecanoyl, n-C18:0)",0.1
+EX_26dap_M_m,26dap_M_m,"meso-2,6-Diaminoheptanedioate",0.1
+EX_2dmmq8_m,2dmmq8_m,2-Demethylmenaquinone 8,0.1
+EX_2obut_m,2obut_m,2-Oxobutanoate,0.1
+EX_3mop_m,3mop_m,3-methyl-2-oxopentanoate,0.1
+EX_4abz_m,4abz_m,4-Aminobenzoate,0.1
+EX_4hbz_m,4hbz_m,4-hydroxybenzoate,0.1
+EX_ac_m,ac_m,acetate,0.1
+EX_acgam_m,acgam_m,N-acetyl-D-glucosamine,0.1
+EX_acmana_m,acmana_m,N-acetyl-D-mannosamine,0.1
+EX_acnam_m,acnam_m,N-acetylneuraminate,0.1
+EX_ade_m,ade_m,Adenine,0.1
+EX_adn_m,adn_m,Adenosine,0.1
+EX_ala_D_m,ala_D_m,D-alanine,0.1
+EX_ala_L_m,ala_L_m,L-alanine,0.1
+EX_amp_m,amp_m,AMP,0.1
+EX_amylopect900_m,amylopect900_m,"Amylopectin, 900 repeat units",1.57e-05
+EX_amylose300_m,amylose300_m,"amylose (n=300 repeat units, alpha-1,4-glc)",4.7e-05
+EX_arab_D_m,arab_D_m,D-Arabinose,0.1
+EX_arab_L_m,arab_L_m,L-arabinose,0.0178783
+EX_arabinan101_m,arabinan101_m,"Arabinan, polymer of 1,5-a-L-linked arabinofuranose units substituted by 1,3 or 1,2 linked branches, MW ~ 15000 Da (REF: www.meg... <Preview truncated at 128 characters>",0.000166277
+EX_arabinogal_m,arabinogal_m,"Larch arabinogalactan, gal/ara 6:1, small amount of glcur, MW ~ 116000",2.19e-05
+EX_arabinoxyl_m,arabinoxyl_m,"Arabinoxylan, 30 xyl_D, 18 arab_L, 3 gal, 3 glc_D",0.000306649
+EX_arg_L_m,arg_L_m,L-argininium(1+),0.015
+EX_asn_L_m,asn_L_m,L-asparagine,0.0225
+EX_asp_L_m,asp_L_m,L-aspartate(1-),0.0225
+EX_bglc_m,bglc_m,beta-glucans,1e-06
+EX_btn_m,btn_m,Biotin,0.1
+EX_ca2_m,ca2_m,calcium(2+),0.1
+EX_cbl1_m,cbl1_m,Cob(I)alamin,0.1
+EX_cellb_m,cellb_m,cellobiose,0.0744929999999999
+EX_cgly_m,cgly_m,L-cysteinylglycine,0.1
+EX_chol_m,chol_m,Choline,0.1
+EX_chor_m,chor_m,chorismate,0.1
+EX_cit_m,cit_m,Citrate,0.1
+EX_cl_m,cl_m,Chloride,0.1
+EX_cobalt2_m,cobalt2_m,Co2+,0.1
+EX_csn_m,csn_m,cytosine,0.1
+EX_cu2_m,cu2_m,Cu2+,0.1
+EX_cys_L_m,cys_L_m,L-cysteine,0.1
+EX_cytd_m,cytd_m,Cytidine,0.1
+EX_dad_2_m,dad_2_m,2-deoxyadenosine,0.1
+EX_dcyt_m,dcyt_m,Deoxycytidine,0.1
+EX_ddca_m,ddca_m,laurate,0.1
+EX_dextran40_m,dextran40_m,"Dextran 40, 1,6-alpha-D-Glucan",0.0001763229999999
+EX_dgsn_m,dgsn_m,Deoxyguanosine,0.1
+EX_drib_m,drib_m,2-deoxy-D-ribose,0.0178783
+EX_fe2_m,fe2_m,Fe2+,0.1
+EX_fe3_m,fe3_m,Fe3+,0.1
+EX_fol_m,fol_m,Folate,0.1
+EX_for_m,for_m,Formate,0.1
+EX_fru_m,fru_m,D-Fructose,0.0148985999999999
+EX_fuc_L_m,fuc_L_m,L-fucose,0.0148985999999999
+EX_fum_m,fum_m,Fumarate,0.1
+EX_gal_m,gal_m,D-Galactose,0.0148985999999999
+EX_galmannan_m,galmannan_m,"Carob galactomannan, Gal:Man ratio 22/78. 220 gal, 780 man assumed",1.41e-05
+EX_gam_m,gam_m,D-Glucosamine,0.1
+EX_glcmannan_m,glcmannan_m,"Konjac glucomannan, MW 77,500 (PMID:17962981), Man:Glc ~ 2:1. -> 286 man, 143 glc_D",3.2899999999999987e-05
+EX_glcn_m,glcn_m,D-gluconate,0.0148985999999999
+EX_gln_L_m,gln_L_m,L-glutamine,0.018
+EX_glu_L_m,glu_L_m,L-glutamate(1-),0.018
+EX_gly_m,gly_m,Glycine,0.045
+EX_glyasp_m,glyasp_m,Glycyl-L-aspartate,0.0837885898388894
+EX_glyc3p_m,glyc3p_m,Glycerol 3-phosphate,0.1
+EX_glyc_m,glyc_m,Glycerol,0.1799655
+EX_glyleu_m,glyleu_m,Glycylleucine,0.1132568205000007
+EX_gsn_m,gsn_m,Guanosine,0.1
+EX_gthox_m,gthox_m,Oxidized glutathione,0.1
+EX_gthrd_m,gthrd_m,Reduced glutathione,0.1
+EX_gua_m,gua_m,Guanine,0.1
+EX_h2_m,h2_m,Hydrogen,0.1
+EX_h2o_m,h2o_m,Water,10.0
+EX_h2s_m,h2s_m,Hydrogen sulfide,0.1
+EX_h_m,h_m,proton,0.1
+EX_hdca_m,hdca_m,Hexadecanoate (n-C16:0),0.0396371
+EX_his_L_m,his_L_m,L-histidine,0.015
+EX_homogal_m,homogal_m,"Homogalacturonan, 100 galacturonate residues. Assumed to be methylated/ acetylated in every 5th residue. Citrus HG consists of 7... <Preview truncated at 128 characters>",0.000128235
+EX_hxan_m,hxan_m,Hypoxanthine,0.1
+EX_ile_L_m,ile_L_m,L-isoleucine,0.015
+EX_indole_m,indole_m,Indole,0.1
+EX_inulin_m,inulin_m,"Chicory inulin, 30 monosaccharide units (29 fru, 1 glc) on average",0.000470195
+EX_k_m,k_m,potassium,0.1
+EX_kestopt_m,kestopt_m,"Kestopentaose (4 fru, 1 glc inulin-type fructo-oligosaccharide)",0.002821167
+EX_lanost_m,lanost_m,lanosterol,0.1
+EX_lcts_m,lcts_m,Lactose,0.0074492999999999
+EX_leu_L_m,leu_L_m,L-leucine,0.015
+EX_levan1000_m,levan1000_m,"Levan, 1000 fructose units",1.41e-05
+EX_lichn_m,lichn_m,"Lichenin from Icelandic moss, 170 glucose residues. DOI: 10.1039/JR9570001951",8.3e-05
+EX_lmn30_m,lmn30_m,"laminarin (n=30 repeat units, beta -1,3 glc)",0.000470195
+EX_lys_L_m,lys_L_m,L-lysinium(1+),0.015
+EX_malt_m,malt_m,Maltose,0.0074492999999999
+EX_man_m,man_m,D-Mannose,0.0148985999999999
+EX_melib_m,melib_m,Melibiose,0.0074492999999999
+EX_meoh_m,meoh_m,methanol,10.0
+EX_met_L_m,met_L_m,L-methionine,0.018
+EX_metsox_S_L_m,metsox_S_L_m,L-Methionine Sulfoxide,0.1
+EX_mg2_m,mg2_m,magnesium,0.1
+EX_mn2_m,mn2_m,Mn2+,0.1
+EX_mnl_m,mnl_m,D-Mannitol,0.0148985999999999
+EX_mobd_m,mobd_m,Molybdate,0.1
+EX_mqn7_m,mqn7_m,Menaquinone 7,0.1
+EX_mqn8_m,mqn8_m,Menaquinone 8,0.1
+EX_na1_m,na1_m,Sodium,0.1
+EX_nac_m,nac_m,Nicotinate,0.1
+EX_ncam_m,ncam_m,Nicotinamide,0.1
+EX_nmn_m,nmn_m,NMN,0.1
+EX_no2_m,no2_m,Nitrite,0.1
+EX_o2_m,o2_m,O2,0.001
+EX_ocdca_m,ocdca_m,octadecanoate (n-C18:0),0.0169283
+EX_ocdcea_m,ocdcea_m,octadecenoate (n-C18:1),0.0681445
+EX_orn_m,orn_m,Ornithine,0.1
+EX_oxa_m,oxa_m,oxalate(2-),0.0446957
+EX_pect_m,pect_m,pectins,3.34e-05
+EX_phe_L_m,phe_L_m,L-phenylalanine,0.1
+EX_pheme_m,pheme_m,Protoheme,0.1
+EX_pi_m,pi_m,hydrogenphosphate,0.1
+EX_pime_m,pime_m,Pimelate,0.1
+EX_pnto_R_m,pnto_R_m,(R)-Pantothenate,0.1
+EX_pro_L_m,pro_L_m,L-proline,0.018
+EX_ptrc_m,ptrc_m,Putrescine,0.1
+EX_pullulan1200_m,pullulan1200_m,"pullulan (n=1200 repeat units, alpha-1,4 and alph-1,6 bounds)",1.18e-05
+EX_pydam_m,pydam_m,Pyridoxamine,0.1
+EX_pydx_m,pydx_m,Pyridoxal,0.1
+EX_pydxn_m,pydxn_m,Pyridoxine,0.1
+EX_q8_m,q8_m,Ubiquinone-8,0.1
+EX_raffin_m,raffin_m,Raffinose,0.004701945
+EX_rhamnogalurII_m,rhamnogalurII_m,"Wine rhamnogalacturonan II, MW ~ 5-10 kDa, 37% galur, 16% rmn, 3% fuc-L, 11% arab-L, 6% gal, 5% glcur, 4% 2omfuc, 3% 2omxyl, 6% ... <Preview truncated at 128 characters>",0.000266987
+EX_rhamnogalurI_m,rhamnogalurI_m,"Potato rhamnogalacturonan I, MW assumed ~200000, 62 galur, 20 rmn, 12 gal, 3 arab-L, 1 xyl-D (www.megazyme.com, PMID: 16661590)",1.4499999999999992e-05
+EX_rib_D_m,rib_D_m,D-ribose,0.0178783
+EX_ribflv_m,ribflv_m,Riboflavin,0.1
+EX_rmn_m,rmn_m,L-Rhamnose,0.0148985999999999
+EX_sbt_D_m,sbt_D_m,D-glucitol,0.0075490653638889
+EX_ser_L_m,ser_L_m,L-serine,0.1
+EX_sheme_m,sheme_m,Siroheme,0.1
+EX_so4_m,so4_m,sulfate,0.1
+EX_spmd_m,spmd_m,Spermidine,0.1
+EX_strch1_m,strch1_m,"starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]})",0.257339
+EX_succ_m,succ_m,Succinate,0.0020024175
+EX_sucr_m,sucr_m,Sucrose,0.0074492999999999
+EX_thm_m,thm_m,Thiamin,0.1
+EX_thr_L_m,thr_L_m,L-threonine,0.0225
+EX_thymd_m,thymd_m,Thymidine,0.1
+EX_tre_m,tre_m,Trehalose,0.0744929999999999
+EX_trp_L_m,trp_L_m,L-tryptophan,0.008182
+EX_ttdca_m,ttdca_m,tetradecanoate (n-C14:0),0.0068676
+EX_tyr_L_m,tyr_L_m,L-tyrosine,0.1
+EX_ura_m,ura_m,uracil,0.1
+EX_uri_m,uri_m,Uridine,0.1
+EX_val_L_m,val_L_m,L-valine,0.018
+EX_xan_m,xan_m,Xanthine,0.1
+EX_xyl_D_m,xyl_D_m,aldehydo-D-xylose,0.0178783
+EX_xylan_m,xylan_m,"Oat spelt xylan, MW 79200 (DOI: 10.1002/masy.200551405) = 528 xyl_D",3.21e-05
+EX_xyluglc_m,xyluglc_m,"Xyluglucan, PMID:16663672, Fry SC 1989. 600 glc_D, 360 xyl_D, 108 gal, 60 fuc_L, 6 arab_L",1.31e-05
+EX_zn2_m,zn2_m,Zinc,0.1

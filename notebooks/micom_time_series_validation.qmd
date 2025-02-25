@@ -1,0 +1,177 @@
+---
+title: "MICOM time series validation"
+author: "Laurie and Casey"
+format: html
+editor: visual
+---
+
+## MICOM time series validation
+
+Load in libraries
+
+```{r}
+library(cowplot) # for plot grid
+library(ggridges)
+library(lme4) # for linear modeling 
+library(tidyverse)
+```
+
+```{r}
+PREVALENCE <- 0.90
+```
+
+Load in MICOM-predicted growth rates and actual log2FC changes in relative abundance
+
+```{r}
+micom_rates_ugly <- read_csv("./data/growth_rates/growth/growth_rates.csv", show_col_types = FALSE)
+actual_log2FC_wide <- read_csv("./data/actual_growth_rates_genus_2/F01_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+```
+
+Convert actual log2FC df from wide to long and make sure columns match for joining real and sim data later
+
+```{r}
+actual_log2FC_long <- actual_log2FC_wide %>% 
+  pivot_longer(!Genus, names_to = "sample_id", values_to = "log2FC_abund") %>% 
+  rename(taxon = Genus) %>% 
+  mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+  mutate(sample_id = as.numeric(sample_id))
+```
+
+Calculate CLR growth rates (i.e. relative growth rates) for each taxon for each time point.
+
+```{r}
+micom_rates <- micom_rates_ugly %>% 
+  mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+  group_by(sample_id) %>% 
+  mutate(sample_growth_rate_geom_mean = exp(mean(log(growth_rate))),
+         sample_growth_rate_clr = log(growth_rate/sample_growth_rate_geom_mean))
+```
+
+Filter out prevalent taxa (present in at least 90% of samples).
+
+```{r}
+prevalent_micom_rates <- micom_rates %>% 
+    group_by(taxon) %>% 
+    mutate(sample_counts = n()) %>% 
+    ungroup() %>% 
+    mutate(prevalence = sample_counts/max(sample_counts)) %>% 
+    mutate(normed_epoch_time = (sample_id-min(sample_id))/
+           (max(sample_id)-min(sample_id))) %>% 
+    mutate(sample_id = as.numeric(sample_id)) %>% 
+    filter(prevalence >= PREVALENCE)
+```
+
+```{r}
+sim_real_data <- left_join(prevalent_micom_rates, 
+                           actual_log2FC_long, 
+                           by=c("taxon","sample_id")) %>% 
+  drop_na(sample_growth_rate_clr, log2FC_abund)  %>%
+  mutate(sampling_date = as.POSIXct(sample_id, origin = "1970-01-01", tz = "UTC"))
+```
+
+## Modeling Growth Rate
+
+Mixed effect linear modeling (random effect + fixed effect)
+
+```{r}
+micom_growth_rate_model <- lmer(growth_rate ~ abundance + (abundance | taxon),
+                                data = prevalent_micom_rates)
+```
+
+```{r, fig.width=8, fig.height=7.5}
+abundance_vs_growth_rate <- prevalent_micom_rates %>% 
+  ggplot(aes(x = abundance, y = growth_rate)) + 
+  geom_point() +
+  geom_line(aes(y = predict(micom_growth_rate_model)),
+            color="red") +
+  facet_wrap(~taxon,
+             scales="free",
+             ncol=3) +
+  theme_bw(base_size = 15) +
+  labs(x = "Relative Abundance",
+       y = "Growth Rate",
+       title = "Relative Abundance vs. MICOM Growth Rate")
+```
+
+## Modeling ***Relative*** Growth Rate
+
+```{r}
+micom_clr_growth_rate_model <- lmer(sample_growth_rate_clr ~ 
+                                      abundance + (abundance | taxon),
+                                    data = prevalent_micom_rates)
+```
+
+```{r, fig.width=8, fig.height=7.5}
+abundance_vs_clr_growth_rate <- prevalent_micom_rates %>% 
+  ggplot(aes(x = abundance, y = sample_growth_rate_clr)) + 
+  geom_point() +
+  geom_line(aes(y = predict(micom_clr_growth_rate_model))) +
+  facet_wrap(~taxon,
+             scales="free",
+             ncol=3) +
+  theme_bw(base_size = 15) +
+  labs(x = "Relative Abundance",
+       y = "CLR Growth Rate",
+       title = "Relative Abundance vs. CLR MICOM Growth Rate")
+```
+
+## Modeling
+
+\*\*need to come back to mixed linear model for sim_real_growth
+
+```{r}
+sim_real_growth_model1 <- lmer(log2FC_abund ~ sample_growth_rate_clr + (1 | taxon),
+                     data = sim_real_data)
+
+sim_real_growth_model2 <- lmer(log2FC_abund ~ sample_growth_rate_clr +
+                                 (sample_growth_rate_clr | taxon),
+                               data = sim_real_data)
+
+sim_real_growth_model3 <- lmer(log2FC_abund ~ sample_growth_rate_clr * 
+                                 abundance +
+                                (abundance | taxon),
+                               data = sim_real_data)
+
+anova(sim_real_growth_model1, sim_real_growth_model3)
+anova(sim_real_growth_model1, sim_real_growth_model2)
+anova(sim_real_growth_model2, sim_real_growth_model3)
+```
+
+Plotting
+
+```{r, fig.width=9.5, fig.height=10}
+growth_rate_vs_fold_change <- sim_real_data %>% 
+  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+    geom_point(aes(color= sampling_date)) + 
+    #geom_smooth(method = "lm") +
+    facet_wrap(~taxon, scales = "free", ncol = 3) +
+    theme_bw(base_size = 16) +
+    labs(x = "Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM Growth Rate vs. Actual Log2FC Abundance")
+    # theme(legend.position = "bottom")
+
+growth_rate_vs_fold_change
+```
+
+```{r, fig.width=9.5, fig.height=10}
+clr_growth_rate_vs_fold_change <- sim_real_data %>% 
+  ggplot(aes(x = sample_growth_rate_clr, y = log2FC_abund)) +
+    geom_point(aes(color = sampling_date)) + 
+    geom_line(aes(y = predict(sim_real_growth_model1)),
+            color="red") +
+    geom_line(aes(y = predict(sim_real_growth_model2)),
+            color="blue") +
+    geom_line(aes(y = predict(sim_real_growth_model3)),
+            color="orange") +
+    #geom_smooth(method = "lm") +
+    facet_wrap(~taxon, scales = "free", ncol = 3) +
+    theme_bw(base_size = 16) +
+    labs(x = "MICOM CLR Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM CLR Growth Rate vs. Actual Abundance Changes") 
+
+clr_growth_rate_vs_fold_change
+```
+
+Figure legend. Title. What are we looking at (prevalent taxa, axes, coloring). Describe models.

@@ -33,6 +33,17 @@ def load_subject_data(subject_id, qza_dir, collapse_on='genus'):
     
     return subject_micom
 
+import pandas as pd
+
+def filter_first_n_sample_ids(subject_micom, n=3):
+    # Get the first three unique sample_ids
+    first_n_ids = subject_micom["sample_id"].unique()[:n]
+    
+    # Filter the dataframe
+    filtered_subject_micom = subject_micom[subject_micom["sample_id"].isin(first_n_ids)].reset_index(drop=True)
+    
+    return filtered_subject_micom
+
 #todo: reorder variables in main to match code and parser order
 def main(subject_id, qza_dir, 
          model_name, model_dir,
@@ -45,22 +56,36 @@ def main(subject_id, qza_dir,
     model_extract_fp = os.path.join(model_dir, Path(model_name).stem)
 
     subject_micom = load_subject_data(subject_id, qza_dir)
+    filtered_subject_micom = filter_first_n_sample_ids(subject_micom)
+    #print(filtered_subject_micom)
     #agora_db = micom.qiime_formats.load_qiime_model_db(model_fp, model_extract_fp)
 
     diet = load_qiime_medium(diet_fp)
-    print(diet)
+    #print(diet)
 
-    manifest = build(subject_micom,
+    manifest = build(filtered_subject_micom,
                     out_folder=pickled_gsmm_out,
                     model_db=model_fp,
+                    cutoff=0.0001,
                     solver=solver,
                     threads=threads)
+    #print(manifest)
+    comp_diet = complete_community_medium(manifest, model_folder=pickled_gsmm_out, medium=diet,
+                    community_growth=0.1, min_growth=0.001, minimize_components=True,
+                    max_import=1, threads=threads)
     
+    #added_components = print(comp_diet[~comp_diet['reaction'].isin(diet['reaction'])]['reaction'])
+    print(len(diet))
+    print(len(comp_diet))
+    #print(added_components)
+    diet.to_csv('diet_components.csv', index=False)
+    comp_diet.to_csv('comp_diet_components.csv', index=False)
 
-    growth = grow(manifest, pickled_gsmm_out, 
-                  medium=diet, tradeoff=tradeoff, 
-                  threads=threads, presolve=True)
-    save_results(growth, growth_out_fp)
+    # print(comp_diet)
+    # growth = grow(manifest, pickled_gsmm_out, 
+    #               medium=comp_diet, tradeoff=tradeoff, 
+    #               threads=threads, presolve=True)
+    # save_results(growth, growth_out_fp)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build and grow MICOM growth models")
@@ -68,10 +93,10 @@ if __name__ == "__main__":
                         required=True, 
                         help="subject ID to process")
     parser.add_argument("--qza_dir",  
-                        default="../data/qiime_outputs/", 
+                        default="../../data/qiime_outputs/", 
                         help="Path to .qza feature table")
     parser.add_argument("--model_dir", 
-                        default="../data/models/", 
+                        default="../../data/models/", 
                         help="Path to model directory, also where .qza will be unzipped")
     parser.add_argument("--model_name", 
                         required=True, 

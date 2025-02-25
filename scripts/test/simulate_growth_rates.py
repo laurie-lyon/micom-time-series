@@ -1,5 +1,6 @@
 import micom
 import os
+import zipfile
 import pandas as pd
 from pathlib import Path 
 import argparse
@@ -33,34 +34,101 @@ def load_subject_data(subject_id, qza_dir, collapse_on='genus'):
     
     return subject_micom
 
+def filter_first_n_sample_ids(subject_micom, n=3):
+    # Get the first three unique sample_ids
+    first_n_ids = subject_micom["sample_id"].unique()[:n]
+    
+    # Filter the dataframe
+    filtered_subject_micom = subject_micom[subject_micom["sample_id"].isin(first_n_ids)].reset_index(drop=True)
+    
+    return filtered_subject_micom
+
+def add_suggested_metabolites(diet_og, diet_sugg):
+    """
+    This function takes in the original diet and the micom suggested (completed) diet 
+    and returns a new diet that includes the suggested metabolites 
+    without removing the original ones.
+    
+    Inputs: 
+    diet_og: pandas dataframe with the original diet
+    diet_sugg: pandas dataframe with the diet from micom complete_community_medium 
+
+    Returns:
+    diet_new: pandas dataframe with the original and new nonzero elements of suggested diet
+    """
+
+    diet_og = diet_og.reset_index(drop=True)
+    diet_sugg = diet_sugg.reset_index(drop=True)
+
+    diet_merged = pd.merge(diet_og, diet_sugg, on=['reaction', 'metabolite'], how='outer', suffixes=('_og', '_sugg'))
+    diet_merged["flux_diff"] = diet_merged["flux_sugg"] - diet_merged["flux_og"]
+    added_metabolites = diet_merged[diet_merged["flux_diff"] > 0]
+    added_metabolites = added_metabolites[["reaction", "metabolite", "global_id", "flux_sugg"]]
+    added_metabolites = added_metabolites.rename(columns={"flux_sugg": "flux"})
+    #add added_metabolites to diet_og
+    diet_new = pd.concat([diet_og, added_metabolites], ignore_index=True)
+    #reindex diet_new
+    diet_new = diet_new.reset_index(drop=True)
+    return diet_new
+
+def unzip_to_folder(growth_out_fp, out_folder):
+    """
+    Unzips the growth output file to the specified folder.
+    Parameters:
+    growth_out_fp (str): The path to the growth output file.
+    out_folder (str): The folder to unzip the file to.
+    """
+    # unzip the growth output .zip file and save contents to a folder by the same name
+    with zipfile.ZipFile(growth_out_fp, 'r') as zip_ref:
+        zip_ref.extractall(out_folder)
+
 #todo: reorder variables in main to match code and parser order
 def main(subject_id, qza_dir, 
          model_name, model_dir,
          pickled_gsmm_out, solver, 
          threads, diet_fp, 
          tradeoff, growth_out_fp):
-    
+
     
     model_fp = os.path.join(model_dir, model_name)
     model_extract_fp = os.path.join(model_dir, Path(model_name).stem)
 
     subject_micom = load_subject_data(subject_id, qza_dir)
+    filtered_subject_micom = filter_first_n_sample_ids(subject_micom)
     #agora_db = micom.qiime_formats.load_qiime_model_db(model_fp, model_extract_fp)
 
-    diet = load_qiime_medium(diet_fp)
-    print(diet)
+    diet_og = load_qiime_medium(diet_fp)
+    #reindex diet_og to be row numbers [0:len(diet_og)]
+    diet_og = diet_og.reset_index(drop=True)
 
-    manifest = build(subject_micom,
+    
+    manifest = build(filtered_subject_micom,
                     out_folder=pickled_gsmm_out,
                     model_db=model_fp,
                     solver=solver,
                     threads=threads)
     
+    diet_sugg = complete_community_medium(manifest, 
+                                        model_folder=pickled_gsmm_out, 
+                                        medium=diet_og, 
+                                        community_growth=0.1, 
+                                        min_growth=0.001, 
+                                        minimize_components=True,
+                                        max_import=1, 
+                                        threads=threads)
+    diet_sugg = diet_sugg.reset_index(drop=True)
+
+    diet_new = add_suggested_metabolites(diet_og, diet_sugg)
 
     growth = grow(manifest, pickled_gsmm_out, 
-                  medium=diet, tradeoff=tradeoff, 
+                  medium=diet_new, tradeoff=tradeoff, 
                   threads=threads, presolve=True)
+    
+    #save the growth results to a .zip file (growth_out_fp)
     save_results(growth, growth_out_fp)
+
+    #unzip the growth output .zip file and save contents to a folder by the same name
+    unzip_to_folder(growth_out_fp, growth_out_fp.replace(".zip", ""))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Build and grow MICOM growth models")
@@ -68,10 +136,10 @@ if __name__ == "__main__":
                         required=True, 
                         help="subject ID to process")
     parser.add_argument("--qza_dir",  
-                        default="../data/qiime_outputs/", 
+                        default="../../data/qiime_outputs/", 
                         help="Path to .qza feature table")
     parser.add_argument("--model_dir", 
-                        default="../data/models/", 
+                        default="../../data/models/", 
                         help="Path to model directory, also where .qza will be unzipped")
     parser.add_argument("--model_name", 
                         required=True, 
