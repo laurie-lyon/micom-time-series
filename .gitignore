@@ -1,2 +1,6 @@
 data/models/*.qza
 data/*.qza
+.DS_Store
+.Rproj.user/
+.micromamba/
+data/*
