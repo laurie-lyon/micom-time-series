@@ -3,4 +3,4 @@ data/*.qza
 .DS_Store
 .Rproj.user/
 .micromamba/
-data/*
+data/data/*
