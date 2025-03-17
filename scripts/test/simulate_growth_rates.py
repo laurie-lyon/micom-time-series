@@ -43,7 +43,7 @@ def filter_first_n_sample_ids(subject_micom, n=3):
     
     return filtered_subject_micom
 
-def add_suggested_metabolites(diet_og, diet_sugg):
+def add_suggested_metabolites(diet_og, diet_sugg, added_metab_out="added_metabolites.csv"):
     """
     This function takes in the original diet and the micom suggested (completed) diet 
     and returns a new diet that includes the suggested metabolites 
@@ -52,6 +52,7 @@ def add_suggested_metabolites(diet_og, diet_sugg):
     Inputs: 
     diet_og: pandas dataframe with the original diet
     diet_sugg: pandas dataframe with the diet from micom complete_community_medium 
+    added_metab_out: path to output csv file for added metabolites
 
     Returns:
     diet_new: pandas dataframe with the original and new nonzero elements of suggested diet
@@ -65,6 +66,8 @@ def add_suggested_metabolites(diet_og, diet_sugg):
     added_metabolites = diet_merged[diet_merged["flux_diff"] > 0]
     added_metabolites = added_metabolites[["reaction", "metabolite", "global_id", "flux_sugg"]]
     added_metabolites = added_metabolites.rename(columns={"flux_sugg": "flux"})
+    #print added_metabolites to a csv file
+    added_metabolites.to_csv(added_metab_out, index=False)
     #add added_metabolites to diet_og
     diet_new = pd.concat([diet_og, added_metabolites], ignore_index=True)
     #reindex diet_new

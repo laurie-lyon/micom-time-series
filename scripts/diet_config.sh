@@ -1,0 +1,4 @@
+export DIET_SHORTHAND_vmh_eu_average_agora="vmhavg"
+export DIET_SHORTHAND_western_diet_gut_agora="wd"
+export DIET_SHORTHAND_vmh_high_fiber_agora="vmhfiber"
+export DIET_SHORTHAND_vmh_high_fat_low_carb_agora="vmhfat"
