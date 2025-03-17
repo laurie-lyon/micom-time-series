@@ -1,0 +1,427 @@
+---
+title: "MICOM time series validation"
+author: "Laurie and Casey"
+format: html
+editor: visual
+---
+
+## MICOM time series validation
+
+Load in libraries
+
+```{r}
+library(cowplot) # for plot grid
+library(glue)
+library(lme4) # for linear modeling 
+library(tidyverse)
+library(ggh4x)
+```
+
+```{r}
+PREVALENCE <- 0.90
+```
+
+Load in MICOM-predicted growth rates and actual log2FC changes in relative abundance
+
+```{r}
+#micom_rates_ugly <- read_csv("../data/growth_rates/growth_f01_gurobi_vmhavg_03/growth_rates.csv", show_col_types = FALSE)
+
+# actual_log2FC_wide <- read_csv("../data/actual_growth_rates_genus_2/F01_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+
+actual_clr_wide <- read_csv("../data/actual_growth_rates_genus_clr/F01_clr_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+
+# actual_log2FC_wide <- read_csv("../data/actual_growth_rates_genus_2/M01_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+
+# actual_log2FC_wide <- read_csv("../data/actual_growth_rates_genus_2/M02_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+```
+
+```{r echo=FALSE}
+# test_folder_list <- list("growth_F01_gurobi_vmhavg_03",
+#                     "growth_F01_gurobi_vmhfiber_03",
+#                     "growth_F01_gurobi_wd_03",
+#                     "growth_F01_gurobi_vmhfat_03")
+
+#grab list of all .zip files with the pattern we want then remove .zip from the end
+zip_list <- Sys.glob("../data/growth_rates/growth*agora201*.zip")
+folder_list <- gsub(basename(zip_list), pattern = ".zip", replacement = "")
+folder_list
+
+#establish pattern for file recognition in for loop
+growth_file_pattern <- "../data/growth_rates/{folder_name}/growth_rates.csv"
+
+# populate an empty list with dataframes 
+growth_df_list <- list()
+
+for (folder_name in folder_list) {
+    tmp_fp <- glue(growth_file_pattern)
+    tmp_df <- read_csv(tmp_fp)
+    tmp_df$folder_name <- folder_name
+    #separate folder_name by "_" into new columns
+    tmp_df <- separate(tmp_df, 
+                       folder_name, 
+                       into = c("micom_step", 
+                                "subject_id", 
+                                "model_db",
+                                "solver", 
+                                "diet", 
+                                "tradeoff"), 
+                       sep = "_", 
+                       remove = FALSE #if TRUE, removes original col
+                       )
+    #create named list (each element named for its corresponding folder_name)
+    #naming an element in a list uses [[double brackets]]
+    growth_df_list[[folder_name]] <- tmp_df
+    #print(head(tmp_df))
+}
+
+#create a df that includes all data from all folders in folder_list
+growth_df <- bind_rows(growth_df_list)
+
+# read_csv("../data/growth_rates/{folder}/growth_rates.csv", show_col_types = FALSE)
+```
+
+Convert actual log2FC df from wide to long and make sure columns match for joining real and sim data later
+
+```{r}
+# actual_log2FC_long <- actual_log2FC_wide %>% 
+#   pivot_longer(!Genus, names_to = "sample_id", values_to = "log2FC_abund") %>% 
+#   rename(taxon = Genus) %>% 
+#   mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+#   mutate(sample_id = as.numeric(sample_id)) 
+
+actual_clr_long <- actual_clr_wide %>% 
+  pivot_longer(!Genus, names_to = "sample_id", values_to = "clr_change_abund") %>% 
+  rename(taxon = Genus) %>% 
+  mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+  mutate(sample_id = as.numeric(sample_id)) 
+```
+
+delete the g\_\_ in front of each genus name to match the actual growth rate taxon names
+
+```{r}
+micom_rates <- growth_df %>% 
+  mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+  group_by(folder_name, sample_id)
+  #originally had CLR transform, but these growth rates are not compositional
+  # mutate(sample_growth_rate_geom_mean = exp(mean(log(growth_rate))),
+  #        sample_growth_rate_clr = log(growth_rate/sample_growth_rate_geom_mean))
+```
+
+Filter out prevalent taxa (present in at least 90% of samples).
+
+```{r}
+prevalent_micom_rates <- micom_rates %>% 
+    group_by(folder_name, taxon) %>% 
+    mutate(sample_counts = n()) %>% 
+    ungroup() %>% 
+    mutate(prevalence = sample_counts/max(sample_counts)) %>% 
+    mutate(normed_epoch_time = (sample_id-min(sample_id))/
+           (max(sample_id)-min(sample_id))) %>% 
+    mutate(sample_id = as.numeric(sample_id)) %>% 
+    filter(prevalence >= PREVALENCE)
+```
+
+```{r}
+# prevalent_micom_rates %>%
+#   group_by(folder_name, taxon) %>% 
+#   summarise(bug_presence = n()) %>% 
+#   arrange(desc(bug_presence), folder_name)
+```
+
+```{r}
+# nrow(prevalent_micom_rates)
+# nrow(actual_log2FC_long)
+
+#F01 sick day 
+sick_day = as.POSIXct(1202688000, origin = "1970-01-01", tz = "UTC")
+#M01 sick day 
+# sick_day = as.POSIXct(1203465600, origin = "1970-01-01", tz = "UTC")
+
+sim_real_data <- left_join(prevalent_micom_rates, 
+                           actual_clr_long, 
+                           by=c("taxon","sample_id")) %>% 
+  # drop_na(sample_growth_rate_clr, log2FC_abund)  %>%
+  mutate(sampling_date = as.POSIXct(sample_id, origin = "1970-01-01", tz = "UTC"))
+
+#nrow(sim_real_data)
+```
+
+```{r, fig.width=10, fig.height=20}
+
+clr_actual_vs_micom_rate <- sim_real_data %>% 
+  ggplot(aes(x = growth_rate, y = clr_change_abund)) + 
+  geom_point(alpha=0.3) + 
+  geom_smooth(method="lm") + 
+  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
+  facet_grid2(taxon~diet, scales = "free", independent="x") + 
+  theme_bw(base_size=14) + 
+  theme(axis.text = element_text(size=10), 
+        panel.spacing.x = unit(1, "line"), 
+        strip.text.y = element_text(size = 9)) + 
+  labs(x = "MICOM-predicted Growth Rate", y = "CLR-transformed Change in Abundance", title = "MICOM Growth Rate Prediction vs. Actual Abundance Changes")
+
+clr_actual_vs_micom_rate
+```
+
+Graphing abundance vs. growth rate from micom in sim_real_data, colored by diet
+
+```{r, fig.width=10, fig.height=20}
+
+abundance_vs_growth_rate <- sim_real_data %>% 
+  ggplot(aes(x=abundance, y=growth_rate)) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method="lm") +
+  scale_x_log10(labels=scales::label_number(drop0trailing=TRUE)) +
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  facet_grid2(taxon~diet, scales = "free", independent="x", shrink = TRUE) +
+  theme_bw(base_size=14) +
+  theme(axis.text = element_text(size=10), 
+        panel.spacing.x = unit(0.75, "line"), 
+        strip.text.y = element_text(size = 9))
+
+growth_rate_vs_fold_change
+
+abundance_vs_growth_rate
+```
+
+## Modeling Growth Rate
+
+Mixed effect linear modeling (random effect + fixed effect)
+
+```{r}
+# micom_growth_rate_model <- lmer(growth_rate ~ abundance + (abundance | taxon),
+#                                 data = prevalent_micom_rates)
+```
+
+```{r, fig.width=8, fig.height=7.5}
+# abundance_vs_growth_rate <- prevalent_micom_rates %>% 
+#   ggplot(aes(x = abundance, y = growth_rate)) + 
+#   geom_point() +
+#   geom_line(aes(y = predict(micom_growth_rate_model)),
+#             color="red") +
+#   facet_wrap(~taxon,
+#              scales="free",
+#              ncol=3) +
+#   theme_bw(base_size = 15) +
+#   labs(x = "Relative Abundance",
+#        y = "Growth Rate",
+#        title = "Relative Abundance vs. MICOM Growth Rate")
+```
+
+## Modeling ***Relative*** Growth Rate
+
+```{r}
+# micom_clr_growth_rate_model <- lmer(sample_growth_rate_clr ~ 
+#                                       abundance + (abundance | taxon),
+#                                     data = prevalent_micom_rates)
+```
+
+```{r, fig.width=8, fig.height=7.5}
+abundance_vs_clr_growth_rate <- prevalent_micom_rates %>% 
+  ggplot(aes(x = abundance, y = sample_growth_rate_clr)) + 
+  geom_point() +
+  geom_line(aes(y = predict(micom_clr_growth_rate_model))) +
+  facet_wrap(~taxon,
+             scales="free",
+             ncol=3) +
+  theme_bw(base_size = 15) +
+  labs(x = "Relative Abundance",
+       y = "CLR Growth Rate",
+       title = "Relative Abundance vs. CLR MICOM Growth Rate")
+
+
+```
+
+## Modeling
+
+\*\*need to come back to mixed linear model for sim_real_growth
+
+```{r}
+sim_real_growth_model1 <- lmer(log2FC_abund ~ sample_growth_rate_clr + (1 | taxon),
+                     data = sim_real_data)
+
+sim_real_growth_model2 <- lmer(log2FC_abund ~ sample_growth_rate_clr +
+                                 (sample_growth_rate_clr | taxon),
+                               data = sim_real_data)
+
+sim_real_growth_model3 <- lmer(log2FC_abund ~ sample_growth_rate_clr * 
+                                 abundance +
+                                (abundance | taxon),
+                               data = sim_real_data)
+
+anova(sim_real_growth_model1, sim_real_growth_model3)
+anova(sim_real_growth_model1, sim_real_growth_model2)
+anova(sim_real_growth_model2, sim_real_growth_model3)
+```
+
+Plotting
+
+```{r, fig.width=10, fig.height=20}
+growth_rate_vs_fold_change <- sim_real_data %>% 
+  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+    geom_point(aes(color= sampling_date)) + 
+    geom_smooth(method = "lm") +
+    facet_wrap(~taxon, scales = "free", ncol = 3) +
+    theme_bw(base_size = 16) +
+    labs(x = "Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM Growth Rate vs. Actual Log2FC Abundance")
+
+
+growth_rate_vs_fold_change2 <- sim_real_data %>% 
+  #filter(diet != "vmhfat") %>% 
+  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method="lm") +
+  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  facet_grid2(taxon~solver, scales = "free", independent = "x", shrink = TRUE) +
+  theme_bw(base_size=14) +
+  theme(axis.text = element_text(size=10), 
+        panel.spacing.x = unit(1, "line"), 
+        strip.text.y = element_text(size = 9))
+
+growth_rate_vs_fold_change2
+```
+
+## Abundance vs Log2FC
+
+```{r, fig.width=10, fig.height=10}
+abundance_vs_fold_change2 <- sim_real_data %>% 
+  filter(diet == "wd") %>% 
+  ggplot(aes(x = abundance, y = log2FC_abund)) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method="lm") +
+  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  facet_wrap(~taxon, scales = "free") +
+  theme_bw(base_size=14) +
+  theme(axis.text = element_text(size=10), 
+        strip.text.y = element_text(size = 9))
+
+abundance_vs_fold_change2
+```
+
+```{r, fig.width=6, fig.height=18}
+# # Compute x-axis limits per taxon
+# x_limits <- sim_real_data %>%
+#   group_by(taxon) %>%
+#   summarize(xmin = min(growth_rate, na.rm = TRUE), 
+#             xmax = max(growth_rate, na.rm = TRUE)) %>%
+#   ungroup()
+# 
+# # Merge x-axis limits into dataset
+# sim_real_data <- sim_real_data %>%
+#   left_join(x_limits, by = "taxon")
+# 
+# # Generate the plot
+# growth_rate_vs_fold_change3 <- ggplot(sim_real_data, 
+#                                       aes(x = growth_rate, y = log2FC_abund)) +
+#   geom_point(alpha = 0.3) +
+#   geom_smooth(method = "lm") +
+#   scale_x_continuous(labels = scales::label_number(drop0trailing = TRUE)) +
+#   scale_y_continuous(labels = scales::label_number(drop0trailing = TRUE)) +
+#   facet_grid2(taxon ~ diet, scales = "free") +  # Keep y-axis free
+#   theme_bw(base_size = 14) +
+#   theme(axis.text = element_text(size = 10),
+#         panel.spacing.x = unit(1, "line"), 
+#         strip.text.y = element_text(size = 9)) +
+#   coord_cartesian(clip = "off") +  # Prevents out-of-range clipping
+#   # Enforce consistent x-axis within each row using geom_blank()
+#   geom_blank(data = sim_real_data %>% 
+#                select(taxon, xmin, xmax) %>% 
+#                pivot_longer(cols = c(xmin, xmax), names_to = "limit", values_to = "growth_rate"),
+#              aes(x = growth_rate))
+# sim_real_data
+# growth_rate_vs_fold_change3
+```
+
+```{r, fig.width=10, fig.height=20}
+clr_growth_rate_vs_fold_change <- sim_real_data %>% 
+  ggplot(aes(x = sample_growth_rate_clr, y = log2FC_abund)) +
+    geom_point(aes(color = sampling_date)) + 
+    #geom_line(aes(y = predict(sim_real_growth_model1)),
+            #color="red") +
+    #geom_line(aes(y = predict(sim_real_growth_model2)),
+           # color="blue") +
+    #geom_line(aes(y = predict(sim_real_growth_model3)),
+            #color="orange") +
+    geom_smooth(method = "lm") +
+    facet_wrap(~taxon, scales = "free", ncol = 3) +
+    theme_bw(base_size = 16) +
+    labs(x = "MICOM CLR Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM CLR Growth Rate vs. Actual Abundance Changes") 
+
+clr_growth_rate_vs_fold_change2 <- sim_real_data %>% 
+  ggplot(aes(x = sample_growth_rate_clr, y = log2FC_abund)) +
+    geom_point(alpha=0.3) +
+    geom_smooth(method="lm") +
+    scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+    scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+    facet_grid2(taxon~diet, scales = "free", independent="x") +
+    theme_bw(base_size=14) +
+    theme(axis.text = element_text(size=10), 
+          panel.spacing.x = unit(1, "line"), 
+          strip.text.y = element_text(size = 9)) 
+    labs(x = "MICOM CLR Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM CLR Growth Rate vs. Actual Abundance Changes") 
+
+clr_growth_rate_vs_fold_change2
+```
+
+Figure legend. Title. What are we looking at (prevalent taxa, axes, coloring). Describe models.
+
+```{r, fig.width=10, fig.height=20}
+clr_change_abund_vs_time <- sim_real_data %>%
+  filter(diet != "vmhfat") %>% 
+  #try filtering for all sampling dates < sick day 
+  ggplot(aes(x = sampling_date, y = clr_change_abund)) +
+    geom_line() +
+    geom_vline(xintercept = sick_day,
+               color = "red") +
+    geom_point(pch=21,
+               color="black",
+               size=2,
+               aes(fill=log10(abundance))) +
+    scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+    facet_grid2(taxon~diet, scales = "free_y") +
+    theme_bw(base_size=14) +
+    theme(axis.text = element_text(size=10), 
+          panel.spacing.x = unit(1, "line"), 
+          strip.text.y = element_text(size = 9),
+          legend.position = "bottom") +
+    scale_fill_continuous(type="viridis") +
+    labs(x = "Sampling Date",
+         y = "Predicted Growth Rate") 
+
+clr_change_abund_vs_time
+```
+
+```{r, fig.width=10, fig.height=20}
+log2fc_vs_time <- sim_real_data %>%
+  filter(diet != "vmhfat") %>% 
+  #try filtering for all sampling dates < sick day 
+  ggplot(aes(x = sampling_date, y = log2FC_abund)) +
+    geom_line() +
+    geom_vline(xintercept = sick_day,
+               color = "red") +
+    geom_point(pch=21,
+               color="black",
+               size=2,
+               aes(fill=log10(abundance))) +
+    scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+    facet_grid2(taxon~diet, scales = "free_y") +
+    theme_bw(base_size=14) +
+    theme(axis.text = element_text(size=10), 
+          panel.spacing.x = unit(1, "line"), 
+          strip.text.y = element_text(size = 9),
+          legend.position = "bottom") +
+    scale_fill_continuous(type="viridis") +
+    labs(x = "Sampling Date",
+         y = "Log2FC Abundance") 
+
+log2fc_vs_time
+```

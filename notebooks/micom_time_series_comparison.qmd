@@ -1,0 +1,396 @@
+---
+title: "MICOM time series comparison"
+author: "Laurie and Casey"
+format: html
+editor: visual
+---
+
+# Comparison of MICOM-predicted growth rates and measured changes in abundance from time series data
+
+Load in libraries
+
+```{r}
+library(cowplot) # to plot grid
+library(glue) # to format and interpolate a string
+library(lme4) # for linear modeling 
+library(tidyverse) 
+library(ggh4x) # ggplot2 extension, includes nested facets
+library(broom)
+```
+
+## Load in actual clr-transformed relative abundance changes (output of calculate_actual_growth_rates_genus_clr.py)
+
+Convert df from wide to long and make sure columns match for joining real and sim data later
+
+```{r}
+#create long df with one subject
+# actual_clr_wide_F01 <- read_csv("../data/actual_growth_rates_genus_clr/F01_clr_actual_growth_rates_by_genus.csv", show_col_types = FALSE)
+# 
+# actual_clr_long_F01 <- actual_clr_wide_F01 %>% 
+#   pivot_longer(!Genus, names_to = "sample_id", values_to = "clr_change_abund") %>% 
+#   rename(taxon = Genus) %>% 
+#   mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+#   mutate(sample_id = as.numeric(sample_id)) %>% 
+#   # add a column for subject_id
+#   cbind(subject_id='F01')
+
+```
+
+```{r}
+# create long df with all subjects included, a column added for subject_id, and all 3 subjects combined
+#list of subject ids
+subject_ids <- c("F01", "M01", "M02")
+
+# Use map_dfr (from purrr package) to read, transform, and combine dataframes
+actual_clr_long_combined <- map_dfr(subject_ids, function(subject) {
+  
+  # Read each subject's file
+  df_wide <- read_csv(paste0("../data/actual_growth_rates_genus_clr/", subject, "_clr_actual_growth_rates_by_genus.csv"), 
+                      show_col_types = FALSE)
+  
+  # Transform to long format and clean columns
+  df_long <- df_wide %>% 
+    pivot_longer(cols = !Genus, names_to = "sample_id", values_to = "clr_change_abund") %>% 
+    rename(taxon = Genus) %>% 
+    mutate(taxon = str_sub(taxon, 4, -1),
+           sample_id = as.numeric(sample_id),
+           subject_id = subject)  # add subject_id column directly
+  
+  return(df_long)
+})
+
+# Verify combined dataframe
+head(actual_clr_long_combined)
+```
+
+## Load in the MICOM-predicted growth data (output of simulate_growth_rates.py script)
+
+```{r echo=FALSE, include=FALSE, message=FALSE}
+
+#grab list of all .zip files with the pattern we want then remove .zip from the end
+zip_list <- Sys.glob("../data/growth_rates/growth*.zip")
+folder_list <- gsub(basename(zip_list), pattern = ".zip", replacement = "")
+
+#establish pattern for file recognition in for loop
+growth_file_pattern <- "../data/growth_rates/{folder_name}/growth_rates.csv"
+
+# populate an empty list with dataframes 
+growth_df_list <- list()
+
+for (folder_name in folder_list) {
+    tmp_fp <- glue(growth_file_pattern)
+    tmp_df <- read_csv(tmp_fp)
+    tmp_df$folder_name <- folder_name
+    #separate folder_name by "_" into new columns
+    tmp_df <- separate(tmp_df, 
+                       folder_name, 
+                       into = c("micom_step", 
+                                "subject_id", 
+                                "model_db",
+                                "solver", 
+                                "diet", 
+                                "tradeoff"), 
+                       sep = "_", 
+                       remove = FALSE #if TRUE, removes original col
+                       )
+    #create named list (each element named for its corresponding folder_name)
+    #naming an element in a list uses [[double brackets]]
+    growth_df_list[[folder_name]] <- tmp_df
+    #print(head(tmp_df))
+}
+
+#create a df that includes all data from all folders in folder_list
+growth_df <- bind_rows(growth_df_list)
+```
+
+delete the g\_\_ in front of each genus name to match the actual growth rate taxon names
+
+```{r}
+micom_rates <- growth_df %>% 
+  mutate(taxon = str_sub(taxon, 4, -1)) %>% 
+  group_by(folder_name, sample_id)
+  #originally had CLR transform, but these growth rates are not compositional
+  # mutate(sample_growth_rate_geom_mean = exp(mean(log(growth_rate))),
+  #        sample_growth_rate_clr = log(growth_rate/sample_growth_rate_geom_mean))
+```
+
+Later, I want to be able to sort by only the most prevalent taxa. Here, we set a cutoff for total fraction of days that a genus must be present to be "prevalent" (e.g. 0.90 is present in at least 90% of time points)
+
+```{r}
+PREVALENCE <- 0.90
+```
+
+For graphing, filter out prevalent taxa (present in at least 90% of samples).
+
+```{r}
+PREVALENCE <- 0.90
+
+prevalent_micom_rates <- micom_rates %>%
+  group_by(folder_name) %>% 
+  mutate(total_samples = n_distinct(sample_id)) %>% 
+  ungroup() %>% 
+  group_by(folder_name, taxon) %>%
+  mutate(sample_counts = n_distinct(sample_id[!is.na(growth_rate)]),
+         prevalence = sample_counts / total_samples) %>%
+  ungroup() %>%
+  filter(prevalence >= PREVALENCE) %>%
+  mutate(normed_epoch_time = (sample_id - min(sample_id)) /
+                             (max(sample_id) - min(sample_id))) %>%
+  mutate(sample_id = as.numeric(sample_id))
+
+```
+
+## Join Data
+
+Joining actual with only the prevalent micom rates (\>90% of samples) to cut down on number of comparisons
+
+```{r}
+sim_real_data <- left_join(prevalent_micom_rates, 
+                           actual_clr_long_combined, 
+                           by=c("taxon","sample_id", "subject_id")) %>% 
+  drop_na(growth_rate, clr_change_abund) %>% 
+  mutate(sampling_date = as.POSIXct(sample_id, origin = "1970-01-01", tz = "UTC"))
+
+```
+
+For graphing, want to add two more columns for the onset of illness
+
+-   column called "sick_day" that adds the correct date for each subject's onset of illness (in metadata)
+
+-   column called timing_vs_sickness_onset that is "before_onset" if before "sick_day" and "after_onset" if on or after sick_day
+
+```{r}
+
+# #F01 sick day
+# F01_sick_day = as.POSIXct(1202688000, origin = "1970-01-01", tz = "UTC")
+# #M01 sick day 
+# M01_sick_day = as.POSIXct(1203465600, origin = "1970-01-01", tz = "UTC")
+# #M02 sick day
+# M02_sick_day = as.POSIXct(1203120000, origin = "1970-01-01", tz = "UTC")
+```
+
+```{r}
+sim_real_data <- sim_real_data %>% 
+  #mutate adds or modifies columns
+  #case_when allows you to vectorize multiple "if else" statements 
+  mutate(sick_day = case_when(
+    subject_id == "F01" ~ 1202688000, 
+    subject_id == "M01" ~ 1203465600,
+    subject_id == "M02" ~ 1203120000)) %>% 
+  mutate(date_vs_onset_illness = case_when(
+    sample_id < sick_day ~ "before", 
+    sample_id >= sick_day ~ "after"
+  ))
+```
+
+## 
+
+## Correlation
+
+I want to see the correlation between
+
+-   can I write a for loop to cycle though all of these combinations - top level: folder_name/parameters, further nested by taxon, possibly further nested by before vs. after onset of illness?
+
+-   how can I extract the values that I want from the Spearman test. Do I filter first by significance?
+
+-   Can I average the rho values across all the taxa in a single folder?
+
+-   How can I quantify what parameters are performing better than others
+
+    -   rank by p-value and rho, count instances of each parameter and where they fall in the ranking?
+
+```{r}
+growth_F01_agora201_gurobi_wd_08_Akkermansia <- sim_real_data %>% 
+  filter(folder_name == "growth_F01_agora201_gurobi_wd_08", taxon == "Akkermansia")
+
+spearman_cor <- cor.test(growth_F01_agora201_gurobi_wd_08_Akkermansia$growth_rate, growth_F01_agora201_gurobi_wd_08_Akkermansia$clr_change_abund, method = c("spearman"))
+
+spearman_cor
+```
+
+Using group_by and broom library to cycle through parameter combinations and taxa
+
+```{r}
+spearman_results <- sim_real_data %>% 
+  #group by folder_name and taxon then perform spearman correlation tests systematically 
+  group_by(folder_name, taxon, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
+  #nest rows into a list-column of dfs, each unique group has its own df with all rows belonging to that group (data column)
+  nest() %>% 
+  #first filter out groups with non-zero variance (was causing errors in several samples)
+  #map() applies a function to each element of a vector (map_dbl return a vector of type dbl)
+  mutate(
+    var_growth = map_dbl(data, ~ sd(.x$growth_rate, na.rm=TRUE)), 
+    var_abund = map_dbl(data, ~sd(.x$clr_change_abund, na.rm=TRUE))
+  ) %>% 
+  #removes zero variance cases
+  filter(var_growth > 0 & var_abund > 0) %>% 
+  mutate(
+    #map applies a function to each element of a vector
+    spearman = map(data, ~ cor.test(.x$growth_rate, 
+                                    .x$clr_change_abund, 
+                                    method = "spearman", 
+                                    #received warning about computing exact p-value with ties
+                                    #default to approx. p-values to deal with this
+                                    exact = FALSE)),
+    #extracts the rho and p-values from spearman with broom::tidy()
+    tidy_results = map(spearman, tidy)
+  ) %>% 
+  #extract tidy results into a new df 
+  unnest(tidy_results) %>% 
+  select(-data, -spearman, -var_growth, -var_abund)
+
+nrow(spearman_results)
+summary(spearman_results)
+```
+
+filter results by significance using broom
+
+```{r}
+significant_spearman_p <- spearman_results %>% 
+  filter(p.value < 0.05)
+
+nrow(significant_spearman_p)
+summary(significant_spearman_p)
+```
+
+average rho values across all taxa within the same folder
+
+```{r}
+avg_rho_by_folder <- spearman_results %>% 
+  group_by(folder_name, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
+  #mean and median rho indicates predictive strength across all taxa
+  summarise(mean_rho = mean(estimate, na.rm=TRUE),
+            median_rho = median(estimate, na.rm=TRUE), 
+            significant_taxa = sum(p.value < 0.05), 
+            total_taxa = n()) %>% 
+  arrange(desc(mean_rho))
+
+summary(avg_rho_by_folder)
+```
+
+quantify which parameters perform better than others
+
+```{r, fig.width=10, fig.height=20}
+avg_rho_by_folder %>%
+  filter(subject_id == "M02", date_vs_onset_illness == "before") %>% 
+  ggplot(aes(x = reorder(folder_name, mean_rho), y = mean_rho, fill = diet)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  labs(x = "Parameter Combination", y = "Mean of Spearman's rho across all genera",
+       title = "Ranking MICOM Parameter Sets by Predictive Accuracy (Mean rho)") +
+  theme_minimal()
+
+avg_rho_by_folder
+```
+
+## Graphing
+
+```{r, fig.width=10, fig.height=20}
+
+clr_actual_vs_micom_rate <- sim_real_data %>% 
+  filter(subject_id == "F01", diet == "wd", model_db == "agora201", date_vs_onset_illness ==  "before", tradeoff == "09") %>% 
+  ggplot(aes(x = growth_rate, y = clr_change_abund)) + 
+  geom_point(alpha=0.3) + 
+  geom_smooth(method="lm") + 
+  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
+  facet_grid2(taxon~tradeoff, scales = "free", independent="x") + 
+  theme_bw(base_size=14) + 
+  theme(axis.text = element_text(size=10), 
+        panel.spacing.x = unit(1, "line"), 
+        strip.text.y = element_text(size = 9)) + 
+  labs(x = "MICOM-predicted Growth Rate", y = "CLR-transformed Change in Abundance", title = "MICOM Growth Rate Prediction vs. Actual Abundance Changes")
+
+clr_actual_vs_micom_rate
+```
+
+# I AM HERE
+
+## Modeling Growth Rate
+
+```{r echo =FALSE}
+source("~/Tools/Madi_Code/art_lmer_functions.R")
+```
+
+Mixed effect linear modeling (random effect + fixed effect)
+
+```{r}
+# micom_growth_rate_model <- lmer(growth_rate ~ abundance + (abundance | taxon),
+#                                 data = prevalent_micom_rates)
+```
+
+```{r, fig.width=8, fig.height=7.5}
+# abundance_vs_growth_rate <- prevalent_micom_rates %>% 
+#   ggplot(aes(x = abundance, y = growth_rate)) + 
+#   geom_point() +
+#   geom_line(aes(y = predict(micom_growth_rate_model)),
+#             color="red") +
+#   facet_wrap(~taxon,
+#              scales="free",
+#              ncol=3) +
+#   theme_bw(base_size = 15) +
+#   labs(x = "Relative Abundance",
+#        y = "Growth Rate",
+#        title = "Relative Abundance vs. MICOM Growth Rate"
+```
+
+## Modeling
+
+\*\*need to come back to mixed linear model for sim_real_growth
+
+```{r}
+sim_real_growth_model1 <- lmer(clr_change_abund ~ growth_rate
+                               * model_db
+                               * diet 
+                               * tradeoff 
+                               + (1 | taxon)
+                               + (1 | subject_id), 
+                               data = sim_real_data)
+
+summary(sim_real_growth_model1)
+# sim_real_growth_model1 <- lmer(clr_change_abund ~ growth_rate + (1 | taxon),
+#                      data = sim_real_data)
+# 
+# sim_real_growth_model2 <- lmer(log2FC_abund ~ sample_growth_rate_clr +
+#                                  (sample_growth_rate_clr | taxon),
+#                                data = sim_real_data)
+# 
+# sim_real_growth_model3 <- lmer(log2FC_abund ~ sample_growth_rate_clr * 
+#                                  abundance +
+#                                 (abundance | taxon),
+#                                data = sim_real_data)
+
+# anova(sim_real_growth_model1, sim_real_growth_model3)
+# anova(sim_real_growth_model1, sim_real_growth_model2)
+# anova(sim_real_growth_model2, sim_real_growth_model3)
+```
+
+Plotting
+
+```{r, fig.width=10, fig.height=20}
+growth_rate_vs_fold_change <- sim_real_data %>% 
+  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+    geom_point(aes(color= sampling_date)) + 
+    geom_smooth(method = "lm") +
+    facet_wrap(~taxon, scales = "free", ncol = 3) +
+    theme_bw(base_size = 16) +
+    labs(x = "Growth Rate",
+         y = "Log2 Fold Change",
+         title = "MICOM Growth Rate vs. Actual Log2FC Abundance")
+
+
+growth_rate_vs_fold_change2 <- sim_real_data %>% 
+  #filter(diet != "vmhfat") %>% 
+  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+  geom_point(alpha=0.3) +
+  geom_smooth(method="lm") +
+  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+  facet_grid2(taxon~solver, scales = "free", independent = "x", shrink = TRUE) +
+  theme_bw(base_size=14) +
+  theme(axis.text = element_text(size=10), 
+        panel.spacing.x = unit(1, "line"), 
+        strip.text.y = element_text(size = 9))
+
+growth_rate_vs_fold_change2
+```
