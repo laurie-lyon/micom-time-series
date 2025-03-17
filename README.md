@@ -80,9 +80,12 @@ flowchart TD
     A --> B
     B --> C
     B --> D
+    C --> E
+    D --> E
 
     A[time_series_data_wrangling_w_parser.py]
     B[silva_taxonomy_mapping.py]
     C[calculate_actual_growth_rates.py]
     D[simulate_growth_rates.py]
+    E[micom_time_series_comparison.qmd]
 ```
