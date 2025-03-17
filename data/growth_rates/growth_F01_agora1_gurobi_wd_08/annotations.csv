@@ -1,0 +1,1583 @@
+metabolite,name,molecular_weight,C_number,N_number,hmdb,inchi,kegg.compound,pubchem.compound,reaction
+12ppd_S[e],"(S)-propane-1,2-diol",76.09442,3,0,HMDB06213,"InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3/t3-/m0/s1",C02917,,EX_12ppd_S(e)
+26dap_M[e],"meso-2,6-Diaminoheptanedioate",190.19706,7,2,,,,,EX_26dap_M(e)
+2obut[e],2-Oxobutanoate,101.0807,4,0,HMDB00005,"InChI=1S/C4H6O3/c1-2-3(5)4(6)7/h2H2,1H3,(H,6,7)/p-1",C00109,58,EX_2obut(e)
+4abut[e],4-Aminobutanoate,103.11976,4,1,HMDB00112,"InChI=1S/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)",C00334,119,EX_4abut(e)
+MGlcn10[e],mucin-type O-glycan No 10,,44,4,,,,,EX_MGlcn10(e)
+MGlcn100[e],mucin-type O-glycan No 100,,61,5,,,,,EX_MGlcn100(e)
+MGlcn100_rl[e],released mucin-type O-glycan No 100,1607.4538,61,5,,,,,EX_MGlcn100_rl(e)
+MGlcn101[e],mucin-type O-glycan No 101,,69,6,,,,,EX_MGlcn101(e)
+MGlcn101_rl[e],released mucin-type O-glycan No 101,1810.64632,69,6,,,,,EX_MGlcn101_rl(e)
+MGlcn102[e],mucin-type O-glycan No 102,,80,7,,,,,EX_MGlcn102(e)
+MGlcn102_rl[e],released mucin-type O-glycan No 102,2100.89296,80,7,,,,,EX_MGlcn102_rl(e)
+MGlcn103[e],mucin-type O-glycan No 103,,88,8,,,,,EX_MGlcn103(e)
+MGlcn103_rl[e],released mucin-type O-glycan No 103,2304.08548,88,8,,,,,EX_MGlcn103_rl(e)
+MGlcn104[e],mucin-type O-glycan No 104,,46,2,,,,,EX_MGlcn104(e)
+MGlcn104_rl[e],released mucin-type O-glycan No 104,1219.10392,46,2,,,,,EX_MGlcn104_rl(e)
+MGlcn105[e],mucin-type O-glycan No 105,,46,2,,,,,EX_MGlcn105(e)
+MGlcn105_rl[e],released mucin-type O-glycan No 105,1219.10392,46,2,,,,,EX_MGlcn105_rl(e)
+MGlcn106[e],mucin-type O-glycan No 106,,54,3,,,,,EX_MGlcn106(e)
+MGlcn106_rl[e],released mucin-type O-glycan No 106,1422.29644,54,3,,,,,EX_MGlcn106_rl(e)
+MGlcn107[e],mucin-type O-glycan No 107,,54,3,,,,,EX_MGlcn107(e)
+MGlcn107_rl[e],released mucin-type O-glycan No 107,1422.29644,54,3,,,,,EX_MGlcn107_rl(e)
+MGlcn108[e],mucin-type O-glycan No 108,,42,3,,,,,EX_MGlcn108(e)
+MGlcn108_rl[e],released mucin-type O-glycan No 108,1098.01524,42,3,,,,,EX_MGlcn108_rl(e)
+MGlcn109[e],mucin-type O-glycan No 109,,36,3,,,,,EX_MGlcn109(e)
+MGlcn109_rl[e],released mucin-type O-glycan No 109,951.87404,36,3,,,,,EX_MGlcn109_rl(e)
+MGlcn10_rl[e],released mucin-type O-glycan No 10,1167.0342,44,4,,,,,EX_MGlcn10_rl(e)
+MGlcn110[e],mucin-type O-glycan No 110,,36,3,,,,,EX_MGlcn110(e)
+MGlcn110_rl[e],released mucin-type O-glycan No 110,951.87404,36,3,,,,,EX_MGlcn110_rl(e)
+MGlcn111[e],mucin-type O-glycan No 111,,34,2,,,,,EX_MGlcn111(e)
+MGlcn111_rl[e],released mucin-type O-glycan No 111,910.8221199999999,34,2,,,,,EX_MGlcn111_rl(e)
+MGlcn112[e],mucin-type O-glycan No 112,,34,2,,,,,EX_MGlcn112(e)
+MGlcn112_rl[e],released mucin-type O-glycan No 112,910.8221199999999,34,2,,,,,EX_MGlcn112_rl(e)
+MGlcn113[e],mucin-type O-glycan No 113,,42,3,,,,,EX_MGlcn113(e)
+MGlcn113_rl[e],released mucin-type O-glycan No 113,1114.0146399999999,42,3,,,,,EX_MGlcn113_rl(e)
+MGlcn114[e],mucin-type O-glycan No 114,,40,2,,,,,EX_MGlcn114(e)
+MGlcn114_rl[e],released mucin-type O-glycan No 114,1072.96272,40,2,,,,,EX_MGlcn114_rl(e)
+MGlcn115[e],mucin-type O-glycan No 115,,48,3,,,,,EX_MGlcn115(e)
+MGlcn115_rl[e],released mucin-type O-glycan No 115,1276.15524,48,3,,,,,EX_MGlcn115_rl(e)
+MGlcn116[e],mucin-type O-glycan No 116,,33,3,,,,,EX_MGlcn116(e)
+MGlcn116_rl[e],released mucin-type O-glycan No 116,876.78756,33,3,,,,,EX_MGlcn116_rl(e)
+MGlcn117[e],mucin-type O-glycan No 117,,39,3,,,,,EX_MGlcn117(e)
+MGlcn117_rl[e],released mucin-type O-glycan No 117,1038.92816,39,3,,,,,EX_MGlcn117_rl(e)
+MGlcn118[e],mucin-type O-glycan No 118,,53,4,,,,,EX_MGlcn118(e)
+MGlcn118_rl[e],released mucin-type O-glycan No 118,1388.26188,53,4,,,,,EX_MGlcn118_rl(e)
+MGlcn119[e],mucin-type O-glycan No 119,,53,4,,,,,EX_MGlcn119(e)
+MGlcn119_rl[e],released mucin-type O-glycan No 119,1388.26188,53,4,,,,,EX_MGlcn119_rl(e)
+MGlcn12[e],mucin-type O-glycan No 12,,22,2,,,,,EX_MGlcn12(e)
+MGlcn120[e],mucin-type O-glycan No 120,,47,4,,,,,EX_MGlcn120(e)
+MGlcn120_rl[e],released mucin-type O-glycan No 120,1242.12068,47,4,,,,,EX_MGlcn120_rl(e)
+MGlcn121[e],mucin-type O-glycan No 121,,61,5,,,,,EX_MGlcn121(e)
+MGlcn121_rl[e],released mucin-type O-glycan No 121,1591.4544,61,5,,,,,EX_MGlcn121_rl(e)
+MGlcn122[e],mucin-type O-glycan No 122,,61,5,,,,,EX_MGlcn122(e)
+MGlcn122_rl[e],released mucin-type O-glycan No 122,1591.4544,61,5,,,,,EX_MGlcn122_rl(e)
+MGlcn123[e],mucin-type O-glycan No 123,,55,5,,,,,EX_MGlcn123(e)
+MGlcn123_rl[e],released mucin-type O-glycan No 123,1445.3131999999998,55,5,,,,,EX_MGlcn123_rl(e)
+MGlcn124[e],mucin-type O-glycan No 124,,55,5,,,,,EX_MGlcn124(e)
+MGlcn124_rl[e],released mucin-type O-glycan No 124,1445.3131999999998,55,5,,,,,EX_MGlcn124_rl(e)
+MGlcn126[e],mucin-type O-glycan No 126,,61,5,,,,,EX_MGlcn126(e)
+MGlcn126_rl[e],released mucin-type O-glycan No 126,1607.4538,61,5,,,,,EX_MGlcn126_rl(e)
+MGlcn127[e],mucin-type O-glycan No 127,,75,6,,,,,EX_MGlcn127(e)
+MGlcn127_rl[e],released mucin-type O-glycan No 127,1956.78752,75,6,,,,,EX_MGlcn127_rl(e)
+MGlcn128[e],mucin-type O-glycan No 128,,75,6,,,,,EX_MGlcn128(e)
+MGlcn128_rl[e],released mucin-type O-glycan No 128,1956.78752,75,6,,,,,EX_MGlcn128_rl(e)
+MGlcn129[e],mucin-type O-glycan No 129,,75,6,,,,,EX_MGlcn129(e)
+MGlcn129_rl[e],released mucin-type O-glycan No 129,1956.78752,75,6,,,,,EX_MGlcn129_rl(e)
+MGlcn12_rl[e],released mucin-type O-glycan No 12,586.54092,22,2,,,,,EX_MGlcn12_rl(e)
+MGlcn13[e],mucin-type O-glycan No 13,,30,3,,,,,EX_MGlcn13(e)
+MGlcn130[e],mucin-type O-glycan No 130,,69,6,,,,,EX_MGlcn130(e)
+MGlcn130_rl[e],released mucin-type O-glycan No 130,1810.64632,69,6,,,,,EX_MGlcn130_rl(e)
+MGlcn131[e],mucin-type O-glycan No 131,,69,6,,,,,EX_MGlcn131(e)
+MGlcn131_rl[e],released mucin-type O-glycan No 131,1810.64632,69,6,,,,,EX_MGlcn131_rl(e)
+MGlcn132[e],mucin-type O-glycan No 132,,69,6,,,,,EX_MGlcn132(e)
+MGlcn132_rl[e],released mucin-type O-glycan No 132,1810.64632,69,6,,,,,EX_MGlcn132_rl(e)
+MGlcn133[e],mucin-type O-glycan No 133,,83,7,,,,,EX_MGlcn133(e)
+MGlcn133_rl[e],released mucin-type O-glycan No 133,2159.98004,83,7,,,,,EX_MGlcn133_rl(e)
+MGlcn134[e],mucin-type O-glycan No 134,,83,7,,,,,EX_MGlcn134(e)
+MGlcn134_rl[e],released mucin-type O-glycan No 134,2159.98004,83,7,,,,,EX_MGlcn134_rl(e)
+MGlcn135[e],mucin-type O-glycan No 135,,77,7,,,,,EX_MGlcn135(e)
+MGlcn135_rl[e],released mucin-type O-glycan No 135,2013.83884,77,7,,,,,EX_MGlcn135_rl(e)
+MGlcn136[e],mucin-type O-glycan No 136,,77,7,,,,,EX_MGlcn136(e)
+MGlcn136_rl[e],released mucin-type O-glycan No 136,2013.83884,77,7,,,,,EX_MGlcn136_rl(e)
+MGlcn137[e],mucin-type O-glycan No 137,,34,2,,,,,EX_MGlcn137(e)
+MGlcn137_rl[e],released mucin-type O-glycan No 137,894.82272,34,2,,,,,EX_MGlcn137_rl(e)
+MGlcn138[e],mucin-type O-glycan No 138,,34,2,,,,,EX_MGlcn138(e)
+MGlcn138_rl[e],released mucin-type O-glycan No 138,894.82272,34,2,,,,,EX_MGlcn138_rl(e)
+MGlcn139[e],mucin-type O-glycan No 139,,34,2,,,,,EX_MGlcn139(e)
+MGlcn139_rl[e],released mucin-type O-glycan No 139,894.82272,34,2,,,,,EX_MGlcn139_rl(e)
+MGlcn13_rl[e],released mucin-type O-glycan No 13,789.73344,30,3,,,,,EX_MGlcn13_rl(e)
+MGlcn14[e],mucin-type O-glycan No 14,,36,3,,,,,EX_MGlcn14(e)
+MGlcn140[e],mucin-type O-glycan No 140,,34,2,,,,,EX_MGlcn140(e)
+MGlcn140_rl[e],released mucin-type O-glycan No 140,894.82272,34,2,,,,,EX_MGlcn140_rl(e)
+MGlcn141[e],mucin-type O-glycan No 141,,28,2,,,,,EX_MGlcn141(e)
+MGlcn141_rl[e],released mucin-type O-glycan No 141,732.68212,28,2,,,,,EX_MGlcn141_rl(e)
+MGlcn142[e],mucin-type O-glycan No 142,,28,2,,,,,EX_MGlcn142(e)
+MGlcn142_rl[e],released mucin-type O-glycan No 142,732.68212,28,2,,,,,EX_MGlcn142_rl(e)
+MGlcn143[e],mucin-type O-glycan No 143,,28,2,,,,,EX_MGlcn143(e)
+MGlcn143_rl[e],released mucin-type O-glycan No 143,732.68212,28,2,,,,,EX_MGlcn143_rl(e)
+MGlcn144[e],mucin-type O-glycan No 144,,28,2,,,,,EX_MGlcn144(e)
+MGlcn144_rl[e],released mucin-type O-glycan No 144,732.68212,28,2,,,,,EX_MGlcn144_rl(e)
+MGlcn145[e],mucin-type O-glycan No 145,,34,2,,,,,EX_MGlcn145(e)
+MGlcn145_rl[e],released mucin-type O-glycan No 145,878.82332,34,2,,,,,EX_MGlcn145_rl(e)
+MGlcn146[e],mucin-type O-glycan No 146,,34,2,,,,,EX_MGlcn146(e)
+MGlcn146_rl[e],released mucin-type O-glycan No 146,878.82332,34,2,,,,,EX_MGlcn146_rl(e)
+MGlcn147[e],mucin-type O-glycan No 147,,33,3,,,,,EX_MGlcn147(e)
+MGlcn147_rl[e],released mucin-type O-glycan No 147,876.78756,33,3,,,,,EX_MGlcn147_rl(e)
+MGlcn148[e],mucin-type O-glycan No 148,,22,2,,,,,EX_MGlcn148(e)
+MGlcn148_rl[e],released mucin-type O-glycan No 148,586.54092,22,2,,,,,EX_MGlcn148_rl(e)
+MGlcn149[e],mucin-type O-glycan No 149,,36,3,,,,,EX_MGlcn149(e)
+MGlcn149_rl[e],released mucin-type O-glycan No 149,935.87464,36,3,,,,,EX_MGlcn149_rl(e)
+MGlcn14_rl[e],released mucin-type O-glycan No 14,951.87404,36,3,,,,,EX_MGlcn14_rl(e)
+MGlcn15[e],mucin-type O-glycan No 15,,50,4,,,,,EX_MGlcn15(e)
+MGlcn150[e],mucin-type O-glycan No 150,,41,4,,,,,EX_MGlcn150(e)
+MGlcn150_rl[e],released mucin-type O-glycan No 150,1079.98008,41,4,,,,,EX_MGlcn150_rl(e)
+MGlcn151[e],mucin-type O-glycan No 151,,41,4,,,,,EX_MGlcn151(e)
+MGlcn151_rl[e],released mucin-type O-glycan No 151,1079.98008,41,4,,,,,EX_MGlcn151_rl(e)
+MGlcn152[e],mucin-type O-glycan No 152,,52,5,,,,,EX_MGlcn152(e)
+MGlcn152_rl[e],released mucin-type O-glycan No 152,1370.22672,52,5,,,,,EX_MGlcn152_rl(e)
+MGlcn153[e],mucin-type O-glycan No 153,,30,3,,,,,EX_MGlcn153(e)
+MGlcn153_rl[e],released mucin-type O-glycan No 153,789.73344,30,3,,,,,EX_MGlcn153_rl(e)
+MGlcn154[e],mucin-type O-glycan No 154,,30,3,,,,,EX_MGlcn154(e)
+MGlcn154_rl[e],released mucin-type O-glycan No 154,789.73344,30,3,,,,,EX_MGlcn154_rl(e)
+MGlcn155[e],mucin-type O-glycan No 155,,36,3,,,,,EX_MGlcn155(e)
+MGlcn155_rl[e],released mucin-type O-glycan No 155,935.87464,36,3,,,,,EX_MGlcn155_rl(e)
+MGlcn156[e],mucin-type O-glycan No 156,,30,3,,,,,EX_MGlcn156(e)
+MGlcn156_rl[e],released mucin-type O-glycan No 156,789.73344,30,3,,,,,EX_MGlcn156_rl(e)
+MGlcn157[e],mucin-type O-glycan No 157,,40,2,,,,,EX_MGlcn157(e)
+MGlcn157_rl[e],released mucin-type O-glycan No 157,1040.96392,40,2,,,,,EX_MGlcn157_rl(e)
+MGlcn158[e],mucin-type O-glycan No 158,,28,2,,,,,EX_MGlcn158(e)
+MGlcn158_rl[e],released mucin-type O-glycan No 158,748.68152,28,2,,,,,EX_MGlcn158_rl(e)
+MGlcn159[e],mucin-type O-glycan No 159,,28,2,,,,,EX_MGlcn159(e)
+MGlcn159_rl[e],released mucin-type O-glycan No 159,748.68152,28,2,,,,,EX_MGlcn159_rl(e)
+MGlcn15_rl[e],released mucin-type O-glycan No 15,1301.20776,50,4,,,,,EX_MGlcn15_rl(e)
+MGlcn16[e],mucin-type O-glycan No 16,,52,5,,,,,EX_MGlcn16(e)
+MGlcn160[e],mucin-type O-glycan No 160,,28,2,,,,,EX_MGlcn160(e)
+MGlcn160_rl[e],released mucin-type O-glycan No 160,748.68152,28,2,,,,,EX_MGlcn160_rl(e)
+MGlcn161[e],mucin-type O-glycan No 161,,42,3,,,,,EX_MGlcn161(e)
+MGlcn161_rl[e],released mucin-type O-glycan No 161,1098.01524,42,3,,,,,EX_MGlcn161_rl(e)
+MGlcn162[e],mucin-type O-glycan No 162,,67,5,,,,,EX_MGlcn162(e)
+MGlcn162_rl[e],released mucin-type O-glycan No 162,1753.595,67,5,,,,,EX_MGlcn162_rl(e)
+MGlcn163[e],mucin-type O-glycan No 163,,36,3,,,,,EX_MGlcn163(e)
+MGlcn163_rl[e],released mucin-type O-glycan No 163,951.87404,36,3,,,,,EX_MGlcn163_rl(e)
+MGlcn164[e],mucin-type O-glycan No 164,,55,5,,,,,EX_MGlcn164(e)
+MGlcn164_rl[e],released mucin-type O-glycan No 164,1445.3131999999998,55,5,,,,,EX_MGlcn164_rl(e)
+MGlcn165[e],mucin-type O-glycan No 165,,55,5,,,,,EX_MGlcn165(e)
+MGlcn165_rl[e],released mucin-type O-glycan No 165,1445.3131999999998,55,5,,,,,EX_MGlcn165_rl(e)
+MGlcn166[e],mucin-type O-glycan No 166,,44,4,,,,,EX_MGlcn166(e)
+MGlcn166_rl[e],released mucin-type O-glycan No 166,1155.06656,44,4,,,,,EX_MGlcn166_rl(e)
+MGlcn167[e],mucin-type O-glycan No 167,,63,6,,,,,EX_MGlcn167(e)
+MGlcn167_rl[e],released mucin-type O-glycan No 167,1648.50572,63,6,,,,,EX_MGlcn167_rl(e)
+MGlcn168[e],mucin-type O-glycan No 168,,63,6,,,,,EX_MGlcn168(e)
+MGlcn168_rl[e],released mucin-type O-glycan No 168,1648.50572,63,6,,,,,EX_MGlcn168_rl(e)
+MGlcn169[e],mucin-type O-glycan No 169,,63,6,,,,,EX_MGlcn169(e)
+MGlcn169_rl[e],released mucin-type O-glycan No 169,1648.50572,63,6,,,,,EX_MGlcn169_rl(e)
+MGlcn16_rl[e],released mucin-type O-glycan No 16,1358.2590799999998,52,5,,,,,EX_MGlcn16_rl(e)
+MGlcn17[e],mucin-type O-glycan No 17,,72,6,,,,,EX_MGlcn17(e)
+MGlcn170[e],mucin-type O-glycan No 170,,52,5,,,,,EX_MGlcn170(e)
+MGlcn170_rl[e],released mucin-type O-glycan No 170,1358.2590799999998,52,5,,,,,EX_MGlcn170_rl(e)
+MGlcn171[e],mucin-type O-glycan No 171,,52,5,,,,,EX_MGlcn171(e)
+MGlcn171_rl[e],released mucin-type O-glycan No 171,1358.2590799999998,52,5,,,,,EX_MGlcn171_rl(e)
+MGlcn172[e],mucin-type O-glycan No 172,,48,3,,,,,EX_MGlcn172(e)
+MGlcn172_rl[e],released mucin-type O-glycan No 172,1260.1558400000001,48,3,,,,,EX_MGlcn172_rl(e)
+MGlcn173[e],mucin-type O-glycan No 173,,42,3,,,,,EX_MGlcn173(e)
+MGlcn173_rl[e],released mucin-type O-glycan No 173,1114.0146399999999,42,3,,,,,EX_MGlcn173_rl(e)
+MGlcn174[e],mucin-type O-glycan No 174,,49,5,,,,,EX_MGlcn174(e)
+MGlcn174_rl[e],released mucin-type O-glycan No 174,1283.1726,49,5,,,,,EX_MGlcn174_rl(e)
+MGlcn175[e],mucin-type O-glycan No 175,,38,4,,,,,EX_MGlcn175(e)
+MGlcn175_rl[e],released mucin-type O-glycan No 175,992.92596,38,4,,,,,EX_MGlcn175_rl(e)
+MGlcn176[e],mucin-type O-glycan No 176,,61,5,,,,,EX_MGlcn176(e)
+MGlcn176_rl[e],released mucin-type O-glycan No 176,1591.4544,61,5,,,,,EX_MGlcn176_rl(e)
+MGlcn177[e],mucin-type O-glycan No 177,,50,4,,,,,EX_MGlcn177(e)
+MGlcn177_rl[e],released mucin-type O-glycan No 177,1301.20776,50,4,,,,,EX_MGlcn177_rl(e)
+MGlcn178[e],mucin-type O-glycan No 178,,66,6,,,,,EX_MGlcn178(e)
+MGlcn178_rl[e],released mucin-type O-glycan No 178,1735.55984,66,6,,,,,EX_MGlcn178_rl(e)
+MGlcn179[e],mucin-type O-glycan No 179,,69,6,,,,,EX_MGlcn179(e)
+MGlcn179_rl[e],released mucin-type O-glycan No 179,1794.64692,69,6,,,,,EX_MGlcn179_rl(e)
+MGlcn17_rl[e],released mucin-type O-glycan No 17,1869.7334,72,6,,,,,EX_MGlcn17_rl(e)
+MGlcn18[e],mucin-type O-glycan No 18,,44,4,,,,,EX_MGlcn18(e)
+MGlcn180[e],mucin-type O-glycan No 180,,58,5,,,,,EX_MGlcn180(e)
+MGlcn180_rl[e],released mucin-type O-glycan No 180,1504.40028,58,5,,,,,EX_MGlcn180_rl(e)
+MGlcn181[e],mucin-type O-glycan No 181,,74,7,,,,,EX_MGlcn181(e)
+MGlcn181_rl[e],released mucin-type O-glycan No 181,1938.75236,74,7,,,,,EX_MGlcn181_rl(e)
+MGlcn182[e],mucin-type O-glycan No 182,,22,2,,,,,EX_MGlcn182(e)
+MGlcn182_rl[e],released mucin-type O-glycan No 182,570.54152,22,2,,,,,EX_MGlcn182_rl(e)
+MGlcn183[e],mucin-type O-glycan No 183,,41,4,,,,,EX_MGlcn183(e)
+MGlcn183_rl[e],released mucin-type O-glycan No 183,1079.98008,41,4,,,,,EX_MGlcn183_rl(e)
+MGlcn185[e],mucin-type O-glycan No 185,,30,3,,,,,EX_MGlcn185(e)
+MGlcn185_rl[e],released mucin-type O-glycan No 185,789.73344,30,3,,,,,EX_MGlcn185_rl(e)
+MGlcn186[e],mucin-type O-glycan No 186,,47,4,,,,,EX_MGlcn186(e)
+MGlcn186_rl[e],released mucin-type O-glycan No 186,1242.12068,47,4,,,,,EX_MGlcn186_rl(e)
+MGlcn187[e],mucin-type O-glycan No 187,,47,4,,,,,EX_MGlcn187(e)
+MGlcn187_rl[e],released mucin-type O-glycan No 187,1242.12068,47,4,,,,,EX_MGlcn187_rl(e)
+MGlcn188[e],mucin-type O-glycan No 188,,58,5,,,,,EX_MGlcn188(e)
+MGlcn188_rl[e],released mucin-type O-glycan No 188,1532.3673199999998,58,5,,,,,EX_MGlcn188_rl(e)
+MGlcn189[e],mucin-type O-glycan No 189,,36,3,,,,,EX_MGlcn189(e)
+MGlcn189_rl[e],released mucin-type O-glycan No 189,951.87404,36,3,,,,,EX_MGlcn189_rl(e)
+MGlcn18_rl[e],released mucin-type O-glycan No 18,1155.06656,44,4,,,,,EX_MGlcn18_rl(e)
+MGlcn19[e],mucin-type O-glycan No 19,,66,6,,,,,EX_MGlcn19(e)
+MGlcn190[e],mucin-type O-glycan No 190,,55,5,,,,,EX_MGlcn190(e)
+MGlcn190_rl[e],released mucin-type O-glycan No 190,1445.3131999999998,55,5,,,,,EX_MGlcn190_rl(e)
+MGlcn191[e],mucin-type O-glycan No 191,,55,5,,,,,EX_MGlcn191(e)
+MGlcn191_rl[e],released mucin-type O-glycan No 191,1445.3131999999998,55,5,,,,,EX_MGlcn191_rl(e)
+MGlcn192[e],mucin-type O-glycan No 192,,66,6,,,,,EX_MGlcn192(e)
+MGlcn192_rl[e],released mucin-type O-glycan No 192,1735.55984,66,6,,,,,EX_MGlcn192_rl(e)
+MGlcn193[e],mucin-type O-glycan No 193,,44,4,,,,,EX_MGlcn193(e)
+MGlcn193_rl[e],released mucin-type O-glycan No 193,1155.06656,44,4,,,,,EX_MGlcn193_rl(e)
+MGlcn194[e],mucin-type O-glycan No 194,,44,4,,,,,EX_MGlcn194(e)
+MGlcn194_rl[e],released mucin-type O-glycan No 194,1155.06656,44,4,,,,,EX_MGlcn194_rl(e)
+MGlcn195[e],mucin-type O-glycan No 195,,26,1,,,,,EX_MGlcn195(e)
+MGlcn195_rl[e],released mucin-type O-glycan No 195,691.6302,26,1,,,,,EX_MGlcn195_rl(e)
+MGlcn196[e],mucin-type O-glycan No 196,,20,1,,,,,EX_MGlcn196(e)
+MGlcn196_rl[e],released mucin-type O-glycan No 196,545.489,20,1,,,,,EX_MGlcn196_rl(e)
+MGlcn19_rl[e],released mucin-type O-glycan No 19,1723.5922,66,6,,,,,EX_MGlcn19_rl(e)
+MGlcn2[e],mucin-type O-glycan No 2,,27,3,,,,,EX_MGlcn2(e)
+MGlcn20[e],mucin-type O-glycan No 20,,44,4,,,,,EX_MGlcn20(e)
+MGlcn20_rl[e],released mucin-type O-glycan No 20,1155.06656,44,4,,,,,EX_MGlcn20_rl(e)
+MGlcn21[e],mucin-type O-glycan No 21,,58,5,,,,,EX_MGlcn21(e)
+MGlcn21_rl[e],released mucin-type O-glycan No 21,1520.39968,58,5,,,,,EX_MGlcn21_rl(e)
+MGlcn22[e],mucin-type O-glycan No 22,,20,1,,,,,EX_MGlcn22(e)
+MGlcn22_rl[e],released mucin-type O-glycan No 22,529.4896,20,1,,,,,EX_MGlcn22_rl(e)
+MGlcn23[e],mucin-type O-glycan No 23,,28,2,,,,,EX_MGlcn23(e)
+MGlcn23_rl[e],released mucin-type O-glycan No 23,732.68212,28,2,,,,,EX_MGlcn23_rl(e)
+MGlcn24[e],mucin-type O-glycan No 24,,28,2,,,,,EX_MGlcn24(e)
+MGlcn24_rl[e],released mucin-type O-glycan No 24,732.68212,28,2,,,,,EX_MGlcn24_rl(e)
+MGlcn25[e],mucin-type O-glycan No 25,,34,2,,,,,EX_MGlcn25(e)
+MGlcn25_rl[e],released mucin-type O-glycan No 25,894.82272,34,2,,,,,EX_MGlcn25_rl(e)
+MGlcn26[e],mucin-type O-glycan No 26,,34,2,,,,,EX_MGlcn26(e)
+MGlcn26_rl[e],released mucin-type O-glycan No 26,894.82272,34,2,,,,,EX_MGlcn26_rl(e)
+MGlcn27[e],mucin-type O-glycan No 27,,34,2,,,,,EX_MGlcn27(e)
+MGlcn27_rl[e],released mucin-type O-glycan No 27,894.82272,34,2,,,,,EX_MGlcn27_rl(e)
+MGlcn28[e],mucin-type O-glycan No 28,,34,2,,,,,EX_MGlcn28(e)
+MGlcn28_rl[e],released mucin-type O-glycan No 28,894.82272,34,2,,,,,EX_MGlcn28_rl(e)
+MGlcn29[e],mucin-type O-glycan No 29,,36,3,,,,,EX_MGlcn29(e)
+MGlcn29_rl[e],released mucin-type O-glycan No 29,935.87464,36,3,,,,,EX_MGlcn29_rl(e)
+MGlcn2_rl[e],released mucin-type O-glycan No 2,714.64696,27,3,,,,,EX_MGlcn2_rl(e)
+MGlcn3[e],mucin-type O-glycan No 3,,33,3,,,,,EX_MGlcn3(e)
+MGlcn30[e],mucin-type O-glycan No 30,,40,2,,,,,EX_MGlcn30(e)
+MGlcn30_rl[e],released mucin-type O-glycan No 30,1040.96392,40,2,,,,,EX_MGlcn30_rl(e)
+MGlcn31[e],mucin-type O-glycan No 31,,40,2,,,,,EX_MGlcn31(e)
+MGlcn31_rl[e],released mucin-type O-glycan No 31,1056.96332,40,2,,,,,EX_MGlcn31_rl(e)
+MGlcn32[e],mucin-type O-glycan No 32,,42,3,,,,,EX_MGlcn32(e)
+MGlcn32_rl[e],released mucin-type O-glycan No 32,1098.01524,42,3,,,,,EX_MGlcn32_rl(e)
+MGlcn33[e],mucin-type O-glycan No 33,,46,2,,,,,EX_MGlcn33(e)
+MGlcn33_rl[e],released mucin-type O-glycan No 33,1187.10512,46,2,,,,,EX_MGlcn33_rl(e)
+MGlcn34[e],mucin-type O-glycan No 34,,46,2,,,,,EX_MGlcn34(e)
+MGlcn34_rl[e],released mucin-type O-glycan No 34,1203.10452,46,2,,,,,EX_MGlcn34_rl(e)
+MGlcn35[e],mucin-type O-glycan No 35,,46,2,,,,,EX_MGlcn35(e)
+MGlcn35_rl[e],released mucin-type O-glycan No 35,1203.10452,46,2,,,,,EX_MGlcn35_rl(e)
+MGlcn36[e],mucin-type O-glycan No 36,,46,2,,,,,EX_MGlcn36(e)
+MGlcn36_rl[e],released mucin-type O-glycan No 36,1203.10452,46,2,,,,,EX_MGlcn36_rl(e)
+MGlcn37[e],mucin-type O-glycan No 37,,48,3,,,,,EX_MGlcn37(e)
+MGlcn37_rl[e],released mucin-type O-glycan No 37,1244.15644,48,3,,,,,EX_MGlcn37_rl(e)
+MGlcn38[e],mucin-type O-glycan No 38,,48,3,,,,,EX_MGlcn38(e)
+MGlcn38_rl[e],released mucin-type O-glycan No 38,1244.15644,48,3,,,,,EX_MGlcn38_rl(e)
+MGlcn39[e],mucin-type O-glycan No 39,,22,2,,,,,EX_MGlcn39(e)
+MGlcn39_rl[e],released mucin-type O-glycan No 39,586.54092,22,2,,,,,EX_MGlcn39_rl(e)
+MGlcn3_rl[e],released mucin-type O-glycan No 3,876.78756,33,3,,,,,EX_MGlcn3_rl(e)
+MGlcn4[e],mucin-type O-glycan No 4,,47,4,,,,,EX_MGlcn4(e)
+MGlcn40[e],mucin-type O-glycan No 40,,48,3,,,,,EX_MGlcn40(e)
+MGlcn40_rl[e],released mucin-type O-glycan No 40,1244.15644,48,3,,,,,EX_MGlcn40_rl(e)
+MGlcn41[e],mucin-type O-glycan No 41,,50,4,,,,,EX_MGlcn41(e)
+MGlcn41_rl[e],released mucin-type O-glycan No 41,1301.20776,50,4,,,,,EX_MGlcn41_rl(e)
+MGlcn42[e],mucin-type O-glycan No 42,,52,2,,,,,EX_MGlcn42(e)
+MGlcn42_rl[e],released mucin-type O-glycan No 42,1365.2451199999998,52,2,,,,,EX_MGlcn42_rl(e)
+MGlcn45[e],mucin-type O-glycan No 45,,28,2,,,,,EX_MGlcn45(e)
+MGlcn45_rl[e],released mucin-type O-glycan No 45,748.68152,28,2,,,,,EX_MGlcn45_rl(e)
+MGlcn46[e],mucin-type O-glycan No 46,,28,2,,,,,EX_MGlcn46(e)
+MGlcn46_rl[e],released mucin-type O-glycan No 46,748.68152,28,2,,,,,EX_MGlcn46_rl(e)
+MGlcn47[e],mucin-type O-glycan No 47,,42,3,,,,,EX_MGlcn47(e)
+MGlcn47_rl[e],released mucin-type O-glycan No 47,1098.01524,42,3,,,,,EX_MGlcn47_rl(e)
+MGlcn48[e],mucin-type O-glycan No 48,,25,2,,,,,EX_MGlcn48(e)
+MGlcn48_rl[e],released mucin-type O-glycan No 48,673.59504,25,2,,,,,EX_MGlcn48_rl(e)
+MGlcn4_rl[e],released mucin-type O-glycan No 4,1242.12068,47,4,,,,,EX_MGlcn4_rl(e)
+MGlcn5[e],mucin-type O-glycan No 5,,55,5,,,,,EX_MGlcn5(e)
+MGlcn50[e],mucin-type O-glycan No 50,,31,2,,,,,EX_MGlcn50(e)
+MGlcn50_rl[e],released mucin-type O-glycan No 50,819.7362400000001,31,2,,,,,EX_MGlcn50_rl(e)
+MGlcn51[e],mucin-type O-glycan No 51,,33,3,,,,,EX_MGlcn51(e)
+MGlcn51_rl[e],released mucin-type O-glycan No 51,876.78756,33,3,,,,,EX_MGlcn51_rl(e)
+MGlcn53[e],mucin-type O-glycan No 53,,39,3,,,,,EX_MGlcn53(e)
+MGlcn53_rl[e],released mucin-type O-glycan No 53,1038.92816,39,3,,,,,EX_MGlcn53_rl(e)
+MGlcn54[e],mucin-type O-glycan No 54,,50,4,,,,,EX_MGlcn54(e)
+MGlcn54_rl[e],released mucin-type O-glycan No 54,1329.1748,50,4,,,,,EX_MGlcn54_rl(e)
+MGlcn55[e],mucin-type O-glycan No 55,,54,3,,,,,EX_MGlcn55(e)
+MGlcn55_rl[e],released mucin-type O-glycan No 55,1406.29704,54,3,,,,,EX_MGlcn55_rl(e)
+MGlcn56[e],mucin-type O-glycan No 56,,60,3,,,,,EX_MGlcn56(e)
+MGlcn56_rl[e],released mucin-type O-glycan No 56,1568.43764,60,3,,,,,EX_MGlcn56_rl(e)
+MGlcn57[e],mucin-type O-glycan No 57,,58,5,,,,,EX_MGlcn57(e)
+MGlcn57_rl[e],released mucin-type O-glycan No 57,1520.39968,58,5,,,,,EX_MGlcn57_rl(e)
+MGlcn58[e],mucin-type O-glycan No 58,,58,5,,,,,EX_MGlcn58(e)
+MGlcn58_rl[e],released mucin-type O-glycan No 58,1520.39968,58,5,,,,,EX_MGlcn58_rl(e)
+MGlcn59[e],mucin-type O-glycan No 59,,86,7,,,,,EX_MGlcn59(e)
+MGlcn59_rl[e],released mucin-type O-glycan No 59,2247.03416,86,7,,,,,EX_MGlcn59_rl(e)
+MGlcn5_rl[e],released mucin-type O-glycan No 5,1445.3131999999998,55,5,,,,,EX_MGlcn5_rl(e)
+MGlcn6[e],mucin-type O-glycan No 6,,75,6,,,,,EX_MGlcn6(e)
+MGlcn60[e],mucin-type O-glycan No 60,,86,7,,,,,EX_MGlcn60(e)
+MGlcn60_rl[e],released mucin-type O-glycan No 60,2247.03416,86,7,,,,,EX_MGlcn60_rl(e)
+MGlcn61[e],mucin-type O-glycan No 61,,64,5,,,,,EX_MGlcn61(e)
+MGlcn61_rl[e],released mucin-type O-glycan No 61,1666.54088,64,5,,,,,EX_MGlcn61_rl(e)
+MGlcn62[e],mucin-type O-glycan No 62,,64,5,,,,,EX_MGlcn62(e)
+MGlcn62_rl[e],released mucin-type O-glycan No 62,1666.54088,64,5,,,,,EX_MGlcn62_rl(e)
+MGlcn63[e],mucin-type O-glycan No 63,,64,5,,,,,EX_MGlcn63(e)
+MGlcn63_rl[e],released mucin-type O-glycan No 63,1678.50852,64,5,,,,,EX_MGlcn63_rl(e)
+MGlcn64[e],mucin-type O-glycan No 64,,67,5,,,,,EX_MGlcn64(e)
+MGlcn64_rl[e],released mucin-type O-glycan No 64,1753.595,67,5,,,,,EX_MGlcn64_rl(e)
+MGlcn65[e],mucin-type O-glycan No 65,,72,6,,,,,EX_MGlcn65(e)
+MGlcn65_rl[e],released mucin-type O-glycan No 65,1897.70044,72,6,,,,,EX_MGlcn65_rl(e)
+MGlcn66[e],mucin-type O-glycan No 66,,50,4,,,,,EX_MGlcn66(e)
+MGlcn66_rl[e],released mucin-type O-glycan No 66,1317.20716,50,4,,,,,EX_MGlcn66_rl(e)
+MGlcn67[e],mucin-type O-glycan No 67,,78,6,,,,,EX_MGlcn67(e)
+MGlcn67_rl[e],released mucin-type O-glycan No 67,2043.84164,78,6,,,,,EX_MGlcn67_rl(e)
+MGlcn68[e],mucin-type O-glycan No 68,,56,4,,,,,EX_MGlcn68(e)
+MGlcn68_rl[e],released mucin-type O-glycan No 68,1463.34836,56,4,,,,,EX_MGlcn68_rl(e)
+MGlcn69[e],mucin-type O-glycan No 69,,40,2,,,,,EX_MGlcn69(e)
+MGlcn69_rl[e],released mucin-type O-glycan No 69,1040.96392,40,2,,,,,EX_MGlcn69_rl(e)
+MGlcn6_rl[e],released mucin-type O-glycan No 6,1956.78752,75,6,,,,,EX_MGlcn6_rl(e)
+MGlcn7[e],mucin-type O-glycan No 7,,72,6,,,,,EX_MGlcn7(e)
+MGlcn70[e],mucin-type O-glycan No 70,,40,2,,,,,EX_MGlcn70(e)
+MGlcn70_rl[e],released mucin-type O-glycan No 70,1040.96392,40,2,,,,,EX_MGlcn70_rl(e)
+MGlcn71[e],mucin-type O-glycan No 71,,46,2,,,,,EX_MGlcn71(e)
+MGlcn71_rl[e],released mucin-type O-glycan No 71,1203.10452,46,2,,,,,EX_MGlcn71_rl(e)
+MGlcn72[e],mucin-type O-glycan No 72,,30,3,,,,,EX_MGlcn72(e)
+MGlcn72_rl[e],released mucin-type O-glycan No 72,789.73344,30,3,,,,,EX_MGlcn72_rl(e)
+MGlcn73[e],mucin-type O-glycan No 73,,22,2,,,,,EX_MGlcn73(e)
+MGlcn73_rl[e],released mucin-type O-glycan No 73,586.54092,22,2,,,,,EX_MGlcn73_rl(e)
+MGlcn74[e],mucin-type O-glycan No 74,,34,2,,,,,EX_MGlcn74(e)
+MGlcn74_rl[e],released mucin-type O-glycan No 74,894.82272,34,2,,,,,EX_MGlcn74_rl(e)
+MGlcn75[e],mucin-type O-glycan No 75,,40,2,,,,,EX_MGlcn75(e)
+MGlcn75_rl[e],released mucin-type O-glycan No 75,1040.96392,40,2,,,,,EX_MGlcn75_rl(e)
+MGlcn76[e],mucin-type O-glycan No 76,,40,2,,,,,EX_MGlcn76(e)
+MGlcn76_rl[e],released mucin-type O-glycan No 76,1040.96392,40,2,,,,,EX_MGlcn76_rl(e)
+MGlcn77[e],mucin-type O-glycan No 77,,28,2,,,,,EX_MGlcn77(e)
+MGlcn77_rl[e],released mucin-type O-glycan No 77,748.68152,28,2,,,,,EX_MGlcn77_rl(e)
+MGlcn78[e],mucin-type O-glycan No 78,,28,2,,,,,EX_MGlcn78(e)
+MGlcn78_rl[e],released mucin-type O-glycan No 78,748.68152,28,2,,,,,EX_MGlcn78_rl(e)
+MGlcn79[e],mucin-type O-glycan No 79,,28,2,,,,,EX_MGlcn79(e)
+MGlcn79_rl[e],released mucin-type O-glycan No 79,748.68152,28,2,,,,,EX_MGlcn79_rl(e)
+MGlcn7_rl[e],released mucin-type O-glycan No 7,1881.70104,72,6,,,,,EX_MGlcn7_rl(e)
+MGlcn8[e],mucin-type O-glycan No 8,,80,7,,,,,EX_MGlcn8(e)
+MGlcn80[e],mucin-type O-glycan No 80,,42,3,,,,,EX_MGlcn80(e)
+MGlcn80_rl[e],released mucin-type O-glycan No 80,1098.01524,42,3,,,,,EX_MGlcn80_rl(e)
+MGlcn81[e],mucin-type O-glycan No 81,,58,5,,,,,EX_MGlcn81(e)
+MGlcn81_rl[e],released mucin-type O-glycan No 81,1532.3673199999998,58,5,,,,,EX_MGlcn81_rl(e)
+MGlcn82[e],mucin-type O-glycan No 82,,36,3,,,,,EX_MGlcn82(e)
+MGlcn82_rl[e],released mucin-type O-glycan No 82,951.87404,36,3,,,,,EX_MGlcn82_rl(e)
+MGlcn83[e],mucin-type O-glycan No 83,,36,3,,,,,EX_MGlcn83(e)
+MGlcn83_rl[e],released mucin-type O-glycan No 83,951.87404,36,3,,,,,EX_MGlcn83_rl(e)
+MGlcn84[e],mucin-type O-glycan No 84,,42,3,,,,,EX_MGlcn84(e)
+MGlcn84_rl[e],released mucin-type O-glycan No 84,1098.01524,42,3,,,,,EX_MGlcn84_rl(e)
+MGlcn85[e],mucin-type O-glycan No 85,,42,3,,,,,EX_MGlcn85(e)
+MGlcn85_rl[e],released mucin-type O-glycan No 85,1098.01524,42,3,,,,,EX_MGlcn85_rl(e)
+MGlcn86[e],mucin-type O-glycan No 86,,42,3,,,,,EX_MGlcn86(e)
+MGlcn86_rl[e],released mucin-type O-glycan No 86,1098.01524,42,3,,,,,EX_MGlcn86_rl(e)
+MGlcn87[e],mucin-type O-glycan No 87,,42,3,,,,,EX_MGlcn87(e)
+MGlcn87_rl[e],released mucin-type O-glycan No 87,1098.01524,42,3,,,,,EX_MGlcn87_rl(e)
+MGlcn88[e],mucin-type O-glycan No 88,,66,6,,,,,EX_MGlcn88(e)
+MGlcn88_rl[e],released mucin-type O-glycan No 88,1735.55984,66,6,,,,,EX_MGlcn88_rl(e)
+MGlcn89[e],mucin-type O-glycan No 89,,44,4,,,,,EX_MGlcn89(e)
+MGlcn89_rl[e],released mucin-type O-glycan No 89,1155.06656,44,4,,,,,EX_MGlcn89_rl(e)
+MGlcn8_rl[e],released mucin-type O-glycan No 8,2100.89296,80,7,,,,,EX_MGlcn8_rl(e)
+MGlcn9[e],mucin-type O-glycan No 9,,94,8,,,,,EX_MGlcn9(e)
+MGlcn90[e],mucin-type O-glycan No 90,,40,2,,,,,EX_MGlcn90(e)
+MGlcn90_rl[e],released mucin-type O-glycan No 90,1056.96332,40,2,,,,,EX_MGlcn90_rl(e)
+MGlcn91[e],mucin-type O-glycan No 91,,40,2,,,,,EX_MGlcn91(e)
+MGlcn91_rl[e],released mucin-type O-glycan No 91,1056.96332,40,2,,,,,EX_MGlcn91_rl(e)
+MGlcn92[e],mucin-type O-glycan No 92,,40,2,,,,,EX_MGlcn92(e)
+MGlcn92_rl[e],released mucin-type O-glycan No 92,1056.96332,40,2,,,,,EX_MGlcn92_rl(e)
+MGlcn93[e],mucin-type O-glycan No 93,,40,2,,,,,EX_MGlcn93(e)
+MGlcn93_rl[e],released mucin-type O-glycan No 93,1056.96332,40,2,,,,,EX_MGlcn93_rl(e)
+MGlcn94[e],mucin-type O-glycan No 94,,40,2,,,,,EX_MGlcn94(e)
+MGlcn94_rl[e],released mucin-type O-glycan No 94,1056.96332,40,2,,,,,EX_MGlcn94_rl(e)
+MGlcn95[e],mucin-type O-glycan No 95,,40,2,,,,,EX_MGlcn95(e)
+MGlcn95_rl[e],released mucin-type O-glycan No 95,1056.96332,40,2,,,,,EX_MGlcn95_rl(e)
+MGlcn96[e],mucin-type O-glycan No 96,,40,2,,,,,EX_MGlcn96(e)
+MGlcn96_rl[e],released mucin-type O-glycan No 96,1056.96332,40,2,,,,,EX_MGlcn96_rl(e)
+MGlcn97[e],mucin-type O-glycan No 97,,34,2,,,,,EX_MGlcn97(e)
+MGlcn97_rl[e],released mucin-type O-glycan No 97,910.8221199999999,34,2,,,,,EX_MGlcn97_rl(e)
+MGlcn98[e],mucin-type O-glycan No 98,,48,3,,,,,EX_MGlcn98(e)
+MGlcn98_rl[e],released mucin-type O-glycan No 98,1260.1558400000001,48,3,,,,,EX_MGlcn98_rl(e)
+MGlcn99[e],mucin-type O-glycan No 99,,48,3,,,,,EX_MGlcn99(e)
+MGlcn99_rl[e],released mucin-type O-glycan No 99,1260.1558400000001,48,3,,,,,EX_MGlcn99_rl(e)
+MGlcn9_rl[e],released mucin-type O-glycan No 9,2450.2266799999998,94,8,,,,,EX_MGlcn9_rl(e)
+Ser_Thr[e],protein-linked serine or threonine residue (O-glycosylation site),,0,0,,,,,EX_Ser_Thr(e)
+T_antigen[e],T antigen (core 1),,14,1,,,,,EX_T_antigen(e)
+Tn_antigen[e],Tn antigen,,8,1,,,C04383,,EX_Tn_antigen(e)
+ac[e],acetate,59.044019999999996,2,0,HMDB00042,"InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)/p-1",C00033,176,EX_ac(e)
+acald[e],acetaldehyde,44.05256,2,0,HMDB00990,"InChI=1S/C2H4O/c1-2-3/h2H,1H3",C00084,177,EX_acald(e)
+acgal[e],N-acetyl-D-galactosamine,221.2078,8,1,HMDB00212,,C01132,35717,EX_acgal(e)
+acgam[e],N-acetyl-D-glucosamine,221.2078,8,1,HMDB00215,"InChI=1S/C8H15NO6/c1-4(12)9-5(2-10)7(14)8(15)6(13)3-11/h2,5-8,11,13-15H,3H2,1H3,(H,9,12)/t5-,6+,7+,8+/m0/s1",C00140,439174,EX_acgam(e)
+acnam[e],N-acetylneuraminate,308.26192000000003,11,1,HMDB00230,,C19910,439197,EX_acnam(e)
+acnam2a6agal[e],"Alpha-2,6-N-acetylneuraminate-N-acetylgalactosamine",511.45444000000003,19,2,,,,,EX_acnam2a6agal(e)
+ade[e],Adenine,135.1267,5,5,HMDB00034,"InChI=1S/C5H5N5/c6-4-3-5(9-1-7-3)10-2-8-4/h1-2H,(H3,6,7,8,9,10)",C00147,190,EX_ade(e)
+adn[e],Adenosine,267.24132,10,5,HMDB00050,,C00212,60961,EX_adn(e)
+agal1b3agal[e],"Beta-1,3-N,N-diacetylgalactosamine",424.40032,16,2,,,,,EX_agal1b3agal(e)
+agam1b3agal[e],"Beta-1,3-N-acetylglucosamine-N-acetylgalactosamine",424.40032,16,2,,,,,EX_agam1b3agal(e)
+agam1b6agal[e],"Beta-1,6-N-acetylglucosamine-N-acetylgalactosamine",424.40032,16,2,,,,,EX_agam1b6agal(e)
+ala_L[e],L-alanine,89.09318,3,1,HMDB00161,"InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1",C00041,5950,EX_ala_L(e)
+alaasp[e],L-alanyl-L-aspartate,203.17264,7,2,,,,,EX_alaasp(e)
+alagln[e],L-alanyl-L-glutamine,217.2224,8,3,,,,,EX_alagln(e)
+alaglu[e],L-alanyl-L-glutamate,217.19922,8,2,,,,,EX_alaglu(e)
+alagly[e],L-alanylglycine,146.1445,5,2,,,,,EX_alagly(e)
+alahis[e],L-alanyl-L-histidine,226.23246,9,4,,"InChI=1S/C9H14N4O3/c10-2-1-8(14)13-7(9(15)16)3-6-4-11-5-12-6/h4-5,7H,1-3,10H2,(H,11,12)(H,13,14)(H,15,16)/t7-/m0/s1",C00386,,EX_alahis(e)
+alaleu[e],L-alanyl-L-leucine,202.25082,9,2,,,,,EX_alaleu(e)
+alathr[e],L-alanyl-L-threonine,190.19706,7,2,,,,,EX_alathr(e)
+arbt[e],Arbutin,272.25124,12,0,,,C06186,,EX_arbt(e)
+asn_L[e],L-asparagine,132.11792,4,2,HMDB00168,"InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)/t2-/m0/s1",C00152,6267,EX_asn_L(e)
+asp_L[e],L-aspartate(1-),132.09474,4,1,HMDB00191,"InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)/p-1/t2-/m0/s1",C00049,5960,EX_asp_L(e)
+btn[e],Biotin,243.3027,10,2,HMDB00030,"InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7)11-10(15)12-9/h6-7,9H,1-5H2,(H,13,14)(H2,11,12,15)/p-1/t6-,7-,9-/m0/s1",C00120,171548,EX_btn(e)
+ca2[e],calcium(2+),40.078,0,0,HMDB00464,InChI=1S/Ca/q+2,C00076,,EX_ca2(e)
+cd2[e],Cadmium,112.411,0,0,,,,,EX_cd2(e)
+cgly[e],L-cysteinylglycine,178.2095,5,2,HMDB00078,"InChI=1S/C5H10N2O3S/c6-3(2-11)5(10)7-1-4(8)9/h3,11H,1-2,6H2,(H,7,10)(H,8,9)/t3-/m0/s1",C01419,439498,EX_cgly(e)
+chtbs[e],"N,N-diacetylchitobiose",424.40032,16,2,,,,,EX_chtbs(e)
+cl[e],Chloride,35.453,0,0,HMDB00492,InChI=1S/ClH/h1H/p-1,C00698,312,EX_cl(e)
+co2[e],carbon dioxide,44.0095,1,0,HMDB01967,InChI=1S/CO2/c2-1-3,C00011,280,EX_co2(e)
+cobalt2[e],Co2+,58.9332,0,0,,,,,EX_cobalt2(e)
+core2[e],Core 2,,22,2,,,,,EX_core2(e)
+core2_rl[e],released Core 2,586.54092,22,2,,,,,EX_core2_rl(e)
+core3[e],Core 3,,16,2,,,,,EX_core3(e)
+core4[e],Core 4,,24,3,,,,,EX_core4(e)
+core4_rl[e],released Core 4,627.59284,24,3,,,,,EX_core4_rl(e)
+core5[e],Core 5,,16,2,,,,,EX_core5(e)
+core6[e],Core 6,,16,2,,,,,EX_core6(e)
+core7[e],Core 7,,16,2,,,,,EX_core7(e)
+core8[e],Core 8,,14,1,,,,,EX_core8(e)
+csn[e],cytosine,111.102,4,3,HMDB00630,"InChI=1S/C4H5N3O/c5-3-1-2-6-4(8)7-3/h1-2H,(H3,5,6,7,8)",C00380,597,EX_csn(e)
+cu2[e],Cu2+,63.546,0,0,,,,,EX_cu2(e)
+cys_L[e],L-cysteine,121.15818,3,1,HMDB00574,"InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1",C00097,5862,EX_cys_L(e)
+cytd[e],Cytidine,243.21662,9,3,HMDB00089,"InChI=1S/C9H13N3O5/c10-5-1-2-12(9(16)11-5)8-7(15)6(14)4(3-13)17-8/h1-2,4,6-8,13-15H,3H2,(H2,10,11,16)/t4-,6-,7-,8-/m1/s1",C00475,6175,EX_cytd(e)
+dad_2[e],2-deoxyadenosine,251.24192,10,5,HMDB00101,"InChI=1S/C10H13N5O3/c11-9-8-10(13-3-12-9)15(4-14-8)7-1-5(17)6(2-16)18-7/h3-7,16-17H,1-2H2,(H2,11,12,13)/t5-,6+,7+/m0/s1",C00559,13730,EX_dad_2(e)
+ddca[e],laurate,199.30982,12,0,HMDB00638,"InChI=1S/C12H24O2/c1-2-3-4-5-6-7-8-9-10-11-12(13)14/h2-11H2,1H3,(H,13,14)/p-1",C02679,3893,EX_ddca(e)
+dgsn[e],Deoxyguanosine,267.24132,10,5,HMDB00085,"InChI=1S/C10H13N5O4/c11-10-13-8-7(9(18)14-10)12-3-15(8)6-1-4(17)5(2-16)19-6/h3-6,16-17H,1-2H2,(H3,11,13,14,18)/t4-,5+,6+/m0/s1",C00330,187790,EX_dgsn(e)
+dsT_antigen[e],disialyl-T antigen,,36,3,,,,,EX_dsT_antigen(e)
+dsT_antigen_rl[e],released disialyl-T antigen,963.84168,36,3,,,,,EX_dsT_antigen_rl(e)
+etoh[e],ethanol,46.06844,2,0,HMDB00108,"InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3",C00469,702,EX_etoh(e)
+f1a[e],F1alpha,,22,2,,,,,EX_f1a(e)
+f1a_rl[e],released F1alpha antigen,586.54092,22,2,,,,,EX_f1a_rl(e)
+fe2[e],Fe2+,55.845,0,0,HMDB00692,InChI=1S/Fe/q+2,C14818,27284,EX_fe2(e)
+fe3[e],Fe3+,55.845,0,0,HMDB12943,InChI=1S/Fe/q+3,C14819,29936,EX_fe3(e)
+fecrm[e],Ferrichrome,740.52048,27,9,,,,,EX_fecrm(e)
+for[e],Formate,45.01744,1,0,HMDB00142,"InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)/p-1",C00058,284,EX_for(e)
+fru[e],D-Fructose,180.15588,6,0,HMDB00660,,C02336,439709,EX_fru(e)
+fuc_L[e],L-fucose,164.15648,6,0,HMDB00174,,C01019,17106,EX_fuc_L(e)
+gal[e],D-Galactose,180.15588,6,0,HMDB00143,,C00984,439357,EX_gal(e)
+gal1a3acgal[e],"Alpha-1,3-Galactose-N-acetylgalactosamine",383.3484,14,1,,,,,EX_gal1a3acgal(e)
+gal1b3acgal[e],"Beta-1,3-Galactose-N-acetylgalactosamine",383.3484,14,1,,,,,EX_gal1b3acgal(e)
+galt[e],galactitol,182.17176,6,0,HMDB00107,"InChI=1S/C6H14O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3-12H,1-2H2/t3-,4+,5+,6-",C01697,11850,EX_galt(e)
+gam[e],D-Glucosamine,180.17906,6,1,HMDB01514,,C00329,439213,EX_gam(e)
+glc_D[e],D-glucose,180.15588,6,0,HMDB00122,,C00031,5793,EX_glc_D(e)
+gln_L[e],L-glutamine,146.1445,5,2,HMDB00641,"InChI=1S/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H2,7,8)(H,9,10)/t3-/m0/s1",C00064,5961,EX_gln_L(e)
+glu_L[e],L-glutamate(1-),146.12132,5,1,HMDB00148,"InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/p-1/t3-/m0/s1",C00025,33032,EX_glu_L(e)
+gly[e],Glycine,75.0666,2,1,HMDB00123,"InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)",C00037,750,EX_gly(e)
+glyasn[e],Glycyl-L-asparagine,189.16924,6,3,,,,,EX_glyasn(e)
+glyasp[e],Glycyl-L-aspartate,189.14606,6,2,,,,,EX_glyasp(e)
+glyc[e],Glycerol,92.09382,3,0,HMDB00131,"InChI=1S/C3H8O3/c4-1-3(6)2-5/h3-6H,1-2H2",C00116,753,EX_glyc(e)
+glycys[e],Gly-Cys,178.2095,5,2,,,,,EX_glycys(e)
+glygln[e],Glycyl-L-glutamine,203.19582,7,3,,,,,EX_glygln(e)
+glyglu[e],Glycyl-L-glutamate,203.17264,7,2,,,,,EX_glyglu(e)
+glyleu[e],Glycylleucine,188.22424,8,2,HMDB00759,,C02155,92843,EX_glyleu(e)
+glymet[e],Glycyl-L-methionine,206.26265999999998,7,2,,,,,EX_glymet(e)
+glyphe[e],Glycylphenylalanine,222.24046,11,2,,,,97415,EX_glyphe(e)
+glypro[e],Glycylproline,172.18178,7,2,HMDB00721,,,79101,EX_glypro(e)
+glytyr[e],Glycyl-L-tyrosine,238.23986000000002,11,2,,,,,EX_glytyr(e)
+gncore1[e],"GlcNAc-alpha-1,4-Core 1",,22,2,,,,,EX_gncore1(e)
+gncore1_rl[e],"released GlcNAc-alpha-1,4-Core 1",586.54092,22,2,,,,,EX_gncore1_rl(e)
+gncore2[e],"GlcNAc-alpha-1,4-Core 2",,30,3,,,,,EX_gncore2(e)
+gncore2_rl[e],"released GlcNAc-alpha-1,4-Core 2",789.73344,30,3,,,,,EX_gncore2_rl(e)
+h[e],proton,1.00794,0,0,HMDB01362,InChI=1S/p+1/i/hH,C00282,1038,EX_h(e)
+h2[e],Hydrogen,2.01588,0,0,HMDB01362,InChI=1S/H2/h1H,C00282,783,EX_h2(e)
+h2o[e],Water,18.01528,0,0,HMDB02111,InChI=1S/H2O/h1H2,C00001,962,EX_h2o(e)
+h2s[e],Hydrogen sulfide,34.08088,0,0,,,,,EX_h2s(e)
+hdca[e],Hexadecanoate (n-C16:0),255.41613999999998,16,0,HMDB00220,"InChI=1S/C16H32O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16(17)18/h2-15H2,1H3,(H,17,18)/p-1",C00249,985,EX_hdca(e)
+hg2[e],Hg2+,200.59,0,0,,,,,EX_hg2(e)
+his_L[e],L-histidine,155.15456,6,3,HMDB00177,"InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)/t5-/m0/s1",C00135,6274,EX_his_L(e)
+ind3ac[e],indole-3-acetate,174.17602,10,1,HMDB00197,"InChI=1S/C10H9NO2/c12-10(13)5-7-6-11-9-4-2-1-3-8(7)9/h1-4,6,11H,5H2,(H,12,13)/p-1",C00954,802,EX_ind3ac(e)
+indole[e],Indole,117.14788,8,1,,,,,EX_indole(e)
+ins[e],Inosine,268.22608,10,4,HMDB00195,,C00294,6021,EX_ins(e)
+k[e],potassium,39.0983,0,0,HMDB00586,InChI=1S/K/q+1,C00238,813,EX_k(e)
+lac_D[e],(R)-lactate,89.07,3,0,HMDB01311,"InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/p-1/t2-/m1/s1",C00256,61503,EX_lac_D(e)
+lald_L[e],(S)-lactaldehyde,74.07854,3,0,HMDB03052,"InChI=1S/C3H6O2/c1-3(5)2-4/h2-3,5H,1H3/t3-/m0/s1",C00424,439231,EX_lald_L(e)
+leu_L[e],L-leucine,131.17292,6,1,HMDB00687,"InChI=1S/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t5-/m0/s1",C00123,6106,EX_leu_L(e)
+lys_L[e],L-lysinium(1+),147.1955,6,2,HMDB00182,"InChI=1S/C6H14N2O2/c7-4-2-1-3-5(8)6(9)10/h5H,1-4,7-8H2,(H,9,10)/p+1/t5-/m0/s1",C00047,5962,EX_lys_L(e)
+malt[e],Maltose,342.29648000000003,12,0,HMDB00163,,C00208,439186,EX_malt(e)
+man[e],D-Mannose,180.15588,6,0,HMDB00169,,C00159,18950,EX_man(e)
+met_L[e],L-methionine,149.21134,5,1,HMDB00696,"InChI=1S/C5H11NO2S/c1-9-3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1",C00073,6137,EX_met_L(e)
+metala[e],L-methionyl-L-alanine,220.28924,8,2,,"InChI=1S/C8H16N2O3S/c1-5(8(12)13)10-7(11)6(9)3-4-14-2/h5-6H,3-4,9H2,1-2H3,(H,10,11)(H,12,13)/t5-,6-/m0/s1",,,EX_metala(e)
+mg2[e],magnesium,24.305,0,0,,,,,EX_mg2(e)
+mn2[e],Mn2+,54.938049,0,0,,,,,EX_mn2(e)
+mnl[e],D-Mannitol,182.17176,6,0,,,,,EX_mnl(e)
+mqn8[e],Menaquinone 8,717.11618,51,0,,,C00828,4086,EX_mqn8(e)
+na1[e],Sodium,22.98977,0,0,HMDB00588,InChI=1S/Na/q+1,C01330,923,EX_na1(e)
+nac[e],Nicotinate,122.10146,6,1,HMDB01488,,C00253,938,EX_nac(e)
+nh4[e],Ammonium,18.03846,0,1,HMDB00051,InChI=1S/H3N/h1H3/p+1,C00014,223,EX_nh4(e)
+o2[e],O2,31.9988,0,0,HMDB01377,InChI=1S/O2/c1-2,C00007,977,EX_o2(e)
+ocdca[e],octadecanoate (n-C18:0),283.4693,18,0,HMDB00827,"InChI=1S/C18H36O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h2-17H2,1H3,(H,19,20)/p-1",C01530,3033836,EX_ocdca(e)
+ocdcea[e],octadecenoate (n-C18:1),281.45342,18,0,HMDB00207,"InChI=1S/C18H34O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h9-10H,2-8,11-17H2,1H3,(H,19,20)/p-1/b10-9-",C00712,5460221,EX_ocdcea(e)
+orn[e],Ornithine,133.16892,5,2,HMDB00214,"InChI=1S/C5H12N2O2/c6-3-1-2-4(7)5(8)9/h4H,1-3,6-7H2,(H,8,9)/p+1",C00077,6262,EX_orn(e)
+pb[e],Lead,207.2,0,0,,,,,EX_pb(e)
+phe_L[e],L-phenylalanine,165.18914,9,1,HMDB00159,"InChI=1S/C9H11NO2/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5,8H,6,10H2,(H,11,12)/t8-/m0/s1",C00079,6140,EX_phe_L(e)
+pheme[e],Protoheme,614.4714,34,4,HMDB03178,,C00032,,EX_pheme(e)
+pi[e],hydrogenphosphate,95.97930099999999,0,0,HMDB00973,"InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)/p-2",C00009,1004,EX_pi(e)
+ppa[e],propionate,73.0706,3,0,HMDB00237,"InChI=1S/C3H6O2/c1-2-3(4)5/h2H2,1H3,(H,4,5)/p-1",C00163,1032,EX_ppa(e)
+ppi[e],Diphosphate,174.951262,0,0,HMDB00250,"InChI=1S/H4O7P2/c1-8(2,3)7-9(4,5)6/h(H2,1,2,3)(H2,4,5,6)/p-3",C00013,1023,EX_ppi(e)
+pro_L[e],L-proline,115.13046,5,1,HMDB00162,"InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)/t4-/m0/s1",C00148,145742,EX_pro_L(e)
+q8[e],Ubiquinone-8,727.10946,49,0,,,,,EX_q8(e)
+sT_antigen[e],sialyl-T antigen,,25,2,,,,,EX_sT_antigen(e)
+sT_antigen_rl[e],released sialyl-Tn antigen,673.59504,25,2,,,,,EX_sT_antigen_rl(e)
+sTn_antigen[e],sialyl-Tn antigen,,19,2,,,,,EX_sTn_antigen(e)
+salcn[e],Salicin,286.27781999999996,13,0,,,C01451,,EX_salcn(e)
+sbt_D[e],D-glucitol,182.17176,6,0,HMDB00247,"InChI=1S/C6H14O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3-12H,1-2H2/t3-,4+,5-,6-/m1/s1",C00794,5780,EX_sbt_D(e)
+ser_L[e],L-serine,105.09258,3,1,HMDB00187,"InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m0/s1",C00065,5951,EX_ser_L(e)
+so4[e],sulfate,96.0626,0,0,HMDB01448,"InChI=1S/H2O4S/c1-5(2,3)4/h(H2,1,2,3,4)/p-2",C00059,1118,EX_so4(e)
+spmd[e],Spermidine,148.26968,7,3,HMDB01257,"InChI=1S/C7H19N3/c8-4-1-2-6-10-7-3-5-9/h10H,1-9H2/p+3",C00315,1102,EX_spmd(e)
+succ[e],Succinate,116.07216,4,0,HMDB00254,"InChI=1S/C4H6O4/c5-3(6)1-2-4(7)8/h1-2H2,(H,5,6)(H,7,8)/p-2",C00042,1110,EX_succ(e)
+sucr[e],Sucrose,342.29648000000003,12,0,HMDB00258,,C00089,5988,EX_sucr(e)
+thm[e],Thiamin,265.35458,12,4,HMDB00235,"InChI=1S/C12H17N4OS/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15)/q+1",C00378,1130,EX_thm(e)
+thr_L[e],L-threonine,119.11916,4,1,HMDB00167,"InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)/t2-,3+/m1/s1",C00188,6288,EX_thr_L(e)
+thymd[e],Thymidine,242.22856000000002,10,2,HMDB00273,"InChI=1S/C10H14N2O5/c1-5-3-12(10(16)11-9(5)15)8-2-6(14)7(4-13)17-8/h3,6-8,13-14H,2,4H2,1H3,(H,11,15,16)/t6-,7+,8+/m0/s1",C00214,5789,EX_thymd(e)
+tre[e],Trehalose,342.29648000000003,12,0,HMDB00975,,C01083,7427,EX_tre(e)
+ttdca[e],tetradecanoate (n-C14:0),227.36298,14,0,HMDB00806,"InChI=1S/C14H28O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14(15)16/h2-13H2,1H3,(H,15,16)/p-1",C06424,11005,EX_ttdca(e)
+tyr_L[e],L-tyrosine,181.18854,9,1,HMDB00158,"InChI=1S/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4-2-6/h1-4,8,11H,5,10H2,(H,12,13)/t8-/m0/s1",C00082,6057,EX_tyr_L(e)
+ura[e],uracil,112.08676,4,2,HMDB00300,"InChI=1S/C4H4N2O2/c7-3-1-2-5-4(8)6-3/h1-2H,(H2,5,6,7,8)",C00106,1174,EX_ura(e)
+uri[e],Uridine,244.20138,9,2,HMDB00296,"InChI=1S/C9H12N2O6/c12-3-4-6(14)7(15)8(17-4)11-2-1-5(13)10-9(11)16/h1-2,4,6-8,12,14-15H,3H2,(H,10,13,16)/t4-,6-,7-,8-/m1/s1",C00299,6029,EX_uri(e)
+xyl_D[e],aldehydo-D-xylose,150.1299,5,0,,"InChI=1S/C5H10O5/c6-1-3(8)5(10)4(9)2-7/h1,3-5,7-10H,2H2/t3-,4+,5+/m0/s1",,644160,EX_xyl_D(e)
+zn2[e],Zinc,65.409,0,0,,,,,EX_zn2(e)
+C02528[e],chenodeoxycholate,391.56406,24,0,HMDB00518,,C02528,10133,EX_C02528(e)
+alltn[e],Allantoin,158.11544,4,4,HMDB00462,"InChI=1S/C4H6N4O3/c5-3(10)6-1-2(9)8-4(11)7-1/h1H,(H3,5,6,10)(H2,7,8,9,11)",C01551,204,EX_alltn(e)
+arab_L[e],L-arabinose,150.1299,5,0,HMDB00646,,C00259,,EX_arab_L(e)
+arg_L[e],L-argininium(1+),175.2089,6,4,HMDB00517,"InChI=1S/C6H14N4O2/c7-4(5(11)12)2-1-3-10-6(8)9/h4H,1-3,7H2,(H,11,12)(H4,8,9,10)/p+1/t4-/m0/s1",C00062,6322,EX_arg_L(e)
+arsenb[e],Arsenobetaine,179.06918,5,0,,,,,EX_arsenb(e)
+but[e],butyrate,87.09718,4,0,HMDB00039,"InChI=1S/C4H8O2/c1-2-3-4(5)6/h2-3H2,1H3,(H,5,6)/p-1",C00246,264,EX_but(e)
+cellb[e],cellobiose,342.29648000000003,12,0,,,,,EX_cellb(e)
+cholate[e],Cholate,407.56346,24,0,HMDB00619,,C00695,221493,EX_cholate(e)
+dgchol[e],glycochenodeoxycholate,449.62332,26,1,HMDB00637,,C05466,,EX_dgchol(e)
+gchola[e],glycocholate,465.62271999999996,26,1,HMDB00138,,C01921,10140,EX_gchola(e)
+glyb[e],glycine betaine,117.14634,5,1,HMDB00043,"InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3",C00719,247,EX_glyb(e)
+hxan[e],Hypoxanthine,136.11146,5,4,HMDB00157,"InChI=1S/C5H4N4O/c10-5-3-4(7-1-6-3)8-2-9-5/h1-2H,(H2,6,7,8,9,10)",C00262,790,EX_hxan(e)
+ile_L[e],L-isoleucine,131.17292,6,1,HMDB00172,"InChI=1S/C6H13NO2/c1-3-4(2)5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t4-,5-/m0/s1",C00407,6306,EX_ile_L(e)
+lac_L[e],(S)-lactate,89.07,3,0,HMDB00190,"InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/p-1/t2-/m0/s1",C00186,107689,EX_lac_L(e)
+lcts[e],Lactose,342.29648000000003,12,0,HMDB00186,,C00243,440995,EX_lcts(e)
+met_D[e],D-Methionine,148.2034,5,1,,,,,EX_met_D(e)
+metsox_R_L[e],L-methionine-R-sulfoxide,165.21074,5,1,,,,,EX_metsox_R_L(e)
+metsox_S_L[e],L-Methionine Sulfoxide,165.21074,5,1,,,,,EX_metsox_S_L(e)
+pnto_R[e],(R)-Pantothenate,218.22704,9,1,HMDB00210,"InChI=1S/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(12)13/h7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13)/p-1",C00864,988,EX_pnto_R(e)
+ptrc[e],Putrescine,90.16736,4,2,HMDB01414,InChI=1S/C4H12N2/c5-3-1-2-4-6/h1-6H2/p+2,C00134,1045,EX_ptrc(e)
+pydx[e],Pyridoxal,167.16196,8,1,HMDB01545,"InChI=1S/C8H9NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,4,10,12H,3H2,1H3",C00250,1050,EX_pydx(e)
+pyr[e],pyruvate,87.05412,3,0,HMDB00243,"InChI=1S/C3H4O3/c1-2(4)3(5)6/h1H3,(H,5,6)/p-1",C00022,1060,EX_pyr(e)
+ribflv[e],Riboflavin,376.3639,17,4,HMDB00244,,C00255,493570,EX_ribflv(e)
+taur[e],Taurine,125.14688,2,1,HMDB00251,"InChI=1S/C2H7NO3S/c3-1-2-7(4,5)6/h1-3H2,(H,4,5,6)",C00245,1123,EX_taur(e)
+tchola[e],taurocholate,515.703,26,1,HMDB00036,,,440567,EX_tchola(e)
+tdchola[e],taurochenodeoxycholate,499.70359999999994,26,1,HMDB00951,,C05465,387316,EX_tdchola(e)
+trp_L[e],L-tryptophan,204.22518000000002,11,2,HMDB00929,"InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1",C00078,6305,EX_trp_L(e)
+urea[e],Urea,60.055260000000004,1,2,HMDB00294,"InChI=1S/CH4N2O/c2-1(3)4/h(H4,2,3,4)",C00086,1176,EX_urea(e)
+val_L[e],L-valine,117.14634,5,1,HMDB00883,"InChI=1S/C5H11NO2/c1-3(2)4(6)5(7)8/h3-4H,6H2,1-2H3,(H,7,8)/t4-/m0/s1",C00183,6287,EX_val_L(e)
+12dhchol[e],12-Dehydrocholate,405.54758,24,0,,,,,EX_12dhchol(e)
+Lcyst[e],L-cysteate(1-),168.14844,3,1,HMDB02757,"InChI=1S/C3H7NO5S/c4-2(3(5)6)1-10(7,8)9/h2H,1,4H2,(H,5,6)(H,7,8,9)/p-1/t2-/m0/s1",C57006,72886,EX_Lcyst(e)
+Lcystin[e],L-cystine,240.30048,6,2,HMDB00192,"InChI=1S/C6H12N2O4S2/c7-3(5(9)10)1-13-14-2-4(8)6(11)12/h3-4H,1-2,7-8H2,(H,9,10)(H,11,12)/t3-,4-/m0/s1",C00491,,EX_Lcystin(e)
+adocbl[e],Adenosylcobalamin,1579.581761,72,18,HMDB02086,,C00194,,EX_adocbl(e)
+aso3[e],arsenite,122.9198,0,0,,,,,EX_aso3(e)
+aso4[e],arsenate,138.9192,0,0,,,,,EX_aso4(e)
+butso3[e],butanesulfonate,137.17746,4,0,,,,,EX_butso3(e)
+cbl1[e],Cob(I)alamin,1329.347781,62,13,HMDB03429,,C00853,,EX_cbl1(e)
+cbl2[e],Cob(II)alamin,1333.379541,62,13,HMDB06316,,C00541,,EX_cbl2(e)
+cro4[e],chromate,115.99369999999999,0,0,,,,,EX_cro4(e)
+ethso3[e],ethanesulfonate,109.12429999999999,2,0,,,,,EX_ethso3(e)
+fum[e],Fumarate,114.05628,4,0,HMDB00134,"InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/p-2/b2-1+",C00122,444972,EX_fum(e)
+gthox[e],Oxidized glutathione,610.6152,20,6,HMDB03337,,C00127,65359,EX_gthox(e)
+gthrd[e],Reduced glutathione,306.31554,10,3,HMDB00125,,C00051,124886,EX_gthrd(e)
+hexs[e],hexanesulfonate,165.23062,6,0,,,,,EX_hexs(e)
+isetac[e],Isethionic acid,125.1237,2,0,,,,,EX_isetac(e)
+kesto[e],"Kestose (2 fru, 1 glc inulin-type fructo-oligosaccharide)",504.43708,18,0,,,,,EX_kesto(e)
+kestopt[e],"Kestopentaose (4 fru, 1 glc inulin-type fructo-oligosaccharide)",828.71828,30,0,,,,,EX_kestopt(e)
+kestottr[e],"Kestotetraose (3 fru, 1 glc inulin-type fructo-oligosaccharide)",666.57768,24,0,,,,,EX_kestottr(e)
+malthx[e],Maltohexaose,990.85888,36,0,HMDB12253,,C01936,439606,EX_malthx(e)
+malttr[e],maltotriose,504.43708,18,0,HMDB01262,,C01835,439586,EX_malttr(e)
+mops[e],3-(n-Morpholino)Propanesulfonic Acid,208.25536,7,1,,,,,EX_mops(e)
+mso3[e],methanesulfonate,95.09772,1,0,,,,,EX_mso3(e)
+no3[e],Nitrate,62.0049,0,1,,,,,EX_no3(e)
+rbflvrd[e],Reduced riboflavin,378.37978,17,4,,,,,EX_rbflvrd(e)
+sulfac[e],sulfoacetate,138.09928,2,0,,,,,EX_sulfac(e)
+12dgr180[e],"1,2-Diacyl-sn-glycerol (dioctadecanoyl, n-C18:0)",625.01774,39,0,,,,,EX_12dgr180(e)
+3mop[e],3-methyl-2-oxopentanoate,129.13386,6,0,HMDB00491,"InChI=1S/C6H10O3/c1-3-4(2)5(7)6(8)9/h4H,3H2,1-2H3,(H,8,9)/p-1",C03465,47,EX_3mop(e)
+4hbz[e],4-hydroxybenzoate,137.1128,7,0,HMDB00500,"InChI=1S/C7H6O3/c8-6-3-1-5(2-4-6)7(9)10/h1-4,8H,(H,9,10)/p-1",C00156,,EX_4hbz(e)
+acgalglcur[e],Dimer GalNAc-GlcA,396.32398,14,1,,,,,EX_acgalglcur(e)
+acgalidour[e],Dimer GalNAc-IdoA,396.32398,14,1,,,,,EX_acgalidour(e)
+acgalidour2s[e],Dimer GalNAc-IdoA2S,475.37924,14,1,,,,,EX_acgalidour2s(e)
+cspg_a[e],chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan,,45,2,,,,,EX_cspg_a(e)
+cspg_a_degr[e],Dimer GalNAc4S-GlcA,475.37924,14,1,,,,,EX_cspg_a_degr(e)
+cspg_ab_rest[e],"Not degradable product CSABCPASE_A/B, Gal4S-Gal-Xyl-L-Ser-protein",,17,0,,,,,EX_cspg_ab_rest(e)
+cspg_b[e],chondroitin sulfate B / dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan,,45,2,,,,,EX_cspg_b(e)
+cspg_b_degr[e],Dimer GalNAc4S-IdoA2S,554.4345,14,1,,,,,EX_cspg_b_degr(e)
+cspg_c[e],chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan,,45,2,,,,,EX_cspg_c(e)
+cspg_c_degr[e],Dimer GalNAc6S-GlcA,475.37924,14,1,,,,,EX_cspg_c_degr(e)
+cspg_c_rest[e],"Not degradable product CSABCPASE_C, Gal6S-Gal-Xyl-L-Ser-protein",,17,0,,,,,EX_cspg_c_rest(e)
+dcyt[e],Deoxycytidine,227.21722,9,3,HMDB00014,"InChI=1S/C9H13N3O4/c10-7-1-2-12(9(15)11-7)8-3-5(14)6(4-13)16-8/h1-2,5-6,8,13-14H,3-4H2,(H2,10,11,15)/t5-,6+,8+/m0/s1",C00881,13711,EX_dcyt(e)
+fol[e],Folate,440.38952,19,7,HMDB00121,,C00504,6037,EX_fol(e)
+galur[e],D-Galacturonate,193.13146,6,0,,,,,EX_galur(e)
+gcald[e],glycolaldehyde,60.05196,2,0,HMDB03344,"InChI=1S/C2H4O2/c3-1-2-4/h1,4H,2H2",C00266,756,EX_gcald(e)
+glcur[e],D-glucuronate,193.13146,6,0,HMDB00127,,C00191,444791,EX_glcur(e)
+glyc3p[e],Glycerol 3-phosphate,170.057841,3,0,HMDB00126,"InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/p-2/t3-/m1/s1",C00093,439162,EX_glyc3p(e)
+gua[e],Guanine,151.1261,5,5,HMDB00132,"InChI=1S/C5H5N5O/c6-5-9-3-2(4(11)10-5)7-1-8-3/h1H,(H4,6,7,8,9,10,11)",C00242,764,EX_gua(e)
+idour[e],L-iduronate,193.13146,6,0,HMDB02704,"InChI=1S/C6H10O7/c7-1-2(8)3(9)4(10)5(11)6(12)13/h1-5,8-11H,(H,12,13)/p-1/t2-,3+,4-,5+/m0/s1",C06472,18845,EX_idour(e)
+inulin[e],"Chicory inulin, 30 monosaccharide units (29 fru, 1 glc) on average",4882.23328,180,0,,,C03323,,EX_inulin(e)
+mantr[e],"mannotriose (beta-1,4)",504.43708,18,0,,,,,EX_mantr(e)
+melib[e],Melibiose,342.29648000000003,12,0,,,,,EX_melib(e)
+meoh[e],methanol,32.04186,1,0,HMDB01875,"InChI=1S/CH4O/c1-2/h2H,1H3",C00132,887,EX_meoh(e)
+mqn7[e],Menaquinone 7,648.9991600000001,46,0,,,C00828,4086,EX_mqn7(e)
+pect[e],pectins,74542.46496,2535,0,,,,,EX_pect(e)
+pydam[e],Pyridoxamine,169.20102,8,2,HMDB01431,"InChI=1S/C8H12N2O2/c1-5-8(12)7(2-9)6(4-11)3-10-5/h3,11-12H,2,4,9H2,1H3/p+1",C00534,1052,EX_pydam(e)
+pydxn[e],Pyridoxine,169.17784,8,1,HMDB00239,"InChI=1S/C8H11NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,10-12H,3-4H2,1H3",C00314,1054,EX_pydxn(e)
+sheme[e],Siroheme,908.59744,42,4,,,,,EX_sheme(e)
+strch1[e],"starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]})",1801.56188,66,0,,,,,EX_strch1(e)
+strch2[e],"starch, structure 2 (1,6-{2[1,4-Glc], [1,4-Glc]})",504.43708,18,0,,,,,EX_strch2(e)
+stys[e],Stachyose,666.57768,24,0,,,,,EX_stys(e)
+tym[e],tyraminium,138.18698,8,1,HMDB00306,"InChI=1S/C8H11NO/c9-6-5-7-1-3-8(10)4-2-7/h1-4,10H,5-6,9H2/p+1",C00483,5610,EX_tym(e)
+dextrin[e],Dextrin,990.85888,36,0,,,C00721,,EX_dextrin(e)
+lctnb[e],Lacto-N-biose,383.3484,14,1,,,C06372,,EX_lctnb(e)
+amp[e],AMP,345.20534100000003,10,5,HMDB00045,,C00020,6083,EX_amp(e)
+glctnb[e],Galacto-N-biose,383.3484,14,1,,,,,EX_glctnb(e)
+arabinogal[e],"Larch arabinogalactan, gal/ara 6:1, small amount of glcur, MW ~ 116000",104298.01804,3862,0,,,C00569,,EX_arabinogal(e)
+arabttr[e],Arabinotriose,414.35914,15,0,,,,,EX_arabttr(e)
+ctbt[e],crotonobetaine,143.18362,7,1,,,,,EX_ctbt(e)
+din[e],Deoxyinosine,252.22668,10,4,HMDB00071,"InChI=1S/C10H12N4O4/c15-2-6-5(16)1-7(18-6)14-4-13-8-9(14)11-3-12-10(8)17/h3-7,15-16H,1-2H2,(H,11,12,17)/t5-,6+,7+/m0/s1",C05512,65058,EX_din(e)
+duri[e],Deoxyuridine,228.20198,9,2,HMDB00012,"InChI=1S/C9H12N2O5/c12-4-6-5(13)3-8(16-6)11-2-1-7(14)10-9(11)15/h1-2,5-6,8,12-13H,3-4H2,(H,10,14,15)/t5-,6+,8+/m0/s1",C00526,13712,EX_duri(e)
+gbbtn[e],gamma-butyrobetaine,145.1995,7,1,,,,,EX_gbbtn(e)
+gsn[e],Guanosine,283.24072,10,5,HMDB00133,,C00387,6802,EX_gsn(e)
+ha[e],hyaluronan,756.6174,28,2,,,,,EX_ha(e)
+ha_deg1[e],hyaluronan degradation product 1,581.50122,22,2,,,,,EX_ha_deg1(e)
+ha_pre1[e],"hyaluronan biosynthesis, precursor 1",378.3087,14,1,,,C04794,440484,EX_ha_pre1(e)
+homogal[e],"Homogalacturonan, 100 galacturonate residues. Assumed to be methylated/ acetylated in every 5th residue. Citrus HG consists of 7... <Preview truncated at 128 characters>",19333.3356,660,0,,,,,EX_homogal(e)
+isocapr[e],Isocaproate,115.15034,6,0,,,,,EX_isocapr(e)
+isoval[e],"Isovalerate, 3-Methylbutanoate",101.12376,5,0,,,C08262,,EX_isoval(e)
+no2[e],Nitrite,46.0055,0,1,HMDB02786,"InChI=1S/HNO2/c2-1-3/h(H,2,3)/p-1",C00088,24529,EX_no2(e)
+pecticgal[e],"Pectic galactan (potato), gal: arab-L: rmn: galur = 78: 9: 4: 9 (www.megazyme.com). Assumed to consist of 100 sugars per macromo... <Preview truncated at 128 characters>",16196.795839999999,597,0,,,,,EX_pecticgal(e)
+raffin[e],Raffinose,504.43708,18,0,,,,,EX_raffin(e)
+rhamnogalurI[e],"Potato rhamnogalacturonan I, MW assumed ~200000, 62 galur, 20 rmn, 12 gal, 3 arab-L, 1 xyl-D (www.megazyme.com, PMID: 16661590)",162559.74367999999,5840,0,,,,,EX_rhamnogalurI(e)
+rib_D[e],D-ribose,150.1299,5,0,HMDB00283,,C00121,5779,EX_rib_D(e)
+rmn[e],L-Rhamnose,164.15648,6,0,,,,,EX_rmn(e)
+xan[e],Xanthine,152.11086,5,4,HMDB00292,"InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",C00385,1188,EX_xan(e)
+Tyr_ggn[e],Tyr-194 of apo-glycogenin protein (primer for glycogen synthesis),,0,0,,,,,EX_Tyr_ggn(e)
+amylopect900[e],"Amylopectin, 900 repeat units",145944.55528,5400,0,,,C00317,,EX_amylopect900(e)
+amylose300[e],"amylose (n=300 repeat units, alpha-1,4-glc)",48660.19528,1800,0,,,,,EX_amylose300(e)
+arabinan101[e],"Arabinan, polymer of 1,5-a-L-linked arabinofuranose units substituted by 1,3 or 1,2 linked branches, MW ~ 15000 Da (REF: www.meg... <Preview truncated at 128 characters>",13491.647579999999,509,0,,,C02474,,EX_arabinan101(e)
+arabinoxyl[e],"Arabinoxylan, 30 xyl_D, 18 arab_L, 3 gal, 3 glc_D",7332.36064,276,0,,,,,EX_arabinoxyl(e)
+bglc[e],beta-glucans,32428138.01528,1200000,0,,,,,EX_bglc(e)
+dextran40[e],"Dextran 40, 1,6-alpha-D-Glucan",12971.248000000001,480,0,,,C00372,,EX_dextran40(e)
+galmannan[e],"Carob galactomannan, Gal:Man ratio 22/78. 220 gal, 780 man assumed",162158.61528,6000,0,,,,,EX_galmannan(e)
+gam26s[e],"Glucosamine 2,6-sulfate",337.28164,6,1,,,,,EX_gam26s(e)
+glcmannan[e],"Konjac glucomannan, MW 77,500 (PMID:17962981), Man:Glc ~ 2:1. -> 286 man, 143 glc_D",69576.33267999999,2574,0,,,,,EX_glcmannan(e)
+glygn2[e],"glycogen, structure 2 (glycogenin-1,6-{7[1,4-Glc], 4[1,4-Glc]})",,66,0,,,,,EX_glygn2(e)
+glygn4[e],"glycogen, structure 4 (glycogenin-1,6-{2[1,4-Glc], [1,4-Glc]})",,18,0,,,,,EX_glygn4(e)
+glygn5[e],"glycogen, structure 5 (glycogenin-2[1,4-Glc])",,12,0,,,,,EX_glygn5(e)
+hspg[e],heparan sulfate proteoglycan,,79,5,,,,,EX_hspg(e)
+hspg_degr_1[e],"Product 1 HEPARL1_e, IdoA-GlcN2,6diS-GlcA-GlcN2,3,6triS",1085.83562,24,2,,,,,EX_hspg_degr_1(e)
+hspg_degr_10[e],"Product AS3TASE_HS2, GlcN2S-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_10(e)
+hspg_degr_11[e],"Product GAM2STASE_HS3, GlcN-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_11(e)
+hspg_degr_12[e],"Product GLCNACASE_HS2, GlcA-GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",,37,1,,,,,EX_hspg_degr_12(e)
+hspg_degr_13[e],"Product GLCAASE_HS, GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",,31,1,,,,,EX_hspg_degr_13(e)
+hspg_degr_14[e],"Product GLCNACASE_HS3, IdoA-Gal-Gal-Xyl-L-Ser (protein)",,23,0,,,,,EX_hspg_degr_14(e)
+hspg_degr_15[e],"Product IDOURASE_HS3, Gal-Gal-Xyl-L-Ser (protein)",,17,0,,,,,EX_hspg_degr_15(e)
+hspg_degr_2[e],"Product 2 HEPARL1_e, IdoA2S-GlcN2,6diS-IdoA2S-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,49,2,,,,,EX_hspg_degr_2(e)
+hspg_degr_3[e],"Product IDOURASE_HS1, GlcN2,6diS-GlcA-GlcN2,3,6triS",910.71944,18,2,,,,,EX_hspg_degr_3(e)
+hspg_degr_4[e],"Product AS6TASE_HS1, GlcN2S-GlcA-GlcN2,3diS",752.60892,18,2,,,,,EX_hspg_degr_4(e)
+hspg_degr_5[e],"Product AS3TASE_HS1, GlcN2S-GlcA-GlcN2S",673.5536599999999,18,2,,,,,EX_hspg_degr_5(e)
+hspg_degr_6[e],"Product GAM2STASE_HS2, GlcN-GlcA-GlcN",515.44314,18,2,,,,,EX_hspg_degr_6(e)
+hspg_degr_7[e],"Product IS2TASE_HS1, IdoA-GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,49,2,,,,,EX_hspg_degr_7(e)
+hspg_degr_8[e],"Product IDOURASE_HS2, GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_8(e)
+hspg_degr_9[e],"Product AS6TASE_HS2, GlcN2S-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_9(e)
+hspg_rest[e],"Undegradable product GALASE_HS, Xyl-L-Ser (protein)",,5,0,,,,,EX_hspg_rest(e)
+isobut[e],"Isobutyrate, 2-Methylpropanoate",87.09718,4,0,,,C02632,,EX_isobut(e)
+levan1000[e],"Levan, 1000 fructose units",162158.61528,6000,0,,,,,EX_levan1000(e)
+levanb[e],Levanbiose,342.29648000000003,12,0,,,,,EX_levanb(e)
+levanttr[e],Levantriose,504.43708,18,0,,,,,EX_levanttr(e)
+levantttr[e],Levantetraose,666.57768,24,0,,,,,EX_levantttr(e)
+lichn[e],"Lichenin from Icelandic moss, 170 glucose residues. DOI: 10.1039/JR9570001951",27581.91728,1020,0,,,C00478,,EX_lichn(e)
+lmn2[e],Laminaribiose,342.29648000000003,12,0,,,,,EX_lmn2(e)
+lmn30[e],"laminarin (n=30 repeat units, beta -1,3 glc)",4882.23328,180,0,,,,,EX_lmn30(e)
+pullulan1200[e],"pullulan (n=1200 repeat units, alpha-1,4 and alph-1,6 bounds)",194586.73528,7200,0,,,,,EX_pullulan1200(e)
+xyluglc[e],"Xyluglucan, PMID:16663672, Fry SC 1989. 600 glc_D, 360 xyl_D, 108 gal, 60 fuc_L, 6 arab_L",171935.983,6438,0,,,,,EX_xyluglc(e)
+2dmmq8[e],2-Demethylmenaquinone 8,703.0896,50,0,,,,,EX_2dmmq8(e)
+chor[e],chorismate,224.16692,10,0,,,,,EX_chor(e)
+glyclt[e],glycolate,75.04342,2,0,HMDB00115,"InChI=1S/C2H4O3/c3-1-2(4)5/h3H,1H2,(H,4,5)/p-1",C00160,757,EX_glyclt(e)
+ncam[e],Nicotinamide,122.12464,6,2,HMDB01406,,C00153,936,EX_ncam(e)
+cit[e],Citrate,189.0997,6,0,HMDB00094,"InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)/p-3",C00158,311,EX_cit(e)
+3dhcdchol[e],3-Dehydrochenodeoxycholate,389.54818,24,0,,,,,EX_3dhcdchol(e)
+3dhchol[e],3-Dehydrocholate,405.54758,24,0,,,,,EX_3dhchol(e)
+4hpro_LT[e],trans-4-hydroxy-L-proline,131.12986,5,1,HMDB00725,"InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4+/m1/s1",C01157,5810,EX_4hpro(e)
+drib[e],2-deoxy-D-ribose,134.13049999999998,5,0,HMDB03224,"InChI=1S/C5H10O4/c6-2-1-4(8)5(9)3-7/h2,4-5,7-9H,1,3H2/t4-,5+/m0/s1",C01801,22833604,EX_drib(e)
+icdchol[e],Isochenodeoxycholate,391.56406,24,0,,,C17660,,EX_icdchol(e)
+isochol[e],Isocholate,407.56346,24,0,,,,,EX_isochol(e)
+mal_L[e],(S)-malate(2-),132.07156,4,0,HMDB00156,"InChI=1S/C4H6O5/c5-2(4(8)9)1-3(6)7/h2,5H,1H2,(H,6,7)(H,8,9)/p-2/t2-/m0/s1",C00149,222656,EX_mal_L(e)
+pac[e],phenylacetate,135.13998,8,0,HMDB00209,"InChI=1S/C8H8O2/c9-8(10)6-7-4-2-1-3-5-7/h1-5H,6H2,(H,9,10)/p-1",C07086,999,EX_pac(e)
+xylan[e],"Oat spelt xylan, MW 79200 (DOI: 10.1002/masy.200551405) = 528 xyl_D",69774.53464,2640,0,,,,,EX_xylan(e)
+4abz[e],4-Aminobenzoate,136.12804,7,1,,,,,EX_4abz(e)
+7dhcdchol[e],7-Dehydrochenodeoxycholate,389.54818,24,0,,,,,EX_7dhcdchol(e)
+7ocholate[e],"3alpha,12alpha-Dihydroxy-7-oxo-5beta-cholanate",405.54758,24,0,,,C04643,,EX_7ocholate(e)
+arab_D[e],D-Arabinose,150.1299,5,0,,,,,EX_arab_D(e)
+tsul[e],thiosulfate(2-),112.12819999999999,0,0,HMDB00257,"InChI=1S/H2O3S2/c1-5(2,3)4/h(H2,1,2,3,4)/p-2",C05529,1084,EX_tsul(e)
+n2[e],Nitrogen,28.0134,0,2,,,,,EX_n2(e)
+2omfuc[e],2-o-methylfucose (rare sugar in rhamnogalacturonan II),178.18306,7,0,,,,444792,EX_2omfuc(e)
+2omxyl[e],2-O-methylxylose (rare sugar in rhamnogalacturonan II),164.15648,6,0,,,,,EX_2omxyl(e)
+3ddlhept[e],3-deoxy-d-lyxo-heptulosaric acid (rare sugar in rhamnogalacturonan II),221.14156,7,0,,,,3082831,EX_3ddlhept(e)
+acerA[e],Aceric acid (3-C-carboxy-5-deoxy-l-xylose) (rare sugar in rhamnogalacturonan II),177.13206,6,0,,,,,EX_acerA(e)
+apio_D[e],D-Apiose (rare sugar in rhamnogalacturonan II),150.1299,5,0,,,C01488,,EX_apio-D(e)
+kdo[e],3-Deoxy-D-manno-2-octulosonate,237.18402,8,0,,,,,EX_kdo(e)
+mannan[e],"Alpha-mannan, yeast, has a MW of about 25000 (PMID: 5461381), equals ~ 140 mannose units. ID according to iMM904",22717.69928,840,0,,,,,EX_mannan(e)
+rhamnogalurII[e],"Wine rhamnogalacturonan II, MW ~ 5-10 kDa, 37% galur, 16% rmn, 3% fuc-L, 11% arab-L, 6% gal, 5% glcur, 4% 2omfuc, 3% 2omxyl, 6% ... <Preview truncated at 128 characters>",8623.7614,317,0,,,,,EX_rhamnogalurII(e)
+agal1b6agal[e],"Beta-1,6-N,N-diacetylgalactosamine",424.40032,16,2,,,,,EX_agal1b6agal(e)
+dttp[e],dTTP,478.136503,10,2,HMDB01342,,C00459,64968,EX_dttp(e)
+2hyoxplac[e],2-Hydroxyphenylacetate,151.13938,8,0,HMDB00669,"InChI=1/C8H8O3/c9-7-4-2-1-3-6(7)5-8(10)11/h1-4,9H,5H2,(H,10,11)",C05852,11970,EX_2hyoxplac(e)
+acmana[e],N-acetyl-D-mannosamine,221.2078,8,1,HMDB01129,"InChI=1S/C8H15NO6/c1-4(12)9-5(2-10)7(14)8(15)6(13)3-11/h2,5-8,11,13-15H,3H2,1H3,(H,9,12)/t5-,6-,7-,8-/m0/s1",C00645,439281,EX_acmana(e)
+glcn[e],D-gluconate,195.14734,6,0,HMDB00625,"InChI=1S/C6H12O7/c7-1-2(8)3(9)4(10)5(11)6(12)13/h2-5,7-11H,1H2,(H,12,13)/p-1/t2-,3-,4+,5-/m1/s1",C00257,10690,EX_glcn(e)
+ala_D[e],D-alanine,89.09318,3,1,HMDB01310,"InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m1/s1",C00133,71080,EX_ala_D(e)
+phenol[e],Phenol,94.11124,6,0,,,,,EX_phenol(e)
+akg[e],2-Oxoglutarate,144.08226,5,0,HMDB00208,"InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)/p-2",C00026,51,EX_akg(e)
+lanost[e],lanosterol,426.71740000000005,30,0,HMDB01251,,C01724,246983,EX_lanost(e)
+nmn[e],NMN,333.211221,11,2,HMDB00229,,C00455,14180,EX_nmn(e)
+2ddglcn[e],2-Dehydro-3-deoxy-D-gluconate,177.13206,6,0,,,,,EX_2ddglcn(e)
+etha[e],etha[c],62.09102,2,1,HMDB00149,"InChI=1S/C2H7NO/c3-1-2-4/h4H,1-3H2/p+1",C00189,700,EX_etha(e)
+pime[e],Pimelate,158.1519,7,0,,,,,EX_pime(e)
+HC00319[e],Malonate,102.04558,3,0,HMDB00691,"InChI=1S/C3H4O4/c4-2(5)1-3(6)7/h1H2,(H,4,5)(H,6,7)",C00383,867,EX_HC00319(e)
+ser_D[e],D-serine,105.09258,3,1,HMDB03406,"InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m1/s1",C00740,71077,EX_ser_D(e)
+34dhpha[e],"(3,4-dihydroxyphenyl)acetate",167.13878,8,0,HMDB01336,"InChI=1S/C8H8O4/c9-6-2-1-5(3-7(6)10)4-8(11)12/h1-3,9-10H,4H2,(H,11,12)/p-1",C01161,,EX_34dhpha(e)
+3hphac[e],3-Hydroxyphenylacetate,151.13938,8,0,,,,,EX_3hphac(e)
+chol[e],Choline,104.17076,5,1,HMDB00097,"InChI=1S/C5H14NO/c1-6(2,3)4-5-7/h7H,4-5H2,1-3H3/q+1",C00114,305,EX_chol(e)
+tma[e],trimethylamine,60.1182,3,1,,,,,EX_tma(e)
+tmao[e],Trimethylamine N-oxide,75.10966,3,1,,,,,EX_tmao(e)
+bhb[e],(R)-3-hydroxybutyrate,103.09658,4,0,HMDB00011,"InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,7)/p-1/t3-/m1/s1",C01089,,EX_bhb(e)
+chols[e],Choline sulfate,183.22602,5,1,,,,,EX_chols(e)
+crn[e],L-Carnitine,161.1989,7,1,HMDB00062,"InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3/t6-/m1/s1",C15025,10917,EX_crn(e)
+oxa[e],oxalate(2-),88.019,2,0,HMDB02329,"InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6)/p-2",C00209,971,EX_oxa(e)
+hom_L[e],L-homoserine,119.11916,4,1,HMDB00719,"InChI=1S/C4H9NO3/c5-3(1-2-6)4(7)8/h3,6H,1-2,5H2,(H,7,8)/t3-/m0/s1",C00263,12647,EX_hom_L(e)
+34dhphe[e],L-dopa,197.18794,9,1,HMDB00181,"InChI=1S/C9H11NO4/c10-6(9(13)14)3-5-1-2-7(11)8(12)4-5/h1-2,4,6,11-12H,3,10H2,(H,13,14)/t6-/m0/s1",C00355,,EX_34dhphe(e)
+5htrp[e],5-hydroxy-L-tryptophan,220.22458,11,2,HMDB00472,"InChI=1S/C11H12N2O3/c12-9(11(15)16)3-6-5-13-10-2-1-7(14)4-8(6)10/h1-2,4-5,9,13-14H,3,12H2,(H,15,16)/t9-/m0/s1",C01017,439280,EX_5htrp(e)
+actn_R[e],(R)-Acetoin,88.10512,4,0,,,,,EX_actn_R(e)
+diact[e],Diacetyl,86.08924,4,0,,,,,EX_diact(e)
+dopa[e],dopaminium(1+),154.18637999999999,8,1,HMDB00073,"InChI=1S/C8H11NO2/c9-4-3-6-1-2-7(10)8(11)5-6/h1-2,5,10-11H,3-4,9H2/p+1",C03758,681,EX_dopa(e)
+hista[e],histamium,112.15299999999999,5,3,HMDB00870,"InChI=1S/C5H9N3/c6-2-1-5-3-7-4-8-5/h3-4H,1-2,6H2,(H,7,8)/p+1",C00388,774,EX_hista(e)
+srtn[e],serotonin(1+),177.22302,10,2,HMDB00259,"InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2/p+1",C00780,5202,EX_srtn(e)
+trypta[e],tryptaminium,161.22362,10,2,HMDB00303,"InChI=1S/C10H12N2/c11-6-5-8-7-12-10-4-2-1-3-9(8)10/h1-4,7,12H,5-6,11H2/p+1",C00398,1150,EX_trypta(e)
+5mthf[e],5-Methyltetrahydrofolate,458.44786,20,7,HMDB01396,,C00440,439234,EX_5mthf(e)
+dpcoa[e],Dephospho-CoA,685.538342,21,7,HMDB01373,,C00882,444485,EX_dpcoa(e)
+thf[e],"5,6,7,8-Tetrahydrofolate",443.41334,19,7,HMDB01846,,C00101,91443,EX_thf(e)
+acac[e],acetoacetate,101.0807,4,0,HMDB00060,"InChI=1S/C4H6O3/c1-3(5)2-4(6)7/h2H2,1H3,(H,6,7)/p-1",C00164,96,EX_acac(e)
+HC02194[e],Ursodiol,391.56406,24,0,HMDB00946,,C07880,,EX_HC02194(e)
+uchol[e],Ursocholate,407.56346,24,0,HMDB00917,,C17644,,EX_uchol(e)
+12ppd_S_m,"(S)-propane-1,2-diol",76.09442,3,0,HMDB06213,"InChI=1S/C3H8O2/c1-3(5)2-4/h3-5H,2H2,1H3/t3-/m0/s1",C02917,,EX_12ppd_S_m
+26dap_M_m,"meso-2,6-Diaminoheptanedioate",190.19706,7,2,,,,,EX_26dap_M_m
+2obut_m,2-Oxobutanoate,101.0807,4,0,HMDB00005,"InChI=1S/C4H6O3/c1-2-3(5)4(6)7/h2H2,1H3,(H,6,7)/p-1",C00109,58,EX_2obut_m
+4abut_m,4-Aminobutanoate,103.11976,4,1,HMDB00112,"InChI=1S/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)",C00334,119,EX_4abut_m
+MGlcn10_m,mucin-type O-glycan No 10,,44,4,,,,,EX_MGlcn10_m
+MGlcn100_m,mucin-type O-glycan No 100,,61,5,,,,,EX_MGlcn100_m
+MGlcn100_rl_m,released mucin-type O-glycan No 100,1607.4538,61,5,,,,,EX_MGlcn100_rl_m
+MGlcn101_m,mucin-type O-glycan No 101,,69,6,,,,,EX_MGlcn101_m
+MGlcn101_rl_m,released mucin-type O-glycan No 101,1810.64632,69,6,,,,,EX_MGlcn101_rl_m
+MGlcn102_m,mucin-type O-glycan No 102,,80,7,,,,,EX_MGlcn102_m
+MGlcn102_rl_m,released mucin-type O-glycan No 102,2100.89296,80,7,,,,,EX_MGlcn102_rl_m
+MGlcn103_m,mucin-type O-glycan No 103,,88,8,,,,,EX_MGlcn103_m
+MGlcn103_rl_m,released mucin-type O-glycan No 103,2304.08548,88,8,,,,,EX_MGlcn103_rl_m
+MGlcn104_m,mucin-type O-glycan No 104,,46,2,,,,,EX_MGlcn104_m
+MGlcn104_rl_m,released mucin-type O-glycan No 104,1219.10392,46,2,,,,,EX_MGlcn104_rl_m
+MGlcn105_m,mucin-type O-glycan No 105,,46,2,,,,,EX_MGlcn105_m
+MGlcn105_rl_m,released mucin-type O-glycan No 105,1219.10392,46,2,,,,,EX_MGlcn105_rl_m
+MGlcn106_m,mucin-type O-glycan No 106,,54,3,,,,,EX_MGlcn106_m
+MGlcn106_rl_m,released mucin-type O-glycan No 106,1422.29644,54,3,,,,,EX_MGlcn106_rl_m
+MGlcn107_m,mucin-type O-glycan No 107,,54,3,,,,,EX_MGlcn107_m
+MGlcn107_rl_m,released mucin-type O-glycan No 107,1422.29644,54,3,,,,,EX_MGlcn107_rl_m
+MGlcn108_m,mucin-type O-glycan No 108,,42,3,,,,,EX_MGlcn108_m
+MGlcn108_rl_m,released mucin-type O-glycan No 108,1098.01524,42,3,,,,,EX_MGlcn108_rl_m
+MGlcn109_m,mucin-type O-glycan No 109,,36,3,,,,,EX_MGlcn109_m
+MGlcn109_rl_m,released mucin-type O-glycan No 109,951.87404,36,3,,,,,EX_MGlcn109_rl_m
+MGlcn10_rl_m,released mucin-type O-glycan No 10,1167.0342,44,4,,,,,EX_MGlcn10_rl_m
+MGlcn110_m,mucin-type O-glycan No 110,,36,3,,,,,EX_MGlcn110_m
+MGlcn110_rl_m,released mucin-type O-glycan No 110,951.87404,36,3,,,,,EX_MGlcn110_rl_m
+MGlcn111_m,mucin-type O-glycan No 111,,34,2,,,,,EX_MGlcn111_m
+MGlcn111_rl_m,released mucin-type O-glycan No 111,910.8221199999999,34,2,,,,,EX_MGlcn111_rl_m
+MGlcn112_m,mucin-type O-glycan No 112,,34,2,,,,,EX_MGlcn112_m
+MGlcn112_rl_m,released mucin-type O-glycan No 112,910.8221199999999,34,2,,,,,EX_MGlcn112_rl_m
+MGlcn113_m,mucin-type O-glycan No 113,,42,3,,,,,EX_MGlcn113_m
+MGlcn113_rl_m,released mucin-type O-glycan No 113,1114.0146399999999,42,3,,,,,EX_MGlcn113_rl_m
+MGlcn114_m,mucin-type O-glycan No 114,,40,2,,,,,EX_MGlcn114_m
+MGlcn114_rl_m,released mucin-type O-glycan No 114,1072.96272,40,2,,,,,EX_MGlcn114_rl_m
+MGlcn115_m,mucin-type O-glycan No 115,,48,3,,,,,EX_MGlcn115_m
+MGlcn115_rl_m,released mucin-type O-glycan No 115,1276.15524,48,3,,,,,EX_MGlcn115_rl_m
+MGlcn116_m,mucin-type O-glycan No 116,,33,3,,,,,EX_MGlcn116_m
+MGlcn116_rl_m,released mucin-type O-glycan No 116,876.78756,33,3,,,,,EX_MGlcn116_rl_m
+MGlcn117_m,mucin-type O-glycan No 117,,39,3,,,,,EX_MGlcn117_m
+MGlcn117_rl_m,released mucin-type O-glycan No 117,1038.92816,39,3,,,,,EX_MGlcn117_rl_m
+MGlcn118_m,mucin-type O-glycan No 118,,53,4,,,,,EX_MGlcn118_m
+MGlcn118_rl_m,released mucin-type O-glycan No 118,1388.26188,53,4,,,,,EX_MGlcn118_rl_m
+MGlcn119_m,mucin-type O-glycan No 119,,53,4,,,,,EX_MGlcn119_m
+MGlcn119_rl_m,released mucin-type O-glycan No 119,1388.26188,53,4,,,,,EX_MGlcn119_rl_m
+MGlcn12_m,mucin-type O-glycan No 12,,22,2,,,,,EX_MGlcn12_m
+MGlcn120_m,mucin-type O-glycan No 120,,47,4,,,,,EX_MGlcn120_m
+MGlcn120_rl_m,released mucin-type O-glycan No 120,1242.12068,47,4,,,,,EX_MGlcn120_rl_m
+MGlcn121_m,mucin-type O-glycan No 121,,61,5,,,,,EX_MGlcn121_m
+MGlcn121_rl_m,released mucin-type O-glycan No 121,1591.4544,61,5,,,,,EX_MGlcn121_rl_m
+MGlcn122_m,mucin-type O-glycan No 122,,61,5,,,,,EX_MGlcn122_m
+MGlcn122_rl_m,released mucin-type O-glycan No 122,1591.4544,61,5,,,,,EX_MGlcn122_rl_m
+MGlcn123_m,mucin-type O-glycan No 123,,55,5,,,,,EX_MGlcn123_m
+MGlcn123_rl_m,released mucin-type O-glycan No 123,1445.3131999999998,55,5,,,,,EX_MGlcn123_rl_m
+MGlcn124_m,mucin-type O-glycan No 124,,55,5,,,,,EX_MGlcn124_m
+MGlcn124_rl_m,released mucin-type O-glycan No 124,1445.3131999999998,55,5,,,,,EX_MGlcn124_rl_m
+MGlcn126_m,mucin-type O-glycan No 126,,61,5,,,,,EX_MGlcn126_m
+MGlcn126_rl_m,released mucin-type O-glycan No 126,1607.4538,61,5,,,,,EX_MGlcn126_rl_m
+MGlcn127_m,mucin-type O-glycan No 127,,75,6,,,,,EX_MGlcn127_m
+MGlcn127_rl_m,released mucin-type O-glycan No 127,1956.78752,75,6,,,,,EX_MGlcn127_rl_m
+MGlcn128_m,mucin-type O-glycan No 128,,75,6,,,,,EX_MGlcn128_m
+MGlcn128_rl_m,released mucin-type O-glycan No 128,1956.78752,75,6,,,,,EX_MGlcn128_rl_m
+MGlcn129_m,mucin-type O-glycan No 129,,75,6,,,,,EX_MGlcn129_m
+MGlcn129_rl_m,released mucin-type O-glycan No 129,1956.78752,75,6,,,,,EX_MGlcn129_rl_m
+MGlcn12_rl_m,released mucin-type O-glycan No 12,586.54092,22,2,,,,,EX_MGlcn12_rl_m
+MGlcn13_m,mucin-type O-glycan No 13,,30,3,,,,,EX_MGlcn13_m
+MGlcn130_m,mucin-type O-glycan No 130,,69,6,,,,,EX_MGlcn130_m
+MGlcn130_rl_m,released mucin-type O-glycan No 130,1810.64632,69,6,,,,,EX_MGlcn130_rl_m
+MGlcn131_m,mucin-type O-glycan No 131,,69,6,,,,,EX_MGlcn131_m
+MGlcn131_rl_m,released mucin-type O-glycan No 131,1810.64632,69,6,,,,,EX_MGlcn131_rl_m
+MGlcn132_m,mucin-type O-glycan No 132,,69,6,,,,,EX_MGlcn132_m
+MGlcn132_rl_m,released mucin-type O-glycan No 132,1810.64632,69,6,,,,,EX_MGlcn132_rl_m
+MGlcn133_m,mucin-type O-glycan No 133,,83,7,,,,,EX_MGlcn133_m
+MGlcn133_rl_m,released mucin-type O-glycan No 133,2159.98004,83,7,,,,,EX_MGlcn133_rl_m
+MGlcn134_m,mucin-type O-glycan No 134,,83,7,,,,,EX_MGlcn134_m
+MGlcn134_rl_m,released mucin-type O-glycan No 134,2159.98004,83,7,,,,,EX_MGlcn134_rl_m
+MGlcn135_m,mucin-type O-glycan No 135,,77,7,,,,,EX_MGlcn135_m
+MGlcn135_rl_m,released mucin-type O-glycan No 135,2013.83884,77,7,,,,,EX_MGlcn135_rl_m
+MGlcn136_m,mucin-type O-glycan No 136,,77,7,,,,,EX_MGlcn136_m
+MGlcn136_rl_m,released mucin-type O-glycan No 136,2013.83884,77,7,,,,,EX_MGlcn136_rl_m
+MGlcn137_m,mucin-type O-glycan No 137,,34,2,,,,,EX_MGlcn137_m
+MGlcn137_rl_m,released mucin-type O-glycan No 137,894.82272,34,2,,,,,EX_MGlcn137_rl_m
+MGlcn138_m,mucin-type O-glycan No 138,,34,2,,,,,EX_MGlcn138_m
+MGlcn138_rl_m,released mucin-type O-glycan No 138,894.82272,34,2,,,,,EX_MGlcn138_rl_m
+MGlcn139_m,mucin-type O-glycan No 139,,34,2,,,,,EX_MGlcn139_m
+MGlcn139_rl_m,released mucin-type O-glycan No 139,894.82272,34,2,,,,,EX_MGlcn139_rl_m
+MGlcn13_rl_m,released mucin-type O-glycan No 13,789.73344,30,3,,,,,EX_MGlcn13_rl_m
+MGlcn14_m,mucin-type O-glycan No 14,,36,3,,,,,EX_MGlcn14_m
+MGlcn140_m,mucin-type O-glycan No 140,,34,2,,,,,EX_MGlcn140_m
+MGlcn140_rl_m,released mucin-type O-glycan No 140,894.82272,34,2,,,,,EX_MGlcn140_rl_m
+MGlcn141_m,mucin-type O-glycan No 141,,28,2,,,,,EX_MGlcn141_m
+MGlcn141_rl_m,released mucin-type O-glycan No 141,732.68212,28,2,,,,,EX_MGlcn141_rl_m
+MGlcn142_m,mucin-type O-glycan No 142,,28,2,,,,,EX_MGlcn142_m
+MGlcn142_rl_m,released mucin-type O-glycan No 142,732.68212,28,2,,,,,EX_MGlcn142_rl_m
+MGlcn143_m,mucin-type O-glycan No 143,,28,2,,,,,EX_MGlcn143_m
+MGlcn143_rl_m,released mucin-type O-glycan No 143,732.68212,28,2,,,,,EX_MGlcn143_rl_m
+MGlcn144_m,mucin-type O-glycan No 144,,28,2,,,,,EX_MGlcn144_m
+MGlcn144_rl_m,released mucin-type O-glycan No 144,732.68212,28,2,,,,,EX_MGlcn144_rl_m
+MGlcn145_m,mucin-type O-glycan No 145,,34,2,,,,,EX_MGlcn145_m
+MGlcn145_rl_m,released mucin-type O-glycan No 145,878.82332,34,2,,,,,EX_MGlcn145_rl_m
+MGlcn146_m,mucin-type O-glycan No 146,,34,2,,,,,EX_MGlcn146_m
+MGlcn146_rl_m,released mucin-type O-glycan No 146,878.82332,34,2,,,,,EX_MGlcn146_rl_m
+MGlcn147_m,mucin-type O-glycan No 147,,33,3,,,,,EX_MGlcn147_m
+MGlcn147_rl_m,released mucin-type O-glycan No 147,876.78756,33,3,,,,,EX_MGlcn147_rl_m
+MGlcn148_m,mucin-type O-glycan No 148,,22,2,,,,,EX_MGlcn148_m
+MGlcn148_rl_m,released mucin-type O-glycan No 148,586.54092,22,2,,,,,EX_MGlcn148_rl_m
+MGlcn149_m,mucin-type O-glycan No 149,,36,3,,,,,EX_MGlcn149_m
+MGlcn149_rl_m,released mucin-type O-glycan No 149,935.87464,36,3,,,,,EX_MGlcn149_rl_m
+MGlcn14_rl_m,released mucin-type O-glycan No 14,951.87404,36,3,,,,,EX_MGlcn14_rl_m
+MGlcn15_m,mucin-type O-glycan No 15,,50,4,,,,,EX_MGlcn15_m
+MGlcn150_m,mucin-type O-glycan No 150,,41,4,,,,,EX_MGlcn150_m
+MGlcn150_rl_m,released mucin-type O-glycan No 150,1079.98008,41,4,,,,,EX_MGlcn150_rl_m
+MGlcn151_m,mucin-type O-glycan No 151,,41,4,,,,,EX_MGlcn151_m
+MGlcn151_rl_m,released mucin-type O-glycan No 151,1079.98008,41,4,,,,,EX_MGlcn151_rl_m
+MGlcn152_m,mucin-type O-glycan No 152,,52,5,,,,,EX_MGlcn152_m
+MGlcn152_rl_m,released mucin-type O-glycan No 152,1370.22672,52,5,,,,,EX_MGlcn152_rl_m
+MGlcn153_m,mucin-type O-glycan No 153,,30,3,,,,,EX_MGlcn153_m
+MGlcn153_rl_m,released mucin-type O-glycan No 153,789.73344,30,3,,,,,EX_MGlcn153_rl_m
+MGlcn154_m,mucin-type O-glycan No 154,,30,3,,,,,EX_MGlcn154_m
+MGlcn154_rl_m,released mucin-type O-glycan No 154,789.73344,30,3,,,,,EX_MGlcn154_rl_m
+MGlcn155_m,mucin-type O-glycan No 155,,36,3,,,,,EX_MGlcn155_m
+MGlcn155_rl_m,released mucin-type O-glycan No 155,935.87464,36,3,,,,,EX_MGlcn155_rl_m
+MGlcn156_m,mucin-type O-glycan No 156,,30,3,,,,,EX_MGlcn156_m
+MGlcn156_rl_m,released mucin-type O-glycan No 156,789.73344,30,3,,,,,EX_MGlcn156_rl_m
+MGlcn157_m,mucin-type O-glycan No 157,,40,2,,,,,EX_MGlcn157_m
+MGlcn157_rl_m,released mucin-type O-glycan No 157,1040.96392,40,2,,,,,EX_MGlcn157_rl_m
+MGlcn158_m,mucin-type O-glycan No 158,,28,2,,,,,EX_MGlcn158_m
+MGlcn158_rl_m,released mucin-type O-glycan No 158,748.68152,28,2,,,,,EX_MGlcn158_rl_m
+MGlcn159_m,mucin-type O-glycan No 159,,28,2,,,,,EX_MGlcn159_m
+MGlcn159_rl_m,released mucin-type O-glycan No 159,748.68152,28,2,,,,,EX_MGlcn159_rl_m
+MGlcn15_rl_m,released mucin-type O-glycan No 15,1301.20776,50,4,,,,,EX_MGlcn15_rl_m
+MGlcn16_m,mucin-type O-glycan No 16,,52,5,,,,,EX_MGlcn16_m
+MGlcn160_m,mucin-type O-glycan No 160,,28,2,,,,,EX_MGlcn160_m
+MGlcn160_rl_m,released mucin-type O-glycan No 160,748.68152,28,2,,,,,EX_MGlcn160_rl_m
+MGlcn161_m,mucin-type O-glycan No 161,,42,3,,,,,EX_MGlcn161_m
+MGlcn161_rl_m,released mucin-type O-glycan No 161,1098.01524,42,3,,,,,EX_MGlcn161_rl_m
+MGlcn162_m,mucin-type O-glycan No 162,,67,5,,,,,EX_MGlcn162_m
+MGlcn162_rl_m,released mucin-type O-glycan No 162,1753.595,67,5,,,,,EX_MGlcn162_rl_m
+MGlcn163_m,mucin-type O-glycan No 163,,36,3,,,,,EX_MGlcn163_m
+MGlcn163_rl_m,released mucin-type O-glycan No 163,951.87404,36,3,,,,,EX_MGlcn163_rl_m
+MGlcn164_m,mucin-type O-glycan No 164,,55,5,,,,,EX_MGlcn164_m
+MGlcn164_rl_m,released mucin-type O-glycan No 164,1445.3131999999998,55,5,,,,,EX_MGlcn164_rl_m
+MGlcn165_m,mucin-type O-glycan No 165,,55,5,,,,,EX_MGlcn165_m
+MGlcn165_rl_m,released mucin-type O-glycan No 165,1445.3131999999998,55,5,,,,,EX_MGlcn165_rl_m
+MGlcn166_m,mucin-type O-glycan No 166,,44,4,,,,,EX_MGlcn166_m
+MGlcn166_rl_m,released mucin-type O-glycan No 166,1155.06656,44,4,,,,,EX_MGlcn166_rl_m
+MGlcn167_m,mucin-type O-glycan No 167,,63,6,,,,,EX_MGlcn167_m
+MGlcn167_rl_m,released mucin-type O-glycan No 167,1648.50572,63,6,,,,,EX_MGlcn167_rl_m
+MGlcn168_m,mucin-type O-glycan No 168,,63,6,,,,,EX_MGlcn168_m
+MGlcn168_rl_m,released mucin-type O-glycan No 168,1648.50572,63,6,,,,,EX_MGlcn168_rl_m
+MGlcn169_m,mucin-type O-glycan No 169,,63,6,,,,,EX_MGlcn169_m
+MGlcn169_rl_m,released mucin-type O-glycan No 169,1648.50572,63,6,,,,,EX_MGlcn169_rl_m
+MGlcn16_rl_m,released mucin-type O-glycan No 16,1358.2590799999998,52,5,,,,,EX_MGlcn16_rl_m
+MGlcn17_m,mucin-type O-glycan No 17,,72,6,,,,,EX_MGlcn17_m
+MGlcn170_m,mucin-type O-glycan No 170,,52,5,,,,,EX_MGlcn170_m
+MGlcn170_rl_m,released mucin-type O-glycan No 170,1358.2590799999998,52,5,,,,,EX_MGlcn170_rl_m
+MGlcn171_m,mucin-type O-glycan No 171,,52,5,,,,,EX_MGlcn171_m
+MGlcn171_rl_m,released mucin-type O-glycan No 171,1358.2590799999998,52,5,,,,,EX_MGlcn171_rl_m
+MGlcn172_m,mucin-type O-glycan No 172,,48,3,,,,,EX_MGlcn172_m
+MGlcn172_rl_m,released mucin-type O-glycan No 172,1260.1558400000001,48,3,,,,,EX_MGlcn172_rl_m
+MGlcn173_m,mucin-type O-glycan No 173,,42,3,,,,,EX_MGlcn173_m
+MGlcn173_rl_m,released mucin-type O-glycan No 173,1114.0146399999999,42,3,,,,,EX_MGlcn173_rl_m
+MGlcn174_m,mucin-type O-glycan No 174,,49,5,,,,,EX_MGlcn174_m
+MGlcn174_rl_m,released mucin-type O-glycan No 174,1283.1726,49,5,,,,,EX_MGlcn174_rl_m
+MGlcn175_m,mucin-type O-glycan No 175,,38,4,,,,,EX_MGlcn175_m
+MGlcn175_rl_m,released mucin-type O-glycan No 175,992.92596,38,4,,,,,EX_MGlcn175_rl_m
+MGlcn176_m,mucin-type O-glycan No 176,,61,5,,,,,EX_MGlcn176_m
+MGlcn176_rl_m,released mucin-type O-glycan No 176,1591.4544,61,5,,,,,EX_MGlcn176_rl_m
+MGlcn177_m,mucin-type O-glycan No 177,,50,4,,,,,EX_MGlcn177_m
+MGlcn177_rl_m,released mucin-type O-glycan No 177,1301.20776,50,4,,,,,EX_MGlcn177_rl_m
+MGlcn178_m,mucin-type O-glycan No 178,,66,6,,,,,EX_MGlcn178_m
+MGlcn178_rl_m,released mucin-type O-glycan No 178,1735.55984,66,6,,,,,EX_MGlcn178_rl_m
+MGlcn179_m,mucin-type O-glycan No 179,,69,6,,,,,EX_MGlcn179_m
+MGlcn179_rl_m,released mucin-type O-glycan No 179,1794.64692,69,6,,,,,EX_MGlcn179_rl_m
+MGlcn17_rl_m,released mucin-type O-glycan No 17,1869.7334,72,6,,,,,EX_MGlcn17_rl_m
+MGlcn18_m,mucin-type O-glycan No 18,,44,4,,,,,EX_MGlcn18_m
+MGlcn180_m,mucin-type O-glycan No 180,,58,5,,,,,EX_MGlcn180_m
+MGlcn180_rl_m,released mucin-type O-glycan No 180,1504.40028,58,5,,,,,EX_MGlcn180_rl_m
+MGlcn181_m,mucin-type O-glycan No 181,,74,7,,,,,EX_MGlcn181_m
+MGlcn181_rl_m,released mucin-type O-glycan No 181,1938.75236,74,7,,,,,EX_MGlcn181_rl_m
+MGlcn182_m,mucin-type O-glycan No 182,,22,2,,,,,EX_MGlcn182_m
+MGlcn182_rl_m,released mucin-type O-glycan No 182,570.54152,22,2,,,,,EX_MGlcn182_rl_m
+MGlcn183_m,mucin-type O-glycan No 183,,41,4,,,,,EX_MGlcn183_m
+MGlcn183_rl_m,released mucin-type O-glycan No 183,1079.98008,41,4,,,,,EX_MGlcn183_rl_m
+MGlcn185_m,mucin-type O-glycan No 185,,30,3,,,,,EX_MGlcn185_m
+MGlcn185_rl_m,released mucin-type O-glycan No 185,789.73344,30,3,,,,,EX_MGlcn185_rl_m
+MGlcn186_m,mucin-type O-glycan No 186,,47,4,,,,,EX_MGlcn186_m
+MGlcn186_rl_m,released mucin-type O-glycan No 186,1242.12068,47,4,,,,,EX_MGlcn186_rl_m
+MGlcn187_m,mucin-type O-glycan No 187,,47,4,,,,,EX_MGlcn187_m
+MGlcn187_rl_m,released mucin-type O-glycan No 187,1242.12068,47,4,,,,,EX_MGlcn187_rl_m
+MGlcn188_m,mucin-type O-glycan No 188,,58,5,,,,,EX_MGlcn188_m
+MGlcn188_rl_m,released mucin-type O-glycan No 188,1532.3673199999998,58,5,,,,,EX_MGlcn188_rl_m
+MGlcn189_m,mucin-type O-glycan No 189,,36,3,,,,,EX_MGlcn189_m
+MGlcn189_rl_m,released mucin-type O-glycan No 189,951.87404,36,3,,,,,EX_MGlcn189_rl_m
+MGlcn18_rl_m,released mucin-type O-glycan No 18,1155.06656,44,4,,,,,EX_MGlcn18_rl_m
+MGlcn19_m,mucin-type O-glycan No 19,,66,6,,,,,EX_MGlcn19_m
+MGlcn190_m,mucin-type O-glycan No 190,,55,5,,,,,EX_MGlcn190_m
+MGlcn190_rl_m,released mucin-type O-glycan No 190,1445.3131999999998,55,5,,,,,EX_MGlcn190_rl_m
+MGlcn191_m,mucin-type O-glycan No 191,,55,5,,,,,EX_MGlcn191_m
+MGlcn191_rl_m,released mucin-type O-glycan No 191,1445.3131999999998,55,5,,,,,EX_MGlcn191_rl_m
+MGlcn192_m,mucin-type O-glycan No 192,,66,6,,,,,EX_MGlcn192_m
+MGlcn192_rl_m,released mucin-type O-glycan No 192,1735.55984,66,6,,,,,EX_MGlcn192_rl_m
+MGlcn193_m,mucin-type O-glycan No 193,,44,4,,,,,EX_MGlcn193_m
+MGlcn193_rl_m,released mucin-type O-glycan No 193,1155.06656,44,4,,,,,EX_MGlcn193_rl_m
+MGlcn194_m,mucin-type O-glycan No 194,,44,4,,,,,EX_MGlcn194_m
+MGlcn194_rl_m,released mucin-type O-glycan No 194,1155.06656,44,4,,,,,EX_MGlcn194_rl_m
+MGlcn195_m,mucin-type O-glycan No 195,,26,1,,,,,EX_MGlcn195_m
+MGlcn195_rl_m,released mucin-type O-glycan No 195,691.6302,26,1,,,,,EX_MGlcn195_rl_m
+MGlcn196_m,mucin-type O-glycan No 196,,20,1,,,,,EX_MGlcn196_m
+MGlcn196_rl_m,released mucin-type O-glycan No 196,545.489,20,1,,,,,EX_MGlcn196_rl_m
+MGlcn19_rl_m,released mucin-type O-glycan No 19,1723.5922,66,6,,,,,EX_MGlcn19_rl_m
+MGlcn2_m,mucin-type O-glycan No 2,,27,3,,,,,EX_MGlcn2_m
+MGlcn20_m,mucin-type O-glycan No 20,,44,4,,,,,EX_MGlcn20_m
+MGlcn20_rl_m,released mucin-type O-glycan No 20,1155.06656,44,4,,,,,EX_MGlcn20_rl_m
+MGlcn21_m,mucin-type O-glycan No 21,,58,5,,,,,EX_MGlcn21_m
+MGlcn21_rl_m,released mucin-type O-glycan No 21,1520.39968,58,5,,,,,EX_MGlcn21_rl_m
+MGlcn22_m,mucin-type O-glycan No 22,,20,1,,,,,EX_MGlcn22_m
+MGlcn22_rl_m,released mucin-type O-glycan No 22,529.4896,20,1,,,,,EX_MGlcn22_rl_m
+MGlcn23_m,mucin-type O-glycan No 23,,28,2,,,,,EX_MGlcn23_m
+MGlcn23_rl_m,released mucin-type O-glycan No 23,732.68212,28,2,,,,,EX_MGlcn23_rl_m
+MGlcn24_m,mucin-type O-glycan No 24,,28,2,,,,,EX_MGlcn24_m
+MGlcn24_rl_m,released mucin-type O-glycan No 24,732.68212,28,2,,,,,EX_MGlcn24_rl_m
+MGlcn25_m,mucin-type O-glycan No 25,,34,2,,,,,EX_MGlcn25_m
+MGlcn25_rl_m,released mucin-type O-glycan No 25,894.82272,34,2,,,,,EX_MGlcn25_rl_m
+MGlcn26_m,mucin-type O-glycan No 26,,34,2,,,,,EX_MGlcn26_m
+MGlcn26_rl_m,released mucin-type O-glycan No 26,894.82272,34,2,,,,,EX_MGlcn26_rl_m
+MGlcn27_m,mucin-type O-glycan No 27,,34,2,,,,,EX_MGlcn27_m
+MGlcn27_rl_m,released mucin-type O-glycan No 27,894.82272,34,2,,,,,EX_MGlcn27_rl_m
+MGlcn28_m,mucin-type O-glycan No 28,,34,2,,,,,EX_MGlcn28_m
+MGlcn28_rl_m,released mucin-type O-glycan No 28,894.82272,34,2,,,,,EX_MGlcn28_rl_m
+MGlcn29_m,mucin-type O-glycan No 29,,36,3,,,,,EX_MGlcn29_m
+MGlcn29_rl_m,released mucin-type O-glycan No 29,935.87464,36,3,,,,,EX_MGlcn29_rl_m
+MGlcn2_rl_m,released mucin-type O-glycan No 2,714.64696,27,3,,,,,EX_MGlcn2_rl_m
+MGlcn3_m,mucin-type O-glycan No 3,,33,3,,,,,EX_MGlcn3_m
+MGlcn30_m,mucin-type O-glycan No 30,,40,2,,,,,EX_MGlcn30_m
+MGlcn30_rl_m,released mucin-type O-glycan No 30,1040.96392,40,2,,,,,EX_MGlcn30_rl_m
+MGlcn31_m,mucin-type O-glycan No 31,,40,2,,,,,EX_MGlcn31_m
+MGlcn31_rl_m,released mucin-type O-glycan No 31,1056.96332,40,2,,,,,EX_MGlcn31_rl_m
+MGlcn32_m,mucin-type O-glycan No 32,,42,3,,,,,EX_MGlcn32_m
+MGlcn32_rl_m,released mucin-type O-glycan No 32,1098.01524,42,3,,,,,EX_MGlcn32_rl_m
+MGlcn33_m,mucin-type O-glycan No 33,,46,2,,,,,EX_MGlcn33_m
+MGlcn33_rl_m,released mucin-type O-glycan No 33,1187.10512,46,2,,,,,EX_MGlcn33_rl_m
+MGlcn34_m,mucin-type O-glycan No 34,,46,2,,,,,EX_MGlcn34_m
+MGlcn34_rl_m,released mucin-type O-glycan No 34,1203.10452,46,2,,,,,EX_MGlcn34_rl_m
+MGlcn35_m,mucin-type O-glycan No 35,,46,2,,,,,EX_MGlcn35_m
+MGlcn35_rl_m,released mucin-type O-glycan No 35,1203.10452,46,2,,,,,EX_MGlcn35_rl_m
+MGlcn36_m,mucin-type O-glycan No 36,,46,2,,,,,EX_MGlcn36_m
+MGlcn36_rl_m,released mucin-type O-glycan No 36,1203.10452,46,2,,,,,EX_MGlcn36_rl_m
+MGlcn37_m,mucin-type O-glycan No 37,,48,3,,,,,EX_MGlcn37_m
+MGlcn37_rl_m,released mucin-type O-glycan No 37,1244.15644,48,3,,,,,EX_MGlcn37_rl_m
+MGlcn38_m,mucin-type O-glycan No 38,,48,3,,,,,EX_MGlcn38_m
+MGlcn38_rl_m,released mucin-type O-glycan No 38,1244.15644,48,3,,,,,EX_MGlcn38_rl_m
+MGlcn39_m,mucin-type O-glycan No 39,,22,2,,,,,EX_MGlcn39_m
+MGlcn39_rl_m,released mucin-type O-glycan No 39,586.54092,22,2,,,,,EX_MGlcn39_rl_m
+MGlcn3_rl_m,released mucin-type O-glycan No 3,876.78756,33,3,,,,,EX_MGlcn3_rl_m
+MGlcn4_m,mucin-type O-glycan No 4,,47,4,,,,,EX_MGlcn4_m
+MGlcn40_m,mucin-type O-glycan No 40,,48,3,,,,,EX_MGlcn40_m
+MGlcn40_rl_m,released mucin-type O-glycan No 40,1244.15644,48,3,,,,,EX_MGlcn40_rl_m
+MGlcn41_m,mucin-type O-glycan No 41,,50,4,,,,,EX_MGlcn41_m
+MGlcn41_rl_m,released mucin-type O-glycan No 41,1301.20776,50,4,,,,,EX_MGlcn41_rl_m
+MGlcn42_m,mucin-type O-glycan No 42,,52,2,,,,,EX_MGlcn42_m
+MGlcn42_rl_m,released mucin-type O-glycan No 42,1365.2451199999998,52,2,,,,,EX_MGlcn42_rl_m
+MGlcn45_m,mucin-type O-glycan No 45,,28,2,,,,,EX_MGlcn45_m
+MGlcn45_rl_m,released mucin-type O-glycan No 45,748.68152,28,2,,,,,EX_MGlcn45_rl_m
+MGlcn46_m,mucin-type O-glycan No 46,,28,2,,,,,EX_MGlcn46_m
+MGlcn46_rl_m,released mucin-type O-glycan No 46,748.68152,28,2,,,,,EX_MGlcn46_rl_m
+MGlcn47_m,mucin-type O-glycan No 47,,42,3,,,,,EX_MGlcn47_m
+MGlcn47_rl_m,released mucin-type O-glycan No 47,1098.01524,42,3,,,,,EX_MGlcn47_rl_m
+MGlcn48_m,mucin-type O-glycan No 48,,25,2,,,,,EX_MGlcn48_m
+MGlcn48_rl_m,released mucin-type O-glycan No 48,673.59504,25,2,,,,,EX_MGlcn48_rl_m
+MGlcn4_rl_m,released mucin-type O-glycan No 4,1242.12068,47,4,,,,,EX_MGlcn4_rl_m
+MGlcn5_m,mucin-type O-glycan No 5,,55,5,,,,,EX_MGlcn5_m
+MGlcn50_m,mucin-type O-glycan No 50,,31,2,,,,,EX_MGlcn50_m
+MGlcn50_rl_m,released mucin-type O-glycan No 50,819.7362400000001,31,2,,,,,EX_MGlcn50_rl_m
+MGlcn51_m,mucin-type O-glycan No 51,,33,3,,,,,EX_MGlcn51_m
+MGlcn51_rl_m,released mucin-type O-glycan No 51,876.78756,33,3,,,,,EX_MGlcn51_rl_m
+MGlcn53_m,mucin-type O-glycan No 53,,39,3,,,,,EX_MGlcn53_m
+MGlcn53_rl_m,released mucin-type O-glycan No 53,1038.92816,39,3,,,,,EX_MGlcn53_rl_m
+MGlcn54_m,mucin-type O-glycan No 54,,50,4,,,,,EX_MGlcn54_m
+MGlcn54_rl_m,released mucin-type O-glycan No 54,1329.1748,50,4,,,,,EX_MGlcn54_rl_m
+MGlcn55_m,mucin-type O-glycan No 55,,54,3,,,,,EX_MGlcn55_m
+MGlcn55_rl_m,released mucin-type O-glycan No 55,1406.29704,54,3,,,,,EX_MGlcn55_rl_m
+MGlcn56_m,mucin-type O-glycan No 56,,60,3,,,,,EX_MGlcn56_m
+MGlcn56_rl_m,released mucin-type O-glycan No 56,1568.43764,60,3,,,,,EX_MGlcn56_rl_m
+MGlcn57_m,mucin-type O-glycan No 57,,58,5,,,,,EX_MGlcn57_m
+MGlcn57_rl_m,released mucin-type O-glycan No 57,1520.39968,58,5,,,,,EX_MGlcn57_rl_m
+MGlcn58_m,mucin-type O-glycan No 58,,58,5,,,,,EX_MGlcn58_m
+MGlcn58_rl_m,released mucin-type O-glycan No 58,1520.39968,58,5,,,,,EX_MGlcn58_rl_m
+MGlcn59_m,mucin-type O-glycan No 59,,86,7,,,,,EX_MGlcn59_m
+MGlcn59_rl_m,released mucin-type O-glycan No 59,2247.03416,86,7,,,,,EX_MGlcn59_rl_m
+MGlcn5_rl_m,released mucin-type O-glycan No 5,1445.3131999999998,55,5,,,,,EX_MGlcn5_rl_m
+MGlcn6_m,mucin-type O-glycan No 6,,75,6,,,,,EX_MGlcn6_m
+MGlcn60_m,mucin-type O-glycan No 60,,86,7,,,,,EX_MGlcn60_m
+MGlcn60_rl_m,released mucin-type O-glycan No 60,2247.03416,86,7,,,,,EX_MGlcn60_rl_m
+MGlcn61_m,mucin-type O-glycan No 61,,64,5,,,,,EX_MGlcn61_m
+MGlcn61_rl_m,released mucin-type O-glycan No 61,1666.54088,64,5,,,,,EX_MGlcn61_rl_m
+MGlcn62_m,mucin-type O-glycan No 62,,64,5,,,,,EX_MGlcn62_m
+MGlcn62_rl_m,released mucin-type O-glycan No 62,1666.54088,64,5,,,,,EX_MGlcn62_rl_m
+MGlcn63_m,mucin-type O-glycan No 63,,64,5,,,,,EX_MGlcn63_m
+MGlcn63_rl_m,released mucin-type O-glycan No 63,1678.50852,64,5,,,,,EX_MGlcn63_rl_m
+MGlcn64_m,mucin-type O-glycan No 64,,67,5,,,,,EX_MGlcn64_m
+MGlcn64_rl_m,released mucin-type O-glycan No 64,1753.595,67,5,,,,,EX_MGlcn64_rl_m
+MGlcn65_m,mucin-type O-glycan No 65,,72,6,,,,,EX_MGlcn65_m
+MGlcn65_rl_m,released mucin-type O-glycan No 65,1897.70044,72,6,,,,,EX_MGlcn65_rl_m
+MGlcn66_m,mucin-type O-glycan No 66,,50,4,,,,,EX_MGlcn66_m
+MGlcn66_rl_m,released mucin-type O-glycan No 66,1317.20716,50,4,,,,,EX_MGlcn66_rl_m
+MGlcn67_m,mucin-type O-glycan No 67,,78,6,,,,,EX_MGlcn67_m
+MGlcn67_rl_m,released mucin-type O-glycan No 67,2043.84164,78,6,,,,,EX_MGlcn67_rl_m
+MGlcn68_m,mucin-type O-glycan No 68,,56,4,,,,,EX_MGlcn68_m
+MGlcn68_rl_m,released mucin-type O-glycan No 68,1463.34836,56,4,,,,,EX_MGlcn68_rl_m
+MGlcn69_m,mucin-type O-glycan No 69,,40,2,,,,,EX_MGlcn69_m
+MGlcn69_rl_m,released mucin-type O-glycan No 69,1040.96392,40,2,,,,,EX_MGlcn69_rl_m
+MGlcn6_rl_m,released mucin-type O-glycan No 6,1956.78752,75,6,,,,,EX_MGlcn6_rl_m
+MGlcn7_m,mucin-type O-glycan No 7,,72,6,,,,,EX_MGlcn7_m
+MGlcn70_m,mucin-type O-glycan No 70,,40,2,,,,,EX_MGlcn70_m
+MGlcn70_rl_m,released mucin-type O-glycan No 70,1040.96392,40,2,,,,,EX_MGlcn70_rl_m
+MGlcn71_m,mucin-type O-glycan No 71,,46,2,,,,,EX_MGlcn71_m
+MGlcn71_rl_m,released mucin-type O-glycan No 71,1203.10452,46,2,,,,,EX_MGlcn71_rl_m
+MGlcn72_m,mucin-type O-glycan No 72,,30,3,,,,,EX_MGlcn72_m
+MGlcn72_rl_m,released mucin-type O-glycan No 72,789.73344,30,3,,,,,EX_MGlcn72_rl_m
+MGlcn73_m,mucin-type O-glycan No 73,,22,2,,,,,EX_MGlcn73_m
+MGlcn73_rl_m,released mucin-type O-glycan No 73,586.54092,22,2,,,,,EX_MGlcn73_rl_m
+MGlcn74_m,mucin-type O-glycan No 74,,34,2,,,,,EX_MGlcn74_m
+MGlcn74_rl_m,released mucin-type O-glycan No 74,894.82272,34,2,,,,,EX_MGlcn74_rl_m
+MGlcn75_m,mucin-type O-glycan No 75,,40,2,,,,,EX_MGlcn75_m
+MGlcn75_rl_m,released mucin-type O-glycan No 75,1040.96392,40,2,,,,,EX_MGlcn75_rl_m
+MGlcn76_m,mucin-type O-glycan No 76,,40,2,,,,,EX_MGlcn76_m
+MGlcn76_rl_m,released mucin-type O-glycan No 76,1040.96392,40,2,,,,,EX_MGlcn76_rl_m
+MGlcn77_m,mucin-type O-glycan No 77,,28,2,,,,,EX_MGlcn77_m
+MGlcn77_rl_m,released mucin-type O-glycan No 77,748.68152,28,2,,,,,EX_MGlcn77_rl_m
+MGlcn78_m,mucin-type O-glycan No 78,,28,2,,,,,EX_MGlcn78_m
+MGlcn78_rl_m,released mucin-type O-glycan No 78,748.68152,28,2,,,,,EX_MGlcn78_rl_m
+MGlcn79_m,mucin-type O-glycan No 79,,28,2,,,,,EX_MGlcn79_m
+MGlcn79_rl_m,released mucin-type O-glycan No 79,748.68152,28,2,,,,,EX_MGlcn79_rl_m
+MGlcn7_rl_m,released mucin-type O-glycan No 7,1881.70104,72,6,,,,,EX_MGlcn7_rl_m
+MGlcn8_m,mucin-type O-glycan No 8,,80,7,,,,,EX_MGlcn8_m
+MGlcn80_m,mucin-type O-glycan No 80,,42,3,,,,,EX_MGlcn80_m
+MGlcn80_rl_m,released mucin-type O-glycan No 80,1098.01524,42,3,,,,,EX_MGlcn80_rl_m
+MGlcn81_m,mucin-type O-glycan No 81,,58,5,,,,,EX_MGlcn81_m
+MGlcn81_rl_m,released mucin-type O-glycan No 81,1532.3673199999998,58,5,,,,,EX_MGlcn81_rl_m
+MGlcn82_m,mucin-type O-glycan No 82,,36,3,,,,,EX_MGlcn82_m
+MGlcn82_rl_m,released mucin-type O-glycan No 82,951.87404,36,3,,,,,EX_MGlcn82_rl_m
+MGlcn83_m,mucin-type O-glycan No 83,,36,3,,,,,EX_MGlcn83_m
+MGlcn83_rl_m,released mucin-type O-glycan No 83,951.87404,36,3,,,,,EX_MGlcn83_rl_m
+MGlcn84_m,mucin-type O-glycan No 84,,42,3,,,,,EX_MGlcn84_m
+MGlcn84_rl_m,released mucin-type O-glycan No 84,1098.01524,42,3,,,,,EX_MGlcn84_rl_m
+MGlcn85_m,mucin-type O-glycan No 85,,42,3,,,,,EX_MGlcn85_m
+MGlcn85_rl_m,released mucin-type O-glycan No 85,1098.01524,42,3,,,,,EX_MGlcn85_rl_m
+MGlcn86_m,mucin-type O-glycan No 86,,42,3,,,,,EX_MGlcn86_m
+MGlcn86_rl_m,released mucin-type O-glycan No 86,1098.01524,42,3,,,,,EX_MGlcn86_rl_m
+MGlcn87_m,mucin-type O-glycan No 87,,42,3,,,,,EX_MGlcn87_m
+MGlcn87_rl_m,released mucin-type O-glycan No 87,1098.01524,42,3,,,,,EX_MGlcn87_rl_m
+MGlcn88_m,mucin-type O-glycan No 88,,66,6,,,,,EX_MGlcn88_m
+MGlcn88_rl_m,released mucin-type O-glycan No 88,1735.55984,66,6,,,,,EX_MGlcn88_rl_m
+MGlcn89_m,mucin-type O-glycan No 89,,44,4,,,,,EX_MGlcn89_m
+MGlcn89_rl_m,released mucin-type O-glycan No 89,1155.06656,44,4,,,,,EX_MGlcn89_rl_m
+MGlcn8_rl_m,released mucin-type O-glycan No 8,2100.89296,80,7,,,,,EX_MGlcn8_rl_m
+MGlcn9_m,mucin-type O-glycan No 9,,94,8,,,,,EX_MGlcn9_m
+MGlcn90_m,mucin-type O-glycan No 90,,40,2,,,,,EX_MGlcn90_m
+MGlcn90_rl_m,released mucin-type O-glycan No 90,1056.96332,40,2,,,,,EX_MGlcn90_rl_m
+MGlcn91_m,mucin-type O-glycan No 91,,40,2,,,,,EX_MGlcn91_m
+MGlcn91_rl_m,released mucin-type O-glycan No 91,1056.96332,40,2,,,,,EX_MGlcn91_rl_m
+MGlcn92_m,mucin-type O-glycan No 92,,40,2,,,,,EX_MGlcn92_m
+MGlcn92_rl_m,released mucin-type O-glycan No 92,1056.96332,40,2,,,,,EX_MGlcn92_rl_m
+MGlcn93_m,mucin-type O-glycan No 93,,40,2,,,,,EX_MGlcn93_m
+MGlcn93_rl_m,released mucin-type O-glycan No 93,1056.96332,40,2,,,,,EX_MGlcn93_rl_m
+MGlcn94_m,mucin-type O-glycan No 94,,40,2,,,,,EX_MGlcn94_m
+MGlcn94_rl_m,released mucin-type O-glycan No 94,1056.96332,40,2,,,,,EX_MGlcn94_rl_m
+MGlcn95_m,mucin-type O-glycan No 95,,40,2,,,,,EX_MGlcn95_m
+MGlcn95_rl_m,released mucin-type O-glycan No 95,1056.96332,40,2,,,,,EX_MGlcn95_rl_m
+MGlcn96_m,mucin-type O-glycan No 96,,40,2,,,,,EX_MGlcn96_m
+MGlcn96_rl_m,released mucin-type O-glycan No 96,1056.96332,40,2,,,,,EX_MGlcn96_rl_m
+MGlcn97_m,mucin-type O-glycan No 97,,34,2,,,,,EX_MGlcn97_m
+MGlcn97_rl_m,released mucin-type O-glycan No 97,910.8221199999999,34,2,,,,,EX_MGlcn97_rl_m
+MGlcn98_m,mucin-type O-glycan No 98,,48,3,,,,,EX_MGlcn98_m
+MGlcn98_rl_m,released mucin-type O-glycan No 98,1260.1558400000001,48,3,,,,,EX_MGlcn98_rl_m
+MGlcn99_m,mucin-type O-glycan No 99,,48,3,,,,,EX_MGlcn99_m
+MGlcn99_rl_m,released mucin-type O-glycan No 99,1260.1558400000001,48,3,,,,,EX_MGlcn99_rl_m
+MGlcn9_rl_m,released mucin-type O-glycan No 9,2450.2266799999998,94,8,,,,,EX_MGlcn9_rl_m
+Ser_Thr_m,protein-linked serine or threonine residue (O-glycosylation site),,0,0,,,,,EX_Ser_Thr_m
+T_antigen_m,T antigen (core 1),,14,1,,,,,EX_T_antigen_m
+Tn_antigen_m,Tn antigen,,8,1,,,C04383,,EX_Tn_antigen_m
+ac_m,acetate,59.044019999999996,2,0,HMDB00042,"InChI=1S/C2H4O2/c1-2(3)4/h1H3,(H,3,4)/p-1",C00033,176,EX_ac_m
+acald_m,acetaldehyde,44.05256,2,0,HMDB00990,"InChI=1S/C2H4O/c1-2-3/h2H,1H3",C00084,177,EX_acald_m
+acgal_m,N-acetyl-D-galactosamine,221.2078,8,1,HMDB00212,,C01132,35717,EX_acgal_m
+acgam_m,N-acetyl-D-glucosamine,221.2078,8,1,HMDB00215,"InChI=1S/C8H15NO6/c1-4(12)9-5(2-10)7(14)8(15)6(13)3-11/h2,5-8,11,13-15H,3H2,1H3,(H,9,12)/t5-,6+,7+,8+/m0/s1",C00140,439174,EX_acgam_m
+acnam_m,N-acetylneuraminate,308.26192000000003,11,1,HMDB00230,,C19910,439197,EX_acnam_m
+acnam2a6agal_m,"Alpha-2,6-N-acetylneuraminate-N-acetylgalactosamine",511.45444000000003,19,2,,,,,EX_acnam2a6agal_m
+ade_m,Adenine,135.1267,5,5,HMDB00034,"InChI=1S/C5H5N5/c6-4-3-5(9-1-7-3)10-2-8-4/h1-2H,(H3,6,7,8,9,10)",C00147,190,EX_ade_m
+adn_m,Adenosine,267.24132,10,5,HMDB00050,,C00212,60961,EX_adn_m
+agal1b3agal_m,"Beta-1,3-N,N-diacetylgalactosamine",424.40032,16,2,,,,,EX_agal1b3agal_m
+agam1b3agal_m,"Beta-1,3-N-acetylglucosamine-N-acetylgalactosamine",424.40032,16,2,,,,,EX_agam1b3agal_m
+agam1b6agal_m,"Beta-1,6-N-acetylglucosamine-N-acetylgalactosamine",424.40032,16,2,,,,,EX_agam1b6agal_m
+ala_L_m,L-alanine,89.09318,3,1,HMDB00161,"InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1",C00041,5950,EX_ala_L_m
+alaasp_m,L-alanyl-L-aspartate,203.17264,7,2,,,,,EX_alaasp_m
+alagln_m,L-alanyl-L-glutamine,217.2224,8,3,,,,,EX_alagln_m
+alaglu_m,L-alanyl-L-glutamate,217.19922,8,2,,,,,EX_alaglu_m
+alagly_m,L-alanylglycine,146.1445,5,2,,,,,EX_alagly_m
+alahis_m,L-alanyl-L-histidine,226.23246,9,4,,"InChI=1S/C9H14N4O3/c10-2-1-8(14)13-7(9(15)16)3-6-4-11-5-12-6/h4-5,7H,1-3,10H2,(H,11,12)(H,13,14)(H,15,16)/t7-/m0/s1",C00386,,EX_alahis_m
+alaleu_m,L-alanyl-L-leucine,202.25082,9,2,,,,,EX_alaleu_m
+alathr_m,L-alanyl-L-threonine,190.19706,7,2,,,,,EX_alathr_m
+arbt_m,Arbutin,272.25124,12,0,,,C06186,,EX_arbt_m
+asn_L_m,L-asparagine,132.11792,4,2,HMDB00168,"InChI=1S/C4H8N2O3/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H2,6,7)(H,8,9)/t2-/m0/s1",C00152,6267,EX_asn_L_m
+asp_L_m,L-aspartate(1-),132.09474,4,1,HMDB00191,"InChI=1S/C4H7NO4/c5-2(4(8)9)1-3(6)7/h2H,1,5H2,(H,6,7)(H,8,9)/p-1/t2-/m0/s1",C00049,5960,EX_asp_L_m
+btn_m,Biotin,243.3027,10,2,HMDB00030,"InChI=1S/C10H16N2O3S/c13-8(14)4-2-1-3-7-9-6(5-16-7)11-10(15)12-9/h6-7,9H,1-5H2,(H,13,14)(H2,11,12,15)/p-1/t6-,7-,9-/m0/s1",C00120,171548,EX_btn_m
+ca2_m,calcium(2+),40.078,0,0,HMDB00464,InChI=1S/Ca/q+2,C00076,,EX_ca2_m
+cd2_m,Cadmium,112.411,0,0,,,,,EX_cd2_m
+cgly_m,L-cysteinylglycine,178.2095,5,2,HMDB00078,"InChI=1S/C5H10N2O3S/c6-3(2-11)5(10)7-1-4(8)9/h3,11H,1-2,6H2,(H,7,10)(H,8,9)/t3-/m0/s1",C01419,439498,EX_cgly_m
+chtbs_m,"N,N-diacetylchitobiose",424.40032,16,2,,,,,EX_chtbs_m
+cl_m,Chloride,35.453,0,0,HMDB00492,InChI=1S/ClH/h1H/p-1,C00698,312,EX_cl_m
+co2_m,carbon dioxide,44.0095,1,0,HMDB01967,InChI=1S/CO2/c2-1-3,C00011,280,EX_co2_m
+cobalt2_m,Co2+,58.9332,0,0,,,,,EX_cobalt2_m
+core2_m,Core 2,,22,2,,,,,EX_core2_m
+core2_rl_m,released Core 2,586.54092,22,2,,,,,EX_core2_rl_m
+core3_m,Core 3,,16,2,,,,,EX_core3_m
+core4_m,Core 4,,24,3,,,,,EX_core4_m
+core4_rl_m,released Core 4,627.59284,24,3,,,,,EX_core4_rl_m
+core5_m,Core 5,,16,2,,,,,EX_core5_m
+core6_m,Core 6,,16,2,,,,,EX_core6_m
+core7_m,Core 7,,16,2,,,,,EX_core7_m
+core8_m,Core 8,,14,1,,,,,EX_core8_m
+csn_m,cytosine,111.102,4,3,HMDB00630,"InChI=1S/C4H5N3O/c5-3-1-2-6-4(8)7-3/h1-2H,(H3,5,6,7,8)",C00380,597,EX_csn_m
+cu2_m,Cu2+,63.546,0,0,,,,,EX_cu2_m
+cys_L_m,L-cysteine,121.15818,3,1,HMDB00574,"InChI=1S/C3H7NO2S/c4-2(1-7)3(5)6/h2,7H,1,4H2,(H,5,6)/t2-/m0/s1",C00097,5862,EX_cys_L_m
+cytd_m,Cytidine,243.21662,9,3,HMDB00089,"InChI=1S/C9H13N3O5/c10-5-1-2-12(9(16)11-5)8-7(15)6(14)4(3-13)17-8/h1-2,4,6-8,13-15H,3H2,(H2,10,11,16)/t4-,6-,7-,8-/m1/s1",C00475,6175,EX_cytd_m
+dad_2_m,2-deoxyadenosine,251.24192,10,5,HMDB00101,"InChI=1S/C10H13N5O3/c11-9-8-10(13-3-12-9)15(4-14-8)7-1-5(17)6(2-16)18-7/h3-7,16-17H,1-2H2,(H2,11,12,13)/t5-,6+,7+/m0/s1",C00559,13730,EX_dad_2_m
+ddca_m,laurate,199.30982,12,0,HMDB00638,"InChI=1S/C12H24O2/c1-2-3-4-5-6-7-8-9-10-11-12(13)14/h2-11H2,1H3,(H,13,14)/p-1",C02679,3893,EX_ddca_m
+dgsn_m,Deoxyguanosine,267.24132,10,5,HMDB00085,"InChI=1S/C10H13N5O4/c11-10-13-8-7(9(18)14-10)12-3-15(8)6-1-4(17)5(2-16)19-6/h3-6,16-17H,1-2H2,(H3,11,13,14,18)/t4-,5+,6+/m0/s1",C00330,187790,EX_dgsn_m
+dsT_antigen_m,disialyl-T antigen,,36,3,,,,,EX_dsT_antigen_m
+dsT_antigen_rl_m,released disialyl-T antigen,963.84168,36,3,,,,,EX_dsT_antigen_rl_m
+etoh_m,ethanol,46.06844,2,0,HMDB00108,"InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3",C00469,702,EX_etoh_m
+f1a_m,F1alpha,,22,2,,,,,EX_f1a_m
+f1a_rl_m,released F1alpha antigen,586.54092,22,2,,,,,EX_f1a_rl_m
+fe2_m,Fe2+,55.845,0,0,HMDB00692,InChI=1S/Fe/q+2,C14818,27284,EX_fe2_m
+fe3_m,Fe3+,55.845,0,0,HMDB12943,InChI=1S/Fe/q+3,C14819,29936,EX_fe3_m
+fecrm_m,Ferrichrome,740.52048,27,9,,,,,EX_fecrm_m
+for_m,Formate,45.01744,1,0,HMDB00142,"InChI=1S/CH2O2/c2-1-3/h1H,(H,2,3)/p-1",C00058,284,EX_for_m
+fru_m,D-Fructose,180.15588,6,0,HMDB00660,,C02336,439709,EX_fru_m
+fuc_L_m,L-fucose,164.15648,6,0,HMDB00174,,C01019,17106,EX_fuc_L_m
+gal_m,D-Galactose,180.15588,6,0,HMDB00143,,C00984,439357,EX_gal_m
+gal1a3acgal_m,"Alpha-1,3-Galactose-N-acetylgalactosamine",383.3484,14,1,,,,,EX_gal1a3acgal_m
+gal1b3acgal_m,"Beta-1,3-Galactose-N-acetylgalactosamine",383.3484,14,1,,,,,EX_gal1b3acgal_m
+galt_m,galactitol,182.17176,6,0,HMDB00107,"InChI=1S/C6H14O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3-12H,1-2H2/t3-,4+,5+,6-",C01697,11850,EX_galt_m
+gam_m,D-Glucosamine,180.17906,6,1,HMDB01514,,C00329,439213,EX_gam_m
+glc_D_m,D-glucose,180.15588,6,0,HMDB00122,,C00031,5793,EX_glc_D_m
+gln_L_m,L-glutamine,146.1445,5,2,HMDB00641,"InChI=1S/C5H10N2O3/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H2,7,8)(H,9,10)/t3-/m0/s1",C00064,5961,EX_gln_L_m
+glu_L_m,L-glutamate(1-),146.12132,5,1,HMDB00148,"InChI=1S/C5H9NO4/c6-3(5(9)10)1-2-4(7)8/h3H,1-2,6H2,(H,7,8)(H,9,10)/p-1/t3-/m0/s1",C00025,33032,EX_glu_L_m
+gly_m,Glycine,75.0666,2,1,HMDB00123,"InChI=1S/C2H5NO2/c3-1-2(4)5/h1,3H2,(H,4,5)",C00037,750,EX_gly_m
+glyasn_m,Glycyl-L-asparagine,189.16924,6,3,,,,,EX_glyasn_m
+glyasp_m,Glycyl-L-aspartate,189.14606,6,2,,,,,EX_glyasp_m
+glyc_m,Glycerol,92.09382,3,0,HMDB00131,"InChI=1S/C3H8O3/c4-1-3(6)2-5/h3-6H,1-2H2",C00116,753,EX_glyc_m
+glycys_m,Gly-Cys,178.2095,5,2,,,,,EX_glycys_m
+glygln_m,Glycyl-L-glutamine,203.19582,7,3,,,,,EX_glygln_m
+glyglu_m,Glycyl-L-glutamate,203.17264,7,2,,,,,EX_glyglu_m
+glyleu_m,Glycylleucine,188.22424,8,2,HMDB00759,,C02155,92843,EX_glyleu_m
+glymet_m,Glycyl-L-methionine,206.26265999999998,7,2,,,,,EX_glymet_m
+glyphe_m,Glycylphenylalanine,222.24046,11,2,,,,97415,EX_glyphe_m
+glypro_m,Glycylproline,172.18178,7,2,HMDB00721,,,79101,EX_glypro_m
+glytyr_m,Glycyl-L-tyrosine,238.23986000000002,11,2,,,,,EX_glytyr_m
+gncore1_m,"GlcNAc-alpha-1,4-Core 1",,22,2,,,,,EX_gncore1_m
+gncore1_rl_m,"released GlcNAc-alpha-1,4-Core 1",586.54092,22,2,,,,,EX_gncore1_rl_m
+gncore2_m,"GlcNAc-alpha-1,4-Core 2",,30,3,,,,,EX_gncore2_m
+gncore2_rl_m,"released GlcNAc-alpha-1,4-Core 2",789.73344,30,3,,,,,EX_gncore2_rl_m
+h_m,proton,1.00794,0,0,HMDB01362,InChI=1S/p+1/i/hH,C00282,1038,EX_h_m
+h2_m,Hydrogen,2.01588,0,0,HMDB01362,InChI=1S/H2/h1H,C00282,783,EX_h2_m
+h2o_m,Water,18.01528,0,0,HMDB02111,InChI=1S/H2O/h1H2,C00001,962,EX_h2o_m
+h2s_m,Hydrogen sulfide,34.08088,0,0,,,,,EX_h2s_m
+hdca_m,Hexadecanoate (n-C16:0),255.41613999999998,16,0,HMDB00220,"InChI=1S/C16H32O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16(17)18/h2-15H2,1H3,(H,17,18)/p-1",C00249,985,EX_hdca_m
+hg2_m,Hg2+,200.59,0,0,,,,,EX_hg2_m
+his_L_m,L-histidine,155.15456,6,3,HMDB00177,"InChI=1S/C6H9N3O2/c7-5(6(10)11)1-4-2-8-3-9-4/h2-3,5H,1,7H2,(H,8,9)(H,10,11)/t5-/m0/s1",C00135,6274,EX_his_L_m
+ind3ac_m,indole-3-acetate,174.17602,10,1,HMDB00197,"InChI=1S/C10H9NO2/c12-10(13)5-7-6-11-9-4-2-1-3-8(7)9/h1-4,6,11H,5H2,(H,12,13)/p-1",C00954,802,EX_ind3ac_m
+indole_m,Indole,117.14788,8,1,,,,,EX_indole_m
+ins_m,Inosine,268.22608,10,4,HMDB00195,,C00294,6021,EX_ins_m
+k_m,potassium,39.0983,0,0,HMDB00586,InChI=1S/K/q+1,C00238,813,EX_k_m
+lac_D_m,(R)-lactate,89.07,3,0,HMDB01311,"InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/p-1/t2-/m1/s1",C00256,61503,EX_lac_D_m
+lald_L_m,(S)-lactaldehyde,74.07854,3,0,HMDB03052,"InChI=1S/C3H6O2/c1-3(5)2-4/h2-3,5H,1H3/t3-/m0/s1",C00424,439231,EX_lald_L_m
+leu_L_m,L-leucine,131.17292,6,1,HMDB00687,"InChI=1S/C6H13NO2/c1-4(2)3-5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t5-/m0/s1",C00123,6106,EX_leu_L_m
+lys_L_m,L-lysinium(1+),147.1955,6,2,HMDB00182,"InChI=1S/C6H14N2O2/c7-4-2-1-3-5(8)6(9)10/h5H,1-4,7-8H2,(H,9,10)/p+1/t5-/m0/s1",C00047,5962,EX_lys_L_m
+malt_m,Maltose,342.29648000000003,12,0,HMDB00163,,C00208,439186,EX_malt_m
+man_m,D-Mannose,180.15588,6,0,HMDB00169,,C00159,18950,EX_man_m
+met_L_m,L-methionine,149.21134,5,1,HMDB00696,"InChI=1S/C5H11NO2S/c1-9-3-2-4(6)5(7)8/h4H,2-3,6H2,1H3,(H,7,8)/t4-/m0/s1",C00073,6137,EX_met_L_m
+metala_m,L-methionyl-L-alanine,220.28924,8,2,,"InChI=1S/C8H16N2O3S/c1-5(8(12)13)10-7(11)6(9)3-4-14-2/h5-6H,3-4,9H2,1-2H3,(H,10,11)(H,12,13)/t5-,6-/m0/s1",,,EX_metala_m
+mg2_m,magnesium,24.305,0,0,,,,,EX_mg2_m
+mn2_m,Mn2+,54.938049,0,0,,,,,EX_mn2_m
+mnl_m,D-Mannitol,182.17176,6,0,,,,,EX_mnl_m
+mqn8_m,Menaquinone 8,717.11618,51,0,,,C00828,4086,EX_mqn8_m
+na1_m,Sodium,22.98977,0,0,HMDB00588,InChI=1S/Na/q+1,C01330,923,EX_na1_m
+nac_m,Nicotinate,122.10146,6,1,HMDB01488,,C00253,938,EX_nac_m
+nh4_m,Ammonium,18.03846,0,1,HMDB00051,InChI=1S/H3N/h1H3/p+1,C00014,223,EX_nh4_m
+o2_m,O2,31.9988,0,0,HMDB01377,InChI=1S/O2/c1-2,C00007,977,EX_o2_m
+ocdca_m,octadecanoate (n-C18:0),283.4693,18,0,HMDB00827,"InChI=1S/C18H36O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h2-17H2,1H3,(H,19,20)/p-1",C01530,3033836,EX_ocdca_m
+ocdcea_m,octadecenoate (n-C18:1),281.45342,18,0,HMDB00207,"InChI=1S/C18H34O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14-15-16-17-18(19)20/h9-10H,2-8,11-17H2,1H3,(H,19,20)/p-1/b10-9-",C00712,5460221,EX_ocdcea_m
+orn_m,Ornithine,133.16892,5,2,HMDB00214,"InChI=1S/C5H12N2O2/c6-3-1-2-4(7)5(8)9/h4H,1-3,6-7H2,(H,8,9)/p+1",C00077,6262,EX_orn_m
+pb_m,Lead,207.2,0,0,,,,,EX_pb_m
+phe_L_m,L-phenylalanine,165.18914,9,1,HMDB00159,"InChI=1S/C9H11NO2/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5,8H,6,10H2,(H,11,12)/t8-/m0/s1",C00079,6140,EX_phe_L_m
+pheme_m,Protoheme,614.4714,34,4,HMDB03178,,C00032,,EX_pheme_m
+pi_m,hydrogenphosphate,95.97930099999999,0,0,HMDB00973,"InChI=1S/H3O4P/c1-5(2,3)4/h(H3,1,2,3,4)/p-2",C00009,1004,EX_pi_m
+ppa_m,propionate,73.0706,3,0,HMDB00237,"InChI=1S/C3H6O2/c1-2-3(4)5/h2H2,1H3,(H,4,5)/p-1",C00163,1032,EX_ppa_m
+ppi_m,Diphosphate,174.951262,0,0,HMDB00250,"InChI=1S/H4O7P2/c1-8(2,3)7-9(4,5)6/h(H2,1,2,3)(H2,4,5,6)/p-3",C00013,1023,EX_ppi_m
+pro_L_m,L-proline,115.13046,5,1,HMDB00162,"InChI=1S/C5H9NO2/c7-5(8)4-2-1-3-6-4/h4,6H,1-3H2,(H,7,8)/t4-/m0/s1",C00148,145742,EX_pro_L_m
+q8_m,Ubiquinone-8,727.10946,49,0,,,,,EX_q8_m
+sT_antigen_m,sialyl-T antigen,,25,2,,,,,EX_sT_antigen_m
+sT_antigen_rl_m,released sialyl-Tn antigen,673.59504,25,2,,,,,EX_sT_antigen_rl_m
+sTn_antigen_m,sialyl-Tn antigen,,19,2,,,,,EX_sTn_antigen_m
+salcn_m,Salicin,286.27781999999996,13,0,,,C01451,,EX_salcn_m
+sbt_D_m,D-glucitol,182.17176,6,0,HMDB00247,"InChI=1S/C6H14O6/c7-1-3(9)5(11)6(12)4(10)2-8/h3-12H,1-2H2/t3-,4+,5-,6-/m1/s1",C00794,5780,EX_sbt_D_m
+ser_L_m,L-serine,105.09258,3,1,HMDB00187,"InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m0/s1",C00065,5951,EX_ser_L_m
+so4_m,sulfate,96.0626,0,0,HMDB01448,"InChI=1S/H2O4S/c1-5(2,3)4/h(H2,1,2,3,4)/p-2",C00059,1118,EX_so4_m
+spmd_m,Spermidine,148.26968,7,3,HMDB01257,"InChI=1S/C7H19N3/c8-4-1-2-6-10-7-3-5-9/h10H,1-9H2/p+3",C00315,1102,EX_spmd_m
+succ_m,Succinate,116.07216,4,0,HMDB00254,"InChI=1S/C4H6O4/c5-3(6)1-2-4(7)8/h1-2H2,(H,5,6)(H,7,8)/p-2",C00042,1110,EX_succ_m
+sucr_m,Sucrose,342.29648000000003,12,0,HMDB00258,,C00089,5988,EX_sucr_m
+thm_m,Thiamin,265.35458,12,4,HMDB00235,"InChI=1S/C12H17N4OS/c1-8-11(3-4-17)18-7-16(8)6-10-5-14-9(2)15-12(10)13/h5,7,17H,3-4,6H2,1-2H3,(H2,13,14,15)/q+1",C00378,1130,EX_thm_m
+thr_L_m,L-threonine,119.11916,4,1,HMDB00167,"InChI=1S/C4H9NO3/c1-2(6)3(5)4(7)8/h2-3,6H,5H2,1H3,(H,7,8)/t2-,3+/m1/s1",C00188,6288,EX_thr_L_m
+thymd_m,Thymidine,242.22856000000002,10,2,HMDB00273,"InChI=1S/C10H14N2O5/c1-5-3-12(10(16)11-9(5)15)8-2-6(14)7(4-13)17-8/h3,6-8,13-14H,2,4H2,1H3,(H,11,15,16)/t6-,7+,8+/m0/s1",C00214,5789,EX_thymd_m
+tre_m,Trehalose,342.29648000000003,12,0,HMDB00975,,C01083,7427,EX_tre_m
+ttdca_m,tetradecanoate (n-C14:0),227.36298,14,0,HMDB00806,"InChI=1S/C14H28O2/c1-2-3-4-5-6-7-8-9-10-11-12-13-14(15)16/h2-13H2,1H3,(H,15,16)/p-1",C06424,11005,EX_ttdca_m
+tyr_L_m,L-tyrosine,181.18854,9,1,HMDB00158,"InChI=1S/C9H11NO3/c10-8(9(12)13)5-6-1-3-7(11)4-2-6/h1-4,8,11H,5,10H2,(H,12,13)/t8-/m0/s1",C00082,6057,EX_tyr_L_m
+ura_m,uracil,112.08676,4,2,HMDB00300,"InChI=1S/C4H4N2O2/c7-3-1-2-5-4(8)6-3/h1-2H,(H2,5,6,7,8)",C00106,1174,EX_ura_m
+uri_m,Uridine,244.20138,9,2,HMDB00296,"InChI=1S/C9H12N2O6/c12-3-4-6(14)7(15)8(17-4)11-2-1-5(13)10-9(11)16/h1-2,4,6-8,12,14-15H,3H2,(H,10,13,16)/t4-,6-,7-,8-/m1/s1",C00299,6029,EX_uri_m
+xyl_D_m,aldehydo-D-xylose,150.1299,5,0,,"InChI=1S/C5H10O5/c6-1-3(8)5(10)4(9)2-7/h1,3-5,7-10H,2H2/t3-,4+,5+/m0/s1",,644160,EX_xyl_D_m
+zn2_m,Zinc,65.409,0,0,,,,,EX_zn2_m
+C02528_m,chenodeoxycholate,391.56406,24,0,HMDB00518,,C02528,10133,EX_C02528_m
+alltn_m,Allantoin,158.11544,4,4,HMDB00462,"InChI=1S/C4H6N4O3/c5-3(10)6-1-2(9)8-4(11)7-1/h1H,(H3,5,6,10)(H2,7,8,9,11)",C01551,204,EX_alltn_m
+arab_L_m,L-arabinose,150.1299,5,0,HMDB00646,,C00259,,EX_arab_L_m
+arg_L_m,L-argininium(1+),175.2089,6,4,HMDB00517,"InChI=1S/C6H14N4O2/c7-4(5(11)12)2-1-3-10-6(8)9/h4H,1-3,7H2,(H,11,12)(H4,8,9,10)/p+1/t4-/m0/s1",C00062,6322,EX_arg_L_m
+arsenb_m,Arsenobetaine,179.06918,5,0,,,,,EX_arsenb_m
+but_m,butyrate,87.09718,4,0,HMDB00039,"InChI=1S/C4H8O2/c1-2-3-4(5)6/h2-3H2,1H3,(H,5,6)/p-1",C00246,264,EX_but_m
+cellb_m,cellobiose,342.29648000000003,12,0,,,,,EX_cellb_m
+cholate_m,Cholate,407.56346,24,0,HMDB00619,,C00695,221493,EX_cholate_m
+dgchol_m,glycochenodeoxycholate,449.62332,26,1,HMDB00637,,C05466,,EX_dgchol_m
+gchola_m,glycocholate,465.62271999999996,26,1,HMDB00138,,C01921,10140,EX_gchola_m
+glyb_m,glycine betaine,117.14634,5,1,HMDB00043,"InChI=1S/C5H11NO2/c1-6(2,3)4-5(7)8/h4H2,1-3H3",C00719,247,EX_glyb_m
+hxan_m,Hypoxanthine,136.11146,5,4,HMDB00157,"InChI=1S/C5H4N4O/c10-5-3-4(7-1-6-3)8-2-9-5/h1-2H,(H2,6,7,8,9,10)",C00262,790,EX_hxan_m
+ile_L_m,L-isoleucine,131.17292,6,1,HMDB00172,"InChI=1S/C6H13NO2/c1-3-4(2)5(7)6(8)9/h4-5H,3,7H2,1-2H3,(H,8,9)/t4-,5-/m0/s1",C00407,6306,EX_ile_L_m
+lac_L_m,(S)-lactate,89.07,3,0,HMDB00190,"InChI=1S/C3H6O3/c1-2(4)3(5)6/h2,4H,1H3,(H,5,6)/p-1/t2-/m0/s1",C00186,107689,EX_lac_L_m
+lcts_m,Lactose,342.29648000000003,12,0,HMDB00186,,C00243,440995,EX_lcts_m
+met_D_m,D-Methionine,148.2034,5,1,,,,,EX_met_D_m
+metsox_R_L_m,L-methionine-R-sulfoxide,165.21074,5,1,,,,,EX_metsox_R_L_m
+metsox_S_L_m,L-Methionine Sulfoxide,165.21074,5,1,,,,,EX_metsox_S_L_m
+pnto_R_m,(R)-Pantothenate,218.22704,9,1,HMDB00210,"InChI=1S/C9H17NO5/c1-9(2,5-11)7(14)8(15)10-4-3-6(12)13/h7,11,14H,3-5H2,1-2H3,(H,10,15)(H,12,13)/p-1",C00864,988,EX_pnto_R_m
+ptrc_m,Putrescine,90.16736,4,2,HMDB01414,InChI=1S/C4H12N2/c5-3-1-2-4-6/h1-6H2/p+2,C00134,1045,EX_ptrc_m
+pydx_m,Pyridoxal,167.16196,8,1,HMDB01545,"InChI=1S/C8H9NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,4,10,12H,3H2,1H3",C00250,1050,EX_pydx_m
+pyr_m,pyruvate,87.05412,3,0,HMDB00243,"InChI=1S/C3H4O3/c1-2(4)3(5)6/h1H3,(H,5,6)/p-1",C00022,1060,EX_pyr_m
+ribflv_m,Riboflavin,376.3639,17,4,HMDB00244,,C00255,493570,EX_ribflv_m
+taur_m,Taurine,125.14688,2,1,HMDB00251,"InChI=1S/C2H7NO3S/c3-1-2-7(4,5)6/h1-3H2,(H,4,5,6)",C00245,1123,EX_taur_m
+tchola_m,taurocholate,515.703,26,1,HMDB00036,,,440567,EX_tchola_m
+tdchola_m,taurochenodeoxycholate,499.70359999999994,26,1,HMDB00951,,C05465,387316,EX_tdchola_m
+trp_L_m,L-tryptophan,204.22518000000002,11,2,HMDB00929,"InChI=1S/C11H12N2O2/c12-9(11(14)15)5-7-6-13-10-4-2-1-3-8(7)10/h1-4,6,9,13H,5,12H2,(H,14,15)/t9-/m0/s1",C00078,6305,EX_trp_L_m
+urea_m,Urea,60.055260000000004,1,2,HMDB00294,"InChI=1S/CH4N2O/c2-1(3)4/h(H4,2,3,4)",C00086,1176,EX_urea_m
+val_L_m,L-valine,117.14634,5,1,HMDB00883,"InChI=1S/C5H11NO2/c1-3(2)4(6)5(7)8/h3-4H,6H2,1-2H3,(H,7,8)/t4-/m0/s1",C00183,6287,EX_val_L_m
+12dhchol_m,12-Dehydrocholate,405.54758,24,0,,,,,EX_12dhchol_m
+Lcyst_m,L-cysteate(1-),168.14844,3,1,HMDB02757,"InChI=1S/C3H7NO5S/c4-2(3(5)6)1-10(7,8)9/h2H,1,4H2,(H,5,6)(H,7,8,9)/p-1/t2-/m0/s1",C57006,72886,EX_Lcyst_m
+Lcystin_m,L-cystine,240.30048,6,2,HMDB00192,"InChI=1S/C6H12N2O4S2/c7-3(5(9)10)1-13-14-2-4(8)6(11)12/h3-4H,1-2,7-8H2,(H,9,10)(H,11,12)/t3-,4-/m0/s1",C00491,,EX_Lcystin_m
+adocbl_m,Adenosylcobalamin,1579.581761,72,18,HMDB02086,,C00194,,EX_adocbl_m
+aso3_m,arsenite,122.9198,0,0,,,,,EX_aso3_m
+aso4_m,arsenate,138.9192,0,0,,,,,EX_aso4_m
+butso3_m,butanesulfonate,137.17746,4,0,,,,,EX_butso3_m
+cbl1_m,Cob(I)alamin,1329.347781,62,13,HMDB03429,,C00853,,EX_cbl1_m
+cbl2_m,Cob(II)alamin,1333.379541,62,13,HMDB06316,,C00541,,EX_cbl2_m
+cro4_m,chromate,115.99369999999999,0,0,,,,,EX_cro4_m
+ethso3_m,ethanesulfonate,109.12429999999999,2,0,,,,,EX_ethso3_m
+fum_m,Fumarate,114.05628,4,0,HMDB00134,"InChI=1S/C4H4O4/c5-3(6)1-2-4(7)8/h1-2H,(H,5,6)(H,7,8)/p-2/b2-1+",C00122,444972,EX_fum_m
+gthox_m,Oxidized glutathione,610.6152,20,6,HMDB03337,,C00127,65359,EX_gthox_m
+gthrd_m,Reduced glutathione,306.31554,10,3,HMDB00125,,C00051,124886,EX_gthrd_m
+hexs_m,hexanesulfonate,165.23062,6,0,,,,,EX_hexs_m
+isetac_m,Isethionic acid,125.1237,2,0,,,,,EX_isetac_m
+kesto_m,"Kestose (2 fru, 1 glc inulin-type fructo-oligosaccharide)",504.43708,18,0,,,,,EX_kesto_m
+kestopt_m,"Kestopentaose (4 fru, 1 glc inulin-type fructo-oligosaccharide)",828.71828,30,0,,,,,EX_kestopt_m
+kestottr_m,"Kestotetraose (3 fru, 1 glc inulin-type fructo-oligosaccharide)",666.57768,24,0,,,,,EX_kestottr_m
+malthx_m,Maltohexaose,990.85888,36,0,HMDB12253,,C01936,439606,EX_malthx_m
+malttr_m,maltotriose,504.43708,18,0,HMDB01262,,C01835,439586,EX_malttr_m
+mops_m,3-(n-Morpholino)Propanesulfonic Acid,208.25536,7,1,,,,,EX_mops_m
+mso3_m,methanesulfonate,95.09772,1,0,,,,,EX_mso3_m
+no3_m,Nitrate,62.0049,0,1,,,,,EX_no3_m
+rbflvrd_m,Reduced riboflavin,378.37978,17,4,,,,,EX_rbflvrd_m
+sulfac_m,sulfoacetate,138.09928,2,0,,,,,EX_sulfac_m
+12dgr180_m,"1,2-Diacyl-sn-glycerol (dioctadecanoyl, n-C18:0)",625.01774,39,0,,,,,EX_12dgr180_m
+3mop_m,3-methyl-2-oxopentanoate,129.13386,6,0,HMDB00491,"InChI=1S/C6H10O3/c1-3-4(2)5(7)6(8)9/h4H,3H2,1-2H3,(H,8,9)/p-1",C03465,47,EX_3mop_m
+4hbz_m,4-hydroxybenzoate,137.1128,7,0,HMDB00500,"InChI=1S/C7H6O3/c8-6-3-1-5(2-4-6)7(9)10/h1-4,8H,(H,9,10)/p-1",C00156,,EX_4hbz_m
+acgalglcur_m,Dimer GalNAc-GlcA,396.32398,14,1,,,,,EX_acgalglcur_m
+acgalidour_m,Dimer GalNAc-IdoA,396.32398,14,1,,,,,EX_acgalidour_m
+acgalidour2s_m,Dimer GalNAc-IdoA2S,475.37924,14,1,,,,,EX_acgalidour2s_m
+cspg_a_m,chondroitin sulfate A (GalNAc4S-GlcA) proteoglycan,,45,2,,,,,EX_cspg_a_m
+cspg_a_degr_m,Dimer GalNAc4S-GlcA,475.37924,14,1,,,,,EX_cspg_a_degr_m
+cspg_ab_rest_m,"Not degradable product CSABCPASE_A/B, Gal4S-Gal-Xyl-L-Ser-protein",,17,0,,,,,EX_cspg_ab_rest_m
+cspg_b_m,chondroitin sulfate B / dermatan sulfate (IdoA2S-GalNAc4S) proteoglycan,,45,2,,,,,EX_cspg_b_m
+cspg_b_degr_m,Dimer GalNAc4S-IdoA2S,554.4345,14,1,,,,,EX_cspg_b_degr_m
+cspg_c_m,chondroitin sulfate C (GalNAc6S-GlcA) proteoglycan,,45,2,,,,,EX_cspg_c_m
+cspg_c_degr_m,Dimer GalNAc6S-GlcA,475.37924,14,1,,,,,EX_cspg_c_degr_m
+cspg_c_rest_m,"Not degradable product CSABCPASE_C, Gal6S-Gal-Xyl-L-Ser-protein",,17,0,,,,,EX_cspg_c_rest_m
+dcyt_m,Deoxycytidine,227.21722,9,3,HMDB00014,"InChI=1S/C9H13N3O4/c10-7-1-2-12(9(15)11-7)8-3-5(14)6(4-13)16-8/h1-2,5-6,8,13-14H,3-4H2,(H2,10,11,15)/t5-,6+,8+/m0/s1",C00881,13711,EX_dcyt_m
+fol_m,Folate,440.38952,19,7,HMDB00121,,C00504,6037,EX_fol_m
+galur_m,D-Galacturonate,193.13146,6,0,,,,,EX_galur_m
+gcald_m,glycolaldehyde,60.05196,2,0,HMDB03344,"InChI=1S/C2H4O2/c3-1-2-4/h1,4H,2H2",C00266,756,EX_gcald_m
+glcur_m,D-glucuronate,193.13146,6,0,HMDB00127,,C00191,444791,EX_glcur_m
+glyc3p_m,Glycerol 3-phosphate,170.057841,3,0,HMDB00126,"InChI=1S/C3H9O6P/c4-1-3(5)2-9-10(6,7)8/h3-5H,1-2H2,(H2,6,7,8)/p-2/t3-/m1/s1",C00093,439162,EX_glyc3p_m
+gua_m,Guanine,151.1261,5,5,HMDB00132,"InChI=1S/C5H5N5O/c6-5-9-3-2(4(11)10-5)7-1-8-3/h1H,(H4,6,7,8,9,10,11)",C00242,764,EX_gua_m
+idour_m,L-iduronate,193.13146,6,0,HMDB02704,"InChI=1S/C6H10O7/c7-1-2(8)3(9)4(10)5(11)6(12)13/h1-5,8-11H,(H,12,13)/p-1/t2-,3+,4-,5+/m0/s1",C06472,18845,EX_idour_m
+inulin_m,"Chicory inulin, 30 monosaccharide units (29 fru, 1 glc) on average",4882.23328,180,0,,,C03323,,EX_inulin_m
+mantr_m,"mannotriose (beta-1,4)",504.43708,18,0,,,,,EX_mantr_m
+melib_m,Melibiose,342.29648000000003,12,0,,,,,EX_melib_m
+meoh_m,methanol,32.04186,1,0,HMDB01875,"InChI=1S/CH4O/c1-2/h2H,1H3",C00132,887,EX_meoh_m
+mqn7_m,Menaquinone 7,648.9991600000001,46,0,,,C00828,4086,EX_mqn7_m
+pect_m,pectins,74542.46496,2535,0,,,,,EX_pect_m
+pydam_m,Pyridoxamine,169.20102,8,2,HMDB01431,"InChI=1S/C8H12N2O2/c1-5-8(12)7(2-9)6(4-11)3-10-5/h3,11-12H,2,4,9H2,1H3/p+1",C00534,1052,EX_pydam_m
+pydxn_m,Pyridoxine,169.17784,8,1,HMDB00239,"InChI=1S/C8H11NO3/c1-5-8(12)7(4-11)6(3-10)2-9-5/h2,10-12H,3-4H2,1H3",C00314,1054,EX_pydxn_m
+sheme_m,Siroheme,908.59744,42,4,,,,,EX_sheme_m
+strch1_m,"starch, structure 1 (1,6-{7[1,4-Glc], 4[1,4-Glc]})",1801.56188,66,0,,,,,EX_strch1_m
+strch2_m,"starch, structure 2 (1,6-{2[1,4-Glc], [1,4-Glc]})",504.43708,18,0,,,,,EX_strch2_m
+stys_m,Stachyose,666.57768,24,0,,,,,EX_stys_m
+tym_m,tyraminium,138.18698,8,1,HMDB00306,"InChI=1S/C8H11NO/c9-6-5-7-1-3-8(10)4-2-7/h1-4,10H,5-6,9H2/p+1",C00483,5610,EX_tym_m
+dextrin_m,Dextrin,990.85888,36,0,,,C00721,,EX_dextrin_m
+lctnb_m,Lacto-N-biose,383.3484,14,1,,,C06372,,EX_lctnb_m
+amp_m,AMP,345.20534100000003,10,5,HMDB00045,,C00020,6083,EX_amp_m
+glctnb_m,Galacto-N-biose,383.3484,14,1,,,,,EX_glctnb_m
+arabinogal_m,"Larch arabinogalactan, gal/ara 6:1, small amount of glcur, MW ~ 116000",104298.01804,3862,0,,,C00569,,EX_arabinogal_m
+arabttr_m,Arabinotriose,414.35914,15,0,,,,,EX_arabttr_m
+ctbt_m,crotonobetaine,143.18362,7,1,,,,,EX_ctbt_m
+din_m,Deoxyinosine,252.22668,10,4,HMDB00071,"InChI=1S/C10H12N4O4/c15-2-6-5(16)1-7(18-6)14-4-13-8-9(14)11-3-12-10(8)17/h3-7,15-16H,1-2H2,(H,11,12,17)/t5-,6+,7+/m0/s1",C05512,65058,EX_din_m
+duri_m,Deoxyuridine,228.20198,9,2,HMDB00012,"InChI=1S/C9H12N2O5/c12-4-6-5(13)3-8(16-6)11-2-1-7(14)10-9(11)15/h1-2,5-6,8,12-13H,3-4H2,(H,10,14,15)/t5-,6+,8+/m0/s1",C00526,13712,EX_duri_m
+gbbtn_m,gamma-butyrobetaine,145.1995,7,1,,,,,EX_gbbtn_m
+gsn_m,Guanosine,283.24072,10,5,HMDB00133,,C00387,6802,EX_gsn_m
+ha_m,hyaluronan,756.6174,28,2,,,,,EX_ha_m
+ha_deg1_m,hyaluronan degradation product 1,581.50122,22,2,,,,,EX_ha_deg1_m
+ha_pre1_m,"hyaluronan biosynthesis, precursor 1",378.3087,14,1,,,C04794,440484,EX_ha_pre1_m
+homogal_m,"Homogalacturonan, 100 galacturonate residues. Assumed to be methylated/ acetylated in every 5th residue. Citrus HG consists of 7... <Preview truncated at 128 characters>",19333.3356,660,0,,,,,EX_homogal_m
+isocapr_m,Isocaproate,115.15034,6,0,,,,,EX_isocapr_m
+isoval_m,"Isovalerate, 3-Methylbutanoate",101.12376,5,0,,,C08262,,EX_isoval_m
+no2_m,Nitrite,46.0055,0,1,HMDB02786,"InChI=1S/HNO2/c2-1-3/h(H,2,3)/p-1",C00088,24529,EX_no2_m
+pecticgal_m,"Pectic galactan (potato), gal: arab-L: rmn: galur = 78: 9: 4: 9 (www.megazyme.com). Assumed to consist of 100 sugars per macromo... <Preview truncated at 128 characters>",16196.795839999999,597,0,,,,,EX_pecticgal_m
+raffin_m,Raffinose,504.43708,18,0,,,,,EX_raffin_m
+rhamnogalurI_m,"Potato rhamnogalacturonan I, MW assumed ~200000, 62 galur, 20 rmn, 12 gal, 3 arab-L, 1 xyl-D (www.megazyme.com, PMID: 16661590)",162559.74367999999,5840,0,,,,,EX_rhamnogalurI_m
+rib_D_m,D-ribose,150.1299,5,0,HMDB00283,,C00121,5779,EX_rib_D_m
+rmn_m,L-Rhamnose,164.15648,6,0,,,,,EX_rmn_m
+xan_m,Xanthine,152.11086,5,4,HMDB00292,"InChI=1S/C5H4N4O2/c10-4-2-3(7-1-6-2)8-5(11)9-4/h1H,(H3,6,7,8,9,10,11)",C00385,1188,EX_xan_m
+Tyr_ggn_m,Tyr-194 of apo-glycogenin protein (primer for glycogen synthesis),,0,0,,,,,EX_Tyr_ggn_m
+amylopect900_m,"Amylopectin, 900 repeat units",145944.55528,5400,0,,,C00317,,EX_amylopect900_m
+amylose300_m,"amylose (n=300 repeat units, alpha-1,4-glc)",48660.19528,1800,0,,,,,EX_amylose300_m
+arabinan101_m,"Arabinan, polymer of 1,5-a-L-linked arabinofuranose units substituted by 1,3 or 1,2 linked branches, MW ~ 15000 Da (REF: www.meg... <Preview truncated at 128 characters>",13491.647579999999,509,0,,,C02474,,EX_arabinan101_m
+arabinoxyl_m,"Arabinoxylan, 30 xyl_D, 18 arab_L, 3 gal, 3 glc_D",7332.36064,276,0,,,,,EX_arabinoxyl_m
+bglc_m,beta-glucans,32428138.01528,1200000,0,,,,,EX_bglc_m
+dextran40_m,"Dextran 40, 1,6-alpha-D-Glucan",12971.248000000001,480,0,,,C00372,,EX_dextran40_m
+galmannan_m,"Carob galactomannan, Gal:Man ratio 22/78. 220 gal, 780 man assumed",162158.61528,6000,0,,,,,EX_galmannan_m
+gam26s_m,"Glucosamine 2,6-sulfate",337.28164,6,1,,,,,EX_gam26s_m
+glcmannan_m,"Konjac glucomannan, MW 77,500 (PMID:17962981), Man:Glc ~ 2:1. -> 286 man, 143 glc_D",69576.33267999999,2574,0,,,,,EX_glcmannan_m
+glygn2_m,"glycogen, structure 2 (glycogenin-1,6-{7[1,4-Glc], 4[1,4-Glc]})",,66,0,,,,,EX_glygn2_m
+glygn4_m,"glycogen, structure 4 (glycogenin-1,6-{2[1,4-Glc], [1,4-Glc]})",,18,0,,,,,EX_glygn4_m
+glygn5_m,"glycogen, structure 5 (glycogenin-2[1,4-Glc])",,12,0,,,,,EX_glygn5_m
+hspg_m,heparan sulfate proteoglycan,,79,5,,,,,EX_hspg_m
+hspg_degr_1_m,"Product 1 HEPARL1_e, IdoA-GlcN2,6diS-GlcA-GlcN2,3,6triS",1085.83562,24,2,,,,,EX_hspg_degr_1_m
+hspg_degr_10_m,"Product AS3TASE_HS2, GlcN2S-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_10_m
+hspg_degr_11_m,"Product GAM2STASE_HS3, GlcN-IdoA-GlcNAc-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_11_m
+hspg_degr_12_m,"Product GLCNACASE_HS2, GlcA-GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",,37,1,,,,,EX_hspg_degr_12_m
+hspg_degr_13_m,"Product GLCAASE_HS, GlcNAc-IdoA-Gal-Gal-Xyl-L-Ser (protein)",,31,1,,,,,EX_hspg_degr_13_m
+hspg_degr_14_m,"Product GLCNACASE_HS3, IdoA-Gal-Gal-Xyl-L-Ser (protein)",,23,0,,,,,EX_hspg_degr_14_m
+hspg_degr_15_m,"Product IDOURASE_HS3, Gal-Gal-Xyl-L-Ser (protein)",,17,0,,,,,EX_hspg_degr_15_m
+hspg_degr_2_m,"Product 2 HEPARL1_e, IdoA2S-GlcN2,6diS-IdoA2S-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,49,2,,,,,EX_hspg_degr_2_m
+hspg_degr_3_m,"Product IDOURASE_HS1, GlcN2,6diS-GlcA-GlcN2,3,6triS",910.71944,18,2,,,,,EX_hspg_degr_3_m
+hspg_degr_4_m,"Product AS6TASE_HS1, GlcN2S-GlcA-GlcN2,3diS",752.60892,18,2,,,,,EX_hspg_degr_4_m
+hspg_degr_5_m,"Product AS3TASE_HS1, GlcN2S-GlcA-GlcN2S",673.5536599999999,18,2,,,,,EX_hspg_degr_5_m
+hspg_degr_6_m,"Product GAM2STASE_HS2, GlcN-GlcA-GlcN",515.44314,18,2,,,,,EX_hspg_degr_6_m
+hspg_degr_7_m,"Product IS2TASE_HS1, IdoA-GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,49,2,,,,,EX_hspg_degr_7_m
+hspg_degr_8_m,"Product IDOURASE_HS2, GlcN2,6diS-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_8_m
+hspg_degr_9_m,"Product AS6TASE_HS2, GlcN2S-IdoA-GlcNAc3S-GlcA-Gal-Gal-Xyl-L-Ser (protein)",,43,2,,,,,EX_hspg_degr_9_m
+hspg_rest_m,"Undegradable product GALASE_HS, Xyl-L-Ser (protein)",,5,0,,,,,EX_hspg_rest_m
+isobut_m,"Isobutyrate, 2-Methylpropanoate",87.09718,4,0,,,C02632,,EX_isobut_m
+levan1000_m,"Levan, 1000 fructose units",162158.61528,6000,0,,,,,EX_levan1000_m
+levanb_m,Levanbiose,342.29648000000003,12,0,,,,,EX_levanb_m
+levanttr_m,Levantriose,504.43708,18,0,,,,,EX_levanttr_m
+levantttr_m,Levantetraose,666.57768,24,0,,,,,EX_levantttr_m
+lichn_m,"Lichenin from Icelandic moss, 170 glucose residues. DOI: 10.1039/JR9570001951",27581.91728,1020,0,,,C00478,,EX_lichn_m
+lmn2_m,Laminaribiose,342.29648000000003,12,0,,,,,EX_lmn2_m
+lmn30_m,"laminarin (n=30 repeat units, beta -1,3 glc)",4882.23328,180,0,,,,,EX_lmn30_m
+pullulan1200_m,"pullulan (n=1200 repeat units, alpha-1,4 and alph-1,6 bounds)",194586.73528,7200,0,,,,,EX_pullulan1200_m
+xyluglc_m,"Xyluglucan, PMID:16663672, Fry SC 1989. 600 glc_D, 360 xyl_D, 108 gal, 60 fuc_L, 6 arab_L",171935.983,6438,0,,,,,EX_xyluglc_m
+2dmmq8_m,2-Demethylmenaquinone 8,703.0896,50,0,,,,,EX_2dmmq8_m
+chor_m,chorismate,224.16692,10,0,,,,,EX_chor_m
+glyclt_m,glycolate,75.04342,2,0,HMDB00115,"InChI=1S/C2H4O3/c3-1-2(4)5/h3H,1H2,(H,4,5)/p-1",C00160,757,EX_glyclt_m
+ncam_m,Nicotinamide,122.12464,6,2,HMDB01406,,C00153,936,EX_ncam_m
+cit_m,Citrate,189.0997,6,0,HMDB00094,"InChI=1S/C6H8O7/c7-3(8)1-6(13,5(11)12)2-4(9)10/h13H,1-2H2,(H,7,8)(H,9,10)(H,11,12)/p-3",C00158,311,EX_cit_m
+3dhcdchol_m,3-Dehydrochenodeoxycholate,389.54818,24,0,,,,,EX_3dhcdchol_m
+3dhchol_m,3-Dehydrocholate,405.54758,24,0,,,,,EX_3dhchol_m
+4hpro_LT_m,trans-4-hydroxy-L-proline,131.12986,5,1,HMDB00725,"InChI=1S/C5H9NO3/c7-3-1-4(5(8)9)6-2-3/h3-4,6-7H,1-2H2,(H,8,9)/t3-,4+/m1/s1",C01157,5810,EX_4hpro_LT_m
+drib_m,2-deoxy-D-ribose,134.13049999999998,5,0,HMDB03224,"InChI=1S/C5H10O4/c6-2-1-4(8)5(9)3-7/h2,4-5,7-9H,1,3H2/t4-,5+/m0/s1",C01801,22833604,EX_drib_m
+icdchol_m,Isochenodeoxycholate,391.56406,24,0,,,C17660,,EX_icdchol_m
+isochol_m,Isocholate,407.56346,24,0,,,,,EX_isochol_m
+mal_L_m,(S)-malate(2-),132.07156,4,0,HMDB00156,"InChI=1S/C4H6O5/c5-2(4(8)9)1-3(6)7/h2,5H,1H2,(H,6,7)(H,8,9)/p-2/t2-/m0/s1",C00149,222656,EX_mal_L_m
+pac_m,phenylacetate,135.13998,8,0,HMDB00209,"InChI=1S/C8H8O2/c9-8(10)6-7-4-2-1-3-5-7/h1-5H,6H2,(H,9,10)/p-1",C07086,999,EX_pac_m
+xylan_m,"Oat spelt xylan, MW 79200 (DOI: 10.1002/masy.200551405) = 528 xyl_D",69774.53464,2640,0,,,,,EX_xylan_m
+4abz_m,4-Aminobenzoate,136.12804,7,1,,,,,EX_4abz_m
+7dhcdchol_m,7-Dehydrochenodeoxycholate,389.54818,24,0,,,,,EX_7dhcdchol_m
+7ocholate_m,"3alpha,12alpha-Dihydroxy-7-oxo-5beta-cholanate",405.54758,24,0,,,C04643,,EX_7ocholate_m
+arab_D_m,D-Arabinose,150.1299,5,0,,,,,EX_arab_D_m
+tsul_m,thiosulfate(2-),112.12819999999999,0,0,HMDB00257,"InChI=1S/H2O3S2/c1-5(2,3)4/h(H2,1,2,3,4)/p-2",C05529,1084,EX_tsul_m
+n2_m,Nitrogen,28.0134,0,2,,,,,EX_n2_m
+2omfuc_m,2-o-methylfucose (rare sugar in rhamnogalacturonan II),178.18306,7,0,,,,444792,EX_2omfuc_m
+2omxyl_m,2-O-methylxylose (rare sugar in rhamnogalacturonan II),164.15648,6,0,,,,,EX_2omxyl_m
+3ddlhept_m,3-deoxy-d-lyxo-heptulosaric acid (rare sugar in rhamnogalacturonan II),221.14156,7,0,,,,3082831,EX_3ddlhept_m
+acerA_m,Aceric acid (3-C-carboxy-5-deoxy-l-xylose) (rare sugar in rhamnogalacturonan II),177.13206,6,0,,,,,EX_acerA_m
+apio_D_m,D-Apiose (rare sugar in rhamnogalacturonan II),150.1299,5,0,,,C01488,,EX_apio_D_m
+kdo_m,3-Deoxy-D-manno-2-octulosonate,237.18402,8,0,,,,,EX_kdo_m
+mannan_m,"Alpha-mannan, yeast, has a MW of about 25000 (PMID: 5461381), equals ~ 140 mannose units. ID according to iMM904",22717.69928,840,0,,,,,EX_mannan_m
+rhamnogalurII_m,"Wine rhamnogalacturonan II, MW ~ 5-10 kDa, 37% galur, 16% rmn, 3% fuc-L, 11% arab-L, 6% gal, 5% glcur, 4% 2omfuc, 3% 2omxyl, 6% ... <Preview truncated at 128 characters>",8623.7614,317,0,,,,,EX_rhamnogalurII_m
+agal1b6agal_m,"Beta-1,6-N,N-diacetylgalactosamine",424.40032,16,2,,,,,EX_agal1b6agal_m
+dttp_m,dTTP,478.136503,10,2,HMDB01342,,C00459,64968,EX_dttp_m
+2hyoxplac_m,2-Hydroxyphenylacetate,151.13938,8,0,HMDB00669,"InChI=1/C8H8O3/c9-7-4-2-1-3-6(7)5-8(10)11/h1-4,9H,5H2,(H,10,11)",C05852,11970,EX_2hyoxplac_m
+acmana_m,N-acetyl-D-mannosamine,221.2078,8,1,HMDB01129,"InChI=1S/C8H15NO6/c1-4(12)9-5(2-10)7(14)8(15)6(13)3-11/h2,5-8,11,13-15H,3H2,1H3,(H,9,12)/t5-,6-,7-,8-/m0/s1",C00645,439281,EX_acmana_m
+glcn_m,D-gluconate,195.14734,6,0,HMDB00625,"InChI=1S/C6H12O7/c7-1-2(8)3(9)4(10)5(11)6(12)13/h2-5,7-11H,1H2,(H,12,13)/p-1/t2-,3-,4+,5-/m1/s1",C00257,10690,EX_glcn_m
+ala_D_m,D-alanine,89.09318,3,1,HMDB01310,"InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m1/s1",C00133,71080,EX_ala_D_m
+phenol_m,Phenol,94.11124,6,0,,,,,EX_phenol_m
+akg_m,2-Oxoglutarate,144.08226,5,0,HMDB00208,"InChI=1S/C5H6O5/c6-3(5(9)10)1-2-4(7)8/h1-2H2,(H,7,8)(H,9,10)/p-2",C00026,51,EX_akg_m
+lanost_m,lanosterol,426.71740000000005,30,0,HMDB01251,,C01724,246983,EX_lanost_m
+nmn_m,NMN,333.211221,11,2,HMDB00229,,C00455,14180,EX_nmn_m
+2ddglcn_m,2-Dehydro-3-deoxy-D-gluconate,177.13206,6,0,,,,,EX_2ddglcn_m
+etha_m,etha[c],62.09102,2,1,HMDB00149,"InChI=1S/C2H7NO/c3-1-2-4/h4H,1-3H2/p+1",C00189,700,EX_etha_m
+pime_m,Pimelate,158.1519,7,0,,,,,EX_pime_m
+HC00319_m,Malonate,102.04558,3,0,HMDB00691,"InChI=1S/C3H4O4/c4-2(5)1-3(6)7/h1H2,(H,4,5)(H,6,7)",C00383,867,EX_HC00319_m
+ser_D_m,D-serine,105.09258,3,1,HMDB03406,"InChI=1S/C3H7NO3/c4-2(1-5)3(6)7/h2,5H,1,4H2,(H,6,7)/t2-/m1/s1",C00740,71077,EX_ser_D_m
+34dhpha_m,"(3,4-dihydroxyphenyl)acetate",167.13878,8,0,HMDB01336,"InChI=1S/C8H8O4/c9-6-2-1-5(3-7(6)10)4-8(11)12/h1-3,9-10H,4H2,(H,11,12)/p-1",C01161,,EX_34dhpha_m
+3hphac_m,3-Hydroxyphenylacetate,151.13938,8,0,,,,,EX_3hphac_m
+chol_m,Choline,104.17076,5,1,HMDB00097,"InChI=1S/C5H14NO/c1-6(2,3)4-5-7/h7H,4-5H2,1-3H3/q+1",C00114,305,EX_chol_m
+tma_m,trimethylamine,60.1182,3,1,,,,,EX_tma_m
+tmao_m,Trimethylamine N-oxide,75.10966,3,1,,,,,EX_tmao_m
+bhb_m,(R)-3-hydroxybutyrate,103.09658,4,0,HMDB00011,"InChI=1S/C4H8O3/c1-3(5)2-4(6)7/h3,5H,2H2,1H3,(H,6,7)/p-1/t3-/m1/s1",C01089,,EX_bhb_m
+chols_m,Choline sulfate,183.22602,5,1,,,,,EX_chols_m
+crn_m,L-Carnitine,161.1989,7,1,HMDB00062,"InChI=1S/C7H15NO3/c1-8(2,3)5-6(9)4-7(10)11/h6,9H,4-5H2,1-3H3/t6-/m1/s1",C15025,10917,EX_crn_m
+oxa_m,oxalate(2-),88.019,2,0,HMDB02329,"InChI=1S/C2H2O4/c3-1(4)2(5)6/h(H,3,4)(H,5,6)/p-2",C00209,971,EX_oxa_m
+hom_L_m,L-homoserine,119.11916,4,1,HMDB00719,"InChI=1S/C4H9NO3/c5-3(1-2-6)4(7)8/h3,6H,1-2,5H2,(H,7,8)/t3-/m0/s1",C00263,12647,EX_hom_L_m
+34dhphe_m,L-dopa,197.18794,9,1,HMDB00181,"InChI=1S/C9H11NO4/c10-6(9(13)14)3-5-1-2-7(11)8(12)4-5/h1-2,4,6,11-12H,3,10H2,(H,13,14)/t6-/m0/s1",C00355,,EX_34dhphe_m
+5htrp_m,5-hydroxy-L-tryptophan,220.22458,11,2,HMDB00472,"InChI=1S/C11H12N2O3/c12-9(11(15)16)3-6-5-13-10-2-1-7(14)4-8(6)10/h1-2,4-5,9,13-14H,3,12H2,(H,15,16)/t9-/m0/s1",C01017,439280,EX_5htrp_m
+actn_R_m,(R)-Acetoin,88.10512,4,0,,,,,EX_actn_R_m
+diact_m,Diacetyl,86.08924,4,0,,,,,EX_diact_m
+dopa_m,dopaminium(1+),154.18637999999999,8,1,HMDB00073,"InChI=1S/C8H11NO2/c9-4-3-6-1-2-7(10)8(11)5-6/h1-2,5,10-11H,3-4,9H2/p+1",C03758,681,EX_dopa_m
+hista_m,histamium,112.15299999999999,5,3,HMDB00870,"InChI=1S/C5H9N3/c6-2-1-5-3-7-4-8-5/h3-4H,1-2,6H2,(H,7,8)/p+1",C00388,774,EX_hista_m
+srtn_m,serotonin(1+),177.22302,10,2,HMDB00259,"InChI=1S/C10H12N2O/c11-4-3-7-6-12-10-2-1-8(13)5-9(7)10/h1-2,5-6,12-13H,3-4,11H2/p+1",C00780,5202,EX_srtn_m
+trypta_m,tryptaminium,161.22362,10,2,HMDB00303,"InChI=1S/C10H12N2/c11-6-5-8-7-12-10-4-2-1-3-9(8)10/h1-4,7,12H,5-6,11H2/p+1",C00398,1150,EX_trypta_m
+5mthf_m,5-Methyltetrahydrofolate,458.44786,20,7,HMDB01396,,C00440,439234,EX_5mthf_m
+dpcoa_m,Dephospho-CoA,685.538342,21,7,HMDB01373,,C00882,444485,EX_dpcoa_m
+thf_m,"5,6,7,8-Tetrahydrofolate",443.41334,19,7,HMDB01846,,C00101,91443,EX_thf_m
+acac_m,acetoacetate,101.0807,4,0,HMDB00060,"InChI=1S/C4H6O3/c1-3(5)2-4(6)7/h2H2,1H3,(H,6,7)/p-1",C00164,96,EX_acac_m
+HC02194_m,Ursodiol,391.56406,24,0,HMDB00946,,C07880,,EX_HC02194_m
+uchol_m,Ursocholate,407.56346,24,0,HMDB00917,,C17644,,EX_uchol_m
+inost[e],myo-inositol,180.15588,6,0,HMDB00211,"InChI=1S/C6H12O6/c7-1-2(8)4(10)6(12)5(11)3(1)9/h1-12H/t1-,2-,3-,4+,5-,6-",C00137,892,EX_inost(e)
+no[e],Nitric oxide,30.0061,0,1,HMDB03378,InChI=1S/NO/c1-2,C00533,145068,EX_no(e)
+ni2[e],nickel,58.6934,0,0,,,,,EX_ni2(e)
+Cit_Mg[e],Citrate-Mg,213.4047,6,0,,,,,EX_Cit_Mg(e)
+pppn[e],Phenylpropanoate,149.16656,9,0,,,,,EX_pppn(e)
+xtsn[e],xanthosine,284.22548,10,4,HMDB00299,,C01762,64959,EX_xtsn(e)
+inost_m,myo-inositol,180.15588,6,0,HMDB00211,"InChI=1S/C6H12O6/c7-1-2(8)4(10)6(12)5(11)3(1)9/h1-12H/t1-,2-,3-,4+,5-,6-",C00137,892,EX_inost_m
+no_m,Nitric oxide,30.0061,0,1,HMDB03378,InChI=1S/NO/c1-2,C00533,145068,EX_no_m
+ni2_m,nickel,58.6934,0,0,,,,,EX_ni2_m
+Cit_Mg_m,Citrate-Mg,213.4047,6,0,,,,,EX_Cit_Mg_m
+pppn_m,Phenylpropanoate,149.16656,9,0,,,,,EX_pppn_m
+xtsn_m,xanthosine,284.22548,10,4,HMDB00299,,C01762,64959,EX_xtsn_m
+HC02191[e],lithocholate,375.56466,24,0,HMDB00761,,C03990,9903,EX_HC02191(e)
+adchac[e],Allodeoxycholic acid,391.56406,24,0,,,C17687,,EX_adchac(e)
+alchac[e],Allolithocholic acid,375.56466,24,0,,,,,EX_alchac(e)
+dchac[e],deoxycholic acid,391.56406,24,0,HMDB00626,,C04483,222528,EX_dchac(e)
+dms[e],Dimethyl sulfide,62.13404,2,0,,,,,EX_dms(e)
+dmso[e],Dimethyl sulfoxide,78.13344,2,0,,,,,EX_dmso(e)
+tet[e],Tetrathionate,224.25639999999999,0,0,,,,,EX_tet(e)
+so3[e],Sulfite,80.0632,0,0,HMDB00240,"InChI=1S/H2O3S/c1-4(2)3/h(H2,1,2,3)/p-2",C00094,1100,EX_so3(e)
+HC02191_m,lithocholate,375.56466,24,0,HMDB00761,,C03990,9903,EX_HC02191_m
+adchac_m,Allodeoxycholic acid,391.56406,24,0,,,C17687,,EX_adchac_m
+alchac_m,Allolithocholic acid,375.56466,24,0,,,,,EX_alchac_m
+dchac_m,deoxycholic acid,391.56406,24,0,HMDB00626,,C04483,222528,EX_dchac_m
+dms_m,Dimethyl sulfide,62.13404,2,0,,,,,EX_dms_m
+dmso_m,Dimethyl sulfoxide,78.13344,2,0,,,,,EX_dmso_m
+tet_m,Tetrathionate,224.25639999999999,0,0,,,,,EX_tet_m
+so3_m,Sulfite,80.0632,0,0,HMDB00240,"InChI=1S/H2O3S/c1-4(2)3/h(H2,1,2,3)/p-2",C00094,1100,EX_so3_m
+n2o[e],Nitrous oxide,44.0128,0,2,,,,,EX_n2o(e)
+n2o_m,Nitrous oxide,44.0128,0,2,,,,,EX_n2o_m
+ch4s[e],Methanethiol,48.107459999999996,1,0,HMDB03227,"InChI=1S/CH4S/c1-2/h2H,1H3",C00409,878,EX_ch4s(e)
+mobd[e],Molybdate,159.9376,0,0,,,,,EX_mobd(e)
+phpyr[e],keto-phenylpyruvate,163.15008,9,0,HMDB00205,"InChI=1S/C9H8O3/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5H,6H2,(H,11,12)/p-1",C00166,997,EX_phpyr(e)
+ch4s_m,Methanethiol,48.107459999999996,1,0,HMDB03227,"InChI=1S/CH4S/c1-2/h2H,1H3",C00409,878,EX_ch4s_m
+mobd_m,Molybdate,159.9376,0,0,,,,,EX_mobd_m
+phpyr_m,keto-phenylpyruvate,163.15008,9,0,HMDB00205,"InChI=1S/C9H8O3/c10-8(9(11)12)6-7-4-2-1-3-5-7/h1-5H,6H2,(H,11,12)/p-1",C00166,997,EX_phpyr_m
+4hoxpacd[e],(4-hydroxyphenyl)acetaldehyde,136.14792,8,0,HMDB03767,"InChI=1S/C8H8O2/c9-6-5-7-1-3-8(10)4-2-7/h1-4,6,10H,5H2",C03765,440113,EX_4hoxpacd(e)
+4hphac[e],4-hydroxyphenylacetate,151.13938,8,0,HMDB00020,"InChI=1S/C8H8O3/c9-7-3-1-6(2-4-7)5-8(10)11/h1-4,9H,5H2,(H,10,11)/p-1",C00642,127,EX_4hphac(e)
+Lkynr[e],L-kynurenine,208.21388,10,2,HMDB00684,"InChI=1S/C10H12N2O3/c11-7-4-2-1-3-6(7)9(13)5-8(12)10(14)15/h1-4,8H,5,11-12H2,(H,14,15)/t8-/m0/s1",C00328,161166,EX_Lkynr[e]
+cynt[e],Cyanate,42.0168,1,1,HMDB02078,InChI=1S/CHNO/c2-1-3/h3H/p-1,C01417,540,EX_cynt(e)
+galct_D[e],D-Galactarate,208.12292,6,0,,,,,EX_galct_D(e)
+galctn_D[e],D-Galactonate,195.14734,6,0,,,,,EX_galctn_D(e)
+glcr[e],D-glucarate(2-),208.12292,6,0,HMDB00663,"InChI=1S/C6H10O8/c7-1(3(9)5(11)12)2(8)4(10)6(13)14/h1-4,7-10H,(H,11,12)(H,13,14)/p-2/t1-,2-,3-,4+/m0/s1",C00818,33037,EX_glcr(e)
+dhcinnm[e],"2,3-dihydroxicinnamic acid",179.14948,9,0,,,,,EX_dhcinnm(e)
+dhpppn[e],"3-(2,3-Dihydroxyphenyl)propanoate",181.16536,9,0,,,,,EX_dhpppn(e)
+4hoxpacd_m,(4-hydroxyphenyl)acetaldehyde,136.14792,8,0,HMDB03767,"InChI=1S/C8H8O2/c9-6-5-7-1-3-8(10)4-2-7/h1-4,6,10H,5H2",C03765,440113,EX_4hoxpacd_m
+4hphac_m,4-hydroxyphenylacetate,151.13938,8,0,HMDB00020,"InChI=1S/C8H8O3/c9-7-3-1-6(2-4-7)5-8(10)11/h1-4,9H,5H2,(H,10,11)/p-1",C00642,127,EX_4hphac_m
+Lkynr_m,L-kynurenine,208.21388,10,2,HMDB00684,"InChI=1S/C10H12N2O3/c11-7-4-2-1-3-6(7)9(13)5-8(12)10(14)15/h1-4,8H,5,11-12H2,(H,14,15)/t8-/m0/s1",C00328,161166,EX_Lkynr_m
+cynt_m,Cyanate,42.0168,1,1,HMDB02078,InChI=1S/CHNO/c2-1-3/h3H/p-1,C01417,540,EX_cynt_m
+galct_D_m,D-Galactarate,208.12292,6,0,,,,,EX_galct_D_m
+galctn_D_m,D-Galactonate,195.14734,6,0,,,,,EX_galctn_D_m
+glcr_m,D-glucarate(2-),208.12292,6,0,HMDB00663,"InChI=1S/C6H10O8/c7-1(3(9)5(11)12)2(8)4(10)6(13)14/h1-4,7-10H,(H,11,12)(H,13,14)/p-2/t1-,2-,3-,4+/m0/s1",C00818,33037,EX_glcr_m
+dhcinnm_m,"2,3-dihydroxicinnamic acid",179.14948,9,0,,,,,EX_dhcinnm_m
+dhpppn_m,"3-(2,3-Dihydroxyphenyl)propanoate",181.16536,9,0,,,,,EX_dhpppn_m
+glutar[e],Glutarate,130.09874,5,0,HMDB00661,"InChI=1S/C5H8O4/c6-4(7)2-1-3-5(8)9/h1-3H2,(H,6,7)(H,8,9)",C00489,3772,EX_glutar(e)
+h2o2[e],Hydrogen peroxide,34.01468,0,0,HMDB03125,InChI=1S/H2O2/c1-2/h1-2H,C00027,784,EX_h2o2(e)
+glutar_m,Glutarate,130.09874,5,0,HMDB00661,"InChI=1S/C5H8O4/c6-4(7)2-1-3-5(8)9/h1-3H2,(H,6,7)(H,8,9)",C00489,3772,EX_glutar_m
+h2o2_m,Hydrogen peroxide,34.01468,0,0,HMDB03125,InChI=1S/H2O2/c1-2/h1-2H,C00027,784,EX_h2o2_m
+oaa[e],Oxaloacetate,130.05568,4,0,HMDB00223,"InChI=1S/C4H4O5/c5-2(4(8)9)1-3(6)7/h1H2,(H,6,7)(H,8,9)/p-2",C00036,970,EX_oaa(e)
+13ppd[e],"Propane-1,3-diol",76.09442,3,0,,"InChI=1S/C3H8O2/c4-2-1-3-5/h4-5H,1-3H2",C02457,5477,EX_13ppd(e)
+ispre[e],Isoprene,68.11702,5,0,,,,,EX_isoprene(e)
+oaa_m,Oxaloacetate,130.05568,4,0,HMDB00223,"InChI=1S/C4H4O5/c5-2(4(8)9)1-3(6)7/h1H2,(H,6,7)(H,8,9)/p-2",C00036,970,EX_oaa_m
+13ppd_m,"Propane-1,3-diol",76.09442,3,0,,"InChI=1S/C3H8O2/c4-2-1-3-5/h4-5H,1-3H2",C02457,5477,EX_13ppd_m
+ispre_m,Isoprene,68.11702,5,0,,,,,EX_ispre_m
+gtp[e],GTP,519.148663,10,5,HMDB01273,,C00044,6830,EX_gtp(e)
+nadp[e],Nicotinamide adenine dinucleotide phosphate,740.381183,21,7,HMDB00217,,C00006,5886,EX_nadp(e)
+gtp_m,GTP,519.148663,10,5,HMDB01273,,C00044,6830,EX_gtp_m
+nadp_m,Nicotinamide adenine dinucleotide phosphate,740.381183,21,7,HMDB00217,,C00006,5886,EX_nadp_m
+3hcinnm[e],3-hydroxycinnamic acid,163.15008,9,0,,,,,EX_3hcinnm(e)
+3hpppn[e],3-(3-hydroxy-phenyl)propionate,165.16595999999998,9,0,,,,,EX_3hpppn(e)
+fuc1p_L[e],L-Fucose 1-phosphate,242.120501,6,0,HMDB01265,,C02985,439871,EX_fuc1p_L(e)
+g6p[e],D-Glucose 6-phosphate,258.11990099999997,6,0,HMDB01401,,C00092,5958,EX_g6p(e)
+man6p[e],D-Mannose 6-phosphate,258.11990099999997,6,0,HMDB01078,,C00275,65127,EX_man6p(e)
+3hcinnm_m,3-hydroxycinnamic acid,163.15008,9,0,,,,,EX_3hcinnm_m
+3hpppn_m,3-(3-hydroxy-phenyl)propionate,165.16595999999998,9,0,,,,,EX_3hpppn_m
+fuc1p_L_m,L-Fucose 1-phosphate,242.120501,6,0,HMDB01265,,C02985,439871,EX_fuc1p_L_m
+g6p_m,D-Glucose 6-phosphate,258.11990099999997,6,0,HMDB01401,,C00092,5958,EX_g6p_m
+man6p_m,D-Mannose 6-phosphate,258.11990099999997,6,0,HMDB01078,,C00275,65127,EX_man6p_m
+15dap[e],"1,5-Diaminopentane",104.19394,5,2,,,,,EX_15dap(e)
+btoh[e],butanol,74.1216,4,0,,,C06142,,EX_btoh(e)
+15dap_m,"1,5-Diaminopentane",104.19394,5,2,,,,,EX_15dap_m
+btoh_m,butanol,74.1216,4,0,,,C06142,,EX_btoh_m
+ph2s[e],Polysulfide,66.14587999999999,0,0,,,,,EX_ph2s(e)
+ph2s_m,Polysulfide,66.14587999999999,0,0,,,,,EX_ph2s_m
+starch1200[e],"starch n=1200 repeat units (300 repeat units amylose, 900 repeat units amylopectin, corresponds to potatoe starch)",194586.73528,7200,0,,,,,EX_starch1200(e)
+starch1200_m,"starch n=1200 repeat units (300 repeat units amylose, 900 repeat units amylopectin, corresponds to potatoe starch)",194586.73528,7200,0,,,,,EX_starch1200_m
+icit[e],Isocitrate,189.0997,6,0,HMDB00193,"InChI=1S/C6H8O7/c7-3(8)1-2(5(10)11)4(9)6(12)13/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13)/p-3",C00311,1198,EX_icit[e]
+sbt_L[e],L-Sorbitol (iMM904),182.17176,6,0,,,C01722,,EX_sbt_L(e)
+5mta[e],5-Methylthioadenosine,297.3335,11,5,HMDB01173,,C00170,439176,EX_5mta(e)
+btd_RR[e],R_R__2_3_Butanediol,90.121,4,0,,,,,EX_btd_RR(e)
+lyx_L[e],L-Lyxose,150.1299,5,0,,,,,EX_lyx_L(e)
+icit_m,Isocitrate,189.0997,6,0,HMDB00193,"InChI=1S/C6H8O7/c7-3(8)1-2(5(10)11)4(9)6(12)13/h2,4,9H,1H2,(H,7,8)(H,10,11)(H,12,13)/p-3",C00311,1198,EX_icit_m
+sbt_L_m,L-Sorbitol (iMM904),182.17176,6,0,,,C01722,,EX_sbt_L_m
+5mta_m,5-Methylthioadenosine,297.3335,11,5,HMDB01173,,C00170,439176,EX_5mta_m
+btd_RR_m,R_R__2_3_Butanediol,90.121,4,0,,,,,EX_btd_RR_m
+lyx_L_m,L-Lyxose,150.1299,5,0,,,,,EX_lyx_L_m
