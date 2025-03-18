@@ -255,8 +255,26 @@ summary(significant_spearman_p)
 
 average rho values across all taxa within the same folder
 
+-   I arranged these in descending order of mean rho, but the highest rho often means there is only 1 significant taxa with a strong prediction...
+
+-   How do I actually want to weight significant taxa vs. total taxa - fraction of total vs amount of significant taxa?
+
+-   Do I look at all taxa within each time point separately?
+
 ```{r}
+#for all Spearman coefficients
 avg_rho_by_folder <- spearman_results %>% 
+  group_by(folder_name, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
+  #mean and median rho indicates predictive strength across all taxa
+  #mean is more sensitive to outliers than median, so just looking at both
+  summarise(mean_rho = mean(estimate, na.rm=TRUE),
+            median_rho = median(estimate, na.rm=TRUE), 
+            significant_taxa = sum(p.value < 0.05), 
+            total_taxa = n()) %>% 
+  arrange(desc(mean_rho)) 
+
+#for only significant Spearman coefficients
+avg_significant_rho_by_folder <- significant_spearman_p %>% 
   group_by(folder_name, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
   #mean and median rho indicates predictive strength across all taxa
   summarise(mean_rho = mean(estimate, na.rm=TRUE),
@@ -265,48 +283,149 @@ avg_rho_by_folder <- spearman_results %>%
             total_taxa = n()) %>% 
   arrange(desc(mean_rho))
 
-summary(avg_rho_by_folder)
+# summary(avg_rho_by_folder)
+# summary(avg_significant_rho_by_folder)
+```
+
+```{r}
+ranked_parameters <- spearman_results %>%
+  mutate(significant = p.value < 0.05) %>%
+  group_by(folder_name, subject_id, diet, tradeoff) %>%
+  summarise(
+    significant_count = sum(significant),
+    total_taxa = n(),
+    mean_rho = mean(estimate, na.rm=TRUE),
+    median_p = median(p.value, na.rm=TRUE)
+  ) %>%
+  arrange(desc(mean_rho), desc(significant_count))
+
+```
+
+Trying to generate a comprehensive performance summary based on significant, positively correlated values
+
+```{r}
+performance_summary <- spearman_results %>%
+  mutate(significant = p.value < 0.05, 
+         positive = estimate > 0, 
+         significant_positive = significant & positive) %>%  
+  group_by(folder_name, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>%
+  summarise(
+    mean_rho = mean(estimate[significant_positive], na.rm = TRUE),                
+    median_rho = median(estimate[significant_positive], na.rm = TRUE),              
+    significant_positive_taxa = sum(significant_positive),                      
+    total_taxa = n(),                                        
+    percent_significant_positive = (significant_positive_taxa / total_taxa)*100 
+  ) %>%
+  #only want positive rho values 
+  filter(significant_positive_taxa > 0) %>% 
+  arrange(desc(percent_significant_positive), desc(median_rho))      
 ```
 
 quantify which parameters perform better than others
 
-```{r, fig.width=10, fig.height=20}
-avg_rho_by_folder %>%
-  filter(subject_id == "M02", date_vs_onset_illness == "before") %>% 
-  ggplot(aes(x = reorder(folder_name, mean_rho), y = mean_rho, fill = diet)) +
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  labs(x = "Parameter Combination", y = "Mean of Spearman's rho across all genera",
-       title = "Ranking MICOM Parameter Sets by Predictive Accuracy (Mean rho)") +
-  theme_minimal()
+-   I want to be able to make a list of parameters/folder that works best for each subject
 
-avg_rho_by_folder
+```{r, fig.width=10, fig.height=12}
+spearman_performance_summary_plot_M01 <- performance_summary %>%
+  filter(subject_id == "M01", date_vs_onset_illness == "after") %>% 
+  ggplot(aes(x = reorder(folder_name, percent_significant_positive), 
+             y = percent_significant_positive, 
+             fill = median_rho)) +
+  geom_bar(stat = "identity", color = "black") +
+  coord_flip() +
+  scale_fill_gradient(low = "lightyellow", high = "darkgreen") +
+  labs(
+    x = "Parameter Combination (folder_name)", 
+    y = "% Significant Positive Correlations",
+    fill = "Median Rho",
+    title = "Ranking MICOM Parameter Sets by Predictive Accuracy",
+    subtitle = "Subject M01 after onset of illness\nRanked by % Significant Positive Taxa\nColor intensity indicates Median Positive Spearman's rho"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "right")
+
+spearman_performance_summary_plot_M01
 ```
 
-## Graphing
+```{r, fig.width=10, fig.height=12}
+spearman_performance_summary_plot_F01 <- performance_summary %>%
+  filter(subject_id == "F01", date_vs_onset_illness == "after") %>% 
+  ggplot(aes(x = reorder(folder_name, percent_significant_positive), 
+             y = percent_significant_positive, 
+             fill = median_rho)) +
+  geom_bar(stat = "identity", color = "black") +
+  coord_flip() +
+  scale_fill_gradient(low = "lightyellow", high = "darkgreen") +
+  labs(
+    x = "Parameter Combination (folder_name)", 
+    y = "% Significant Positive Correlations",
+    fill = "Median Rho",
+    title = "Ranking MICOM Parameter Sets by Predictive Accuracy",
+    subtitle = "Subject F01: Ranked by % Significant Positive Taxa\nColor intensity indicates Median Positive Spearman's rho"
+  ) +
+  theme_minimal() +
+  theme(legend.position = "right")
 
-```{r, fig.width=10, fig.height=20}
+spearman_performance_summary_plot_F01
+```
 
-clr_actual_vs_micom_rate <- sim_real_data %>% 
-  filter(subject_id == "F01", diet == "wd", model_db == "agora201", date_vs_onset_illness ==  "before", tradeoff == "09") %>% 
-  ggplot(aes(x = growth_rate, y = clr_change_abund)) + 
-  geom_point(alpha=0.3) + 
-  geom_smooth(method="lm") + 
-  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
-  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) + 
-  facet_grid2(taxon~tradeoff, scales = "free", independent="x") + 
-  theme_bw(base_size=14) + 
-  theme(axis.text = element_text(size=10), 
-        panel.spacing.x = unit(1, "line"), 
-        strip.text.y = element_text(size = 9)) + 
-  labs(x = "MICOM-predicted Growth Rate", y = "CLR-transformed Change in Abundance", title = "MICOM Growth Rate Prediction vs. Actual Abundance Changes")
+Want to automate graphical representations for each subject both before and after onset of illness
 
-clr_actual_vs_micom_rate
+```{r, fig.width=10, fig.height=15}
+#define the categories I want to cycle through
+#unique() returns a vector, df, or array like x but with duplicate elements removed
+subjects <- unique(performance_summary$subject_id)
+onset_timing <- unique(performance_summary$date_vs_onset_illness)
+
+#create and store the plots in a nested list like my data from earlier
+#expand.grid() creates a df from all combinations of supplied vectors 
+predictive_accuracy_plots <- expand.grid(subject = subjects, onset = onset_timing) %>% 
+#pmap maps in parallel 
+  pmap(function(subject, onset) {
+    performance_summary %>% 
+      filter(subject_id == subject, 
+             date_vs_onset_illness == onset) %>% 
+      ggplot(aes(x = reorder(folder_name, percent_significant_positive), 
+                 y = percent_significant_positive, 
+                 fill = median_rho)) +
+      #makes bar plot with actual data values (percent_significant_positive)
+      #default is stat = "counts"
+      geom_bar(stat = "identity", color = "black") +
+      #put folder names on the side for easier readability
+      coord_flip() +
+      scale_fill_gradient(low = "lightyellow",
+                          high = "darkgreen") +
+      labs(x = "Parameter Combination (folder_name)", 
+        y = "% Significant Positive Correlations",
+        fill = "Median Rho",
+        title = paste("MICOM Parameter Rankings for ", subject),
+        subtitle = paste("Time relative to illness onset: ", onset,
+                         "\nRanked by % Significant Positive Taxa; color = Median Rho")
+      ) +
+      theme_minimal() +
+      theme(legend.position = "right")
+    
+  })
+
+#name the plots
+names(predictive_accuracy_plots) <- expand.grid(
+  subject = subjects, onset = onset_timing) %>%
+  mutate(plot_name = paste(subject, onset, sep = "_")) %>%
+  pull(plot_name)
+```
+
+```{r}
+predictive_accuracy_plots$M01_before
+predictive_accuracy_plots$M01_after
+predictive_accuracy_plots$F01_before
+predictive_accuracy_plots$F01_after
+predictive_accuracy_plots$M02_before
+predictive_accuracy_plots$M02_after
 ```
 
 # I AM HERE
 
-## Modeling Growth Rate
+want to try linear modeling next to account for more than just monotonic relationships like Spearman
 
 ```{r echo =FALSE}
 source("~/Tools/Madi_Code/art_lmer_functions.R")
@@ -368,29 +487,29 @@ summary(sim_real_growth_model1)
 Plotting
 
 ```{r, fig.width=10, fig.height=20}
-growth_rate_vs_fold_change <- sim_real_data %>% 
-  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
-    geom_point(aes(color= sampling_date)) + 
-    geom_smooth(method = "lm") +
-    facet_wrap(~taxon, scales = "free", ncol = 3) +
-    theme_bw(base_size = 16) +
-    labs(x = "Growth Rate",
-         y = "Log2 Fold Change",
-         title = "MICOM Growth Rate vs. Actual Log2FC Abundance")
-
-
-growth_rate_vs_fold_change2 <- sim_real_data %>% 
-  #filter(diet != "vmhfat") %>% 
-  ggplot(aes(x = growth_rate, y = log2FC_abund)) +
-  geom_point(alpha=0.3) +
-  geom_smooth(method="lm") +
-  scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
-  scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
-  facet_grid2(taxon~solver, scales = "free", independent = "x", shrink = TRUE) +
-  theme_bw(base_size=14) +
-  theme(axis.text = element_text(size=10), 
-        panel.spacing.x = unit(1, "line"), 
-        strip.text.y = element_text(size = 9))
-
-growth_rate_vs_fold_change2
+# growth_rate_vs_fold_change <- sim_real_data %>% 
+#   ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+#     geom_point(aes(color= sampling_date)) + 
+#     geom_smooth(method = "lm") +
+#     facet_wrap(~taxon, scales = "free", ncol = 3) +
+#     theme_bw(base_size = 16) +
+#     labs(x = "Growth Rate",
+#          y = "Log2 Fold Change",
+#          title = "MICOM Growth Rate vs. Actual Log2FC Abundance")
+# 
+# 
+# growth_rate_vs_fold_change2 <- sim_real_data %>% 
+#   #filter(diet != "vmhfat") %>% 
+#   ggplot(aes(x = growth_rate, y = log2FC_abund)) +
+#   geom_point(alpha=0.3) +
+#   geom_smooth(method="lm") +
+#   scale_x_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+#   scale_y_continuous(labels=scales::label_number(drop0trailing=TRUE)) +
+#   facet_grid2(taxon~solver, scales = "free", independent = "x", shrink = TRUE) +
+#   theme_bw(base_size=14) +
+#   theme(axis.text = element_text(size=10), 
+#         panel.spacing.x = unit(1, "line"), 
+#         strip.text.y = element_text(size = 9))
+# 
+# growth_rate_vs_fold_change2
 ```
