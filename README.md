@@ -2,7 +2,7 @@
 using time series data to test micom's ability to predict growth 
 
 ## To Do:
-  - [ ] Recreate directory structure
+  - [x] Recreate directory structure
   - [x] Write thorough documentation about workflow
   - [ ] Tidy up scripts
   - [ ] Update documentation 
@@ -82,10 +82,12 @@ flowchart TD
     B --> D
     C --> E
     D --> E
+    E --> F
 
     A[time_series_data_wrangling_w_parser.py]
     B[silva_taxonomy_mapping.py]
     C[calculate_actual_growth_rates.py]
     D[simulate_growth_rates.py]
-    E[micom_time_series_comparison.qmd]
+    E[combine_sim_and_real_data.r]
+    F[currently working on: micom_time_series_validation.qmd]
 ```
