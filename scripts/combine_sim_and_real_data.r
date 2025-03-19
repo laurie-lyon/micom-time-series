@@ -149,4 +149,8 @@ sim_real_data <- sim_real_data %>%
     sample_id < sick_day ~ "before",
     sample_id >= sick_day ~ "after"
   ))
-  #------------------------------------------------------------------------
+#------------------------------------------------------------------------
+# FINAL STEP: Save sim_real_data to a .csv file
+#------------------------------------------------------------------------
+# Save sim_real_data to a .csv file for downstream analysis
+write_csv(sim_real_data, "../data/combined_sim_real_data.csv")
