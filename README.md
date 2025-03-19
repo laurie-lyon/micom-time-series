@@ -86,8 +86,8 @@ flowchart TD
 
     A[time_series_data_wrangling_w_parser.py]
     B[silva_taxonomy_mapping.py]
-    C[calculate_actual_growth_rates_genus_clr.py]
-    D[simulate_growth_rates.py]
+    C[calculate_actual_growth_rates_genus_clr.py via calculate_actual_growth_rates_genus.sh]
+    D[simulate_growth_rates.py via simulate_growth_loop.sh + diet_config.sh]
     E[combine_sim_and_real_data.r]
     F[currently working on: micom_time_series_validation.qmd]
 ```
