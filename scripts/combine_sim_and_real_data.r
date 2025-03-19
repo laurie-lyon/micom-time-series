@@ -24,7 +24,7 @@ subject_ids <- c("F01", "M01", "M02")
 # Use map_dfr (from purrr package) to read, transform, and combine dataframes
 actual_clr_long_combined <- map_dfr(subject_ids, function(subject) {
   # Read each subject's file (wide format dataframe) from folder
-  df_wide <- read_csv(paste0("../data/actual_growth_rates_genus_clr/",
+  df_wide <- read_csv(paste0("./data/actual_growth_rates_genus_clr/",
                              subject,
                              "_clr_actual_growth_rates_by_genus.csv"),
                       show_col_types = FALSE)
@@ -54,12 +54,12 @@ actual_clr_long_combined <- map_dfr(subject_ids, function(subject) {
 
 # grab list of all .zip files with the pattern we want
 #(all should start with growth_)
-zip_list <- Sys.glob("../data/growth_rates/growth*.zip")
+zip_list <- Sys.glob("./data/growth_rates/growth*.zip")
 # remove .zip from the end to get the unzipped folder basename
 folder_list <- gsub(basename(zip_list), pattern = ".zip", replacement = "")
 
 # establish pattern for file recognition in for loop
-growth_file_pattern <- "../data/growth_rates/{folder_name}/growth_rates.csv"
+growth_file_pattern <- "./data/growth_rates/{folder_name}/growth_rates.csv"
 
 # populate an empty list with dataframes
 growth_df_list <- list()
@@ -153,4 +153,5 @@ sim_real_data <- sim_real_data %>%
 # FINAL STEP: Save sim_real_data to a .csv file
 #------------------------------------------------------------------------
 # Save sim_real_data to a .csv file for downstream analysis
-write_csv(sim_real_data, "../data/combined_sim_real_data.csv")
+write_csv(sim_real_data, "./data/combined_sim_real_data.csv")
+print("Combination complete. Data saved to ./data/combined_sim_real_data.csv")
