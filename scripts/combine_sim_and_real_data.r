@@ -102,8 +102,8 @@ micom_rates <- growth_df %>%
 # This step is optional and can be commented out if not desired
 # This step is useful for reducing the number of taxa to plot
 
-#set a prevalence threshold (0.90 = taxa present in 90% of samples)
-prevalence_threshold <- 0.90
+#set a prevalence threshold (0.50 = taxa present in 50% of samples)
+prevalence_threshold <- 0.50
 
 prevalent_micom_rates <- micom_rates %>%
   group_by(folder_name) %>%
@@ -153,5 +153,5 @@ sim_real_data <- sim_real_data %>%
 # FINAL STEP: Save sim_real_data to a .csv file
 #------------------------------------------------------------------------
 # Save sim_real_data to a .csv file for downstream analysis
-write_csv(sim_real_data, "./data/combined_sim_real_data.csv")
+write_csv(sim_real_data, "./data/combined_sim_real_data_50.csv")
 print("Combination complete. Data saved to ./data/combined_sim_real_data.csv")
