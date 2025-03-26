@@ -5,3 +5,4 @@ data/*
 !data/interpolated_bioms
 !data/actual_growth_rates_genus_clr
 !data/growth_rates/growth_F01*
+*broken*

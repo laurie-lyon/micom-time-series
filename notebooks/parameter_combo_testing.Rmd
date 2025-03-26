@@ -1,0 +1,287 @@
+---
+title: "parameter_combo_testing"
+author: "Laurie Lyon"
+date: "2025-03-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Comparison of MICOM-predicted growth rates and measured changes in relative abundance from time series data
+
+Load in libraries
+
+```{r}
+library(cowplot) # to plot grid
+library(glue) # to format and interpolate a string
+library(lme4) # for linear modeling 
+library(tidyverse) 
+library(ggh4x) # ggplot2 extension, includes nested facets
+library(broom)
+```
+
+Load in combined data generated from combine_sim_and_real_data.r (within data folder of micom-time-series project folder)
+
+Choosing file generated from 50% prevalence value cutoff (taxon present in at least half of all sampling timepoints)
+
+```{r}
+sim_real_data <- read.csv("./data/combined_sim_real_data.csv", sep = ",")
+```
+
+## Measuring Spearman Correlation
+
+Goal: I want to see the correlation between micom predicted growth rates and actual CLR-transformed changes in abundance
+
+Using Spearman Correlation as a nonparametric alternative to measuring monotonic correlation between samples
+
+Plan of attack:
+
+-   can I write a for loop to cycle though all of these combinations - top level: folder_name/parameters, further nested by taxon, possibly further nested by before vs. after onset of illness?
+
+-   how can I extract the values that I want from the Spearman test. Do I filter first by significance?
+
+-   Can I average the rho values across all the taxa in a single folder?
+
+-   How can I quantify what parameters are performing better than others
+
+    -   rank by p-value and rho, count instances of each parameter and where they fall in the ranking?
+
+### Spearman results for all genera, all samples, all parameter combinations
+
+-   further split by date_vs_onset_illness to see if there are differences between the "undisturbed" and "disturbed" gut parameters in this dataset
+
+-   usig group_by and broom to cycle through parameter combinations and taxa
+
+```{r}
+spearman_results <- sim_real_data %>% 
+  #group by folder_name and taxon then perform spearman correlation tests systematically 
+  group_by(folder_name, taxon, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
+  #nest rows into a list-column of dfs, each unique group has its own df with all rows belonging to that group (data column)
+  nest() %>% 
+  #first filter groups with non-zero variance (was causing errors in several samples)
+  #map() applies a function to each element of a vector (map_dbl return a vector of type dbl)
+  mutate(
+    var_growth = map_dbl(data, ~ sd(.x$growth_rate, na.rm=TRUE)), 
+    var_abund = map_dbl(data, ~sd(.x$clr_change_abund, na.rm=TRUE))
+  ) %>% 
+  #removes zero variance cases
+  filter(var_growth > 0 & var_abund > 0) %>% 
+  mutate(
+    #map applies a function to each element of a vector
+    spearman = map(data, ~ cor.test(.x$growth_rate, 
+                                    .x$clr_change_abund, 
+                                    method = "spearman", 
+                                    #received warning about computing exact p-value with ties
+                                    #default to approx. p-values to deal with this
+                                    exact = FALSE)),
+    #extracts the rho and p-values from spearman with broom::tidy()
+    tidy_results = map(spearman, tidy)
+  ) %>% 
+  #extract tidy results into a new df 
+  unnest(tidy_results) %>% 
+  select(-data, -spearman, -var_growth, -var_abund)
+
+nrow(spearman_results)
+# summary(spearman_results)
+```
+
+But how many of these are statistically significant?
+
+-   in this example, just over 10% are statistically significant
+
+```{r}
+spearman_significant_p <- spearman_results %>% 
+  filter(p.value < 0.05)
+
+nrow(spearman_significant_p)
+
+significant_p_percentage <- (nrow(spearman_significant_p)/nrow(spearman_results))*100
+```
+
+### Performance Summary - Spearman Correlations
+
+I want a type of summary that tells me how many of these correlations are statistically significant (p \< 0.05), and of these, how many are positive vs. negatively correlated (positive or negative rho value)
+
+```{r}
+spearman_significant_p_summary <- spearman_results %>% 
+  #add columns for significance and directionality
+  mutate(significant = p.value < 0.05, 
+         positive = estimate > 0, 
+         negative = estimate < 0,
+         significant_positive = significant & positive, 
+         significant_negative = significant & negative)
+
+```
+
+```{r}
+spearman_performance_summary_temporal <- spearman_results %>% 
+  #add columns for significance and directionality
+  mutate(significant = p.value < 0.05, 
+         positive = estimate > 0, 
+         negative = estimate < 0,
+         significant_positive = significant & positive, 
+         significant_negative = significant & negative) %>% 
+  group_by(folder_name,
+           subject_id,
+           model_db,
+           diet,
+           tradeoff,
+           date_vs_onset_illness) %>%
+  summarise(
+    mean_rho = mean(estimate[significant_positive],
+                    na.rm = TRUE),
+    median_rho = median(estimate[significant_positive],
+                        na.rm = TRUE),
+    significant_taxa = sum(significant),
+    significant_positive_taxa = sum(significant_positive),
+    significant_negative_taxa = sum(significant_negative),
+    total_taxa = n(),
+    percent_significant = (significant_taxa / total_taxa)*100,
+    percent_significant_positive = (significant_positive_taxa /
+                                    total_taxa)*100,
+    percent_significant_negative = (significant_negative_taxa /
+                                    total_taxa)*100,
+    pos_to_neg_ratio = significant_positive_taxa / (significant_negative_taxa + 1),
+    pos_fraction = significant_positive_taxa /
+                 (significant_positive_taxa + significant_negative_taxa),
+    pos_minus_neg = significant_positive_taxa - significant_negative_taxa
+  ) %>%
+  #only want positive rho values
+  #filter(significant_positive_taxa > 0) %>%
+  arrange(desc(pos_minus_neg), desc(percent_significant_positive), desc(median_rho))
+```
+
+```{r}
+spearman_performance_summary <- spearman_results %>% 
+  #add columns for significance and directionality
+  mutate(significant = p.value < 0.05, 
+         positive = estimate > 0, 
+         negative = estimate < 0,
+         significant_positive = significant & positive, 
+         significant_negative = significant & negative) %>% 
+  group_by(folder_name,
+           subject_id,
+           model_db,
+           diet,
+           tradeoff) %>%
+  summarise(
+    mean_rho = mean(estimate[significant_positive],
+                    na.rm = TRUE),
+    median_rho = median(estimate[significant_positive],
+                        na.rm = TRUE),
+    significant_taxa = sum(significant),
+    significant_positive_taxa = sum(significant_positive),
+    significant_negative_taxa = sum(significant_negative),
+    total_taxa = n(),
+    percent_significant = (significant_taxa / total_taxa)*100,
+    percent_significant_positive = (significant_positive_taxa /
+                                    total_taxa)*100,
+    percent_significant_negative = (significant_negative_taxa /
+                                    total_taxa)*100,
+    pos_to_neg_ratio = significant_positive_taxa / (significant_negative_taxa + 1),
+    pos_fraction = significant_positive_taxa /
+                 (significant_positive_taxa + significant_negative_taxa),
+    pos_minus_neg = significant_positive_taxa - significant_negative_taxa
+  ) %>%
+  #only want positive rho values
+  #filter(significant_positive_taxa > 0) %>%
+  arrange(desc(pos_minus_neg), desc(percent_significant_positive), desc(median_rho))
+```
+
+### Graphing outcomes 
+
+```{r}
+#define the categories I want to cycle through
+#unique() returns a vector, df, or array like x but with duplicate elements removed
+subjects <- unique(spearman_performance_summary$subject_id)
+onset_timing <- unique(spearman_performance_summary$date_vs_onset_illness)
+
+#create and store the plots in a nested list like my data from earlier
+#expand.grid() creates a df from all combinations of supplied vectors 
+spearman_predictive_accuracy_plots <- expand.grid(subject = subjects, onset = onset_timing) %>% 
+#pmap maps in parallel 
+  pmap(function(subject, onset) {
+    spearman_performance_summary %>% 
+      filter(subject_id == subject, 
+             date_vs_onset_illness == onset,
+             pos_minus_neg > 0) %>% 
+      ggplot(aes(x = reorder(folder_name, significant_positive_taxa), 
+                 y = pos_minus_neg, 
+                 fill = median_rho)) +
+      #makes bar plot with actual data values (percent_significant_positive)
+      #default is stat = "counts"
+      geom_bar(stat = "identity", color = "black") +
+      #put folder names on the side for easier readability
+      coord_flip() +
+      scale_fill_gradient(low = "lightyellow",
+                          high = "darkgreen") +
+      labs(x = "Parameter Combination (folder_name)", 
+        y = "# Significant Positive Taxa - Significant Negative Taxa",
+        fill = "Median Rho",
+        title = paste("MICOM Parameter Rankings for ", subject),
+        subtitle = paste("Time relative to illness onset: ", onset,
+                         "\nRanked by # Significant Positive Taxa; color = Median Rho")
+      ) +
+      theme_minimal() +
+      theme(legend.position = "right")
+    
+  })
+
+#name the plots
+names(spearman_predictive_accuracy_plots) <- expand.grid(
+  subject = subjects, onset = onset_timing) %>%
+  mutate(plot_name = paste(subject, onset, sep = "_")) %>%
+  pull(plot_name)
+```
+
+```{r}
+# Define the unique subjects to iterate over
+subjects <- unique(spearman_performance_summary$subject_id)
+
+# Create and store the plots in a list using purrr::map
+spearman_predictive_accuracy_plots <- purrr::map(subjects, function(subject) {
+  spearman_performance_summary %>% 
+    filter(subject_id == subject, 
+           pos_minus_neg > 0) %>% 
+    ggplot(aes(x = reorder(folder_name, pos_minus_neg), 
+               y = percent_significant_positive, 
+               fill = median_rho)) +
+    geom_bar(stat = "identity", color = "black") +
+    coord_flip() +
+    scale_fill_gradient(low = "lightyellow",
+                        high = "darkgreen") +
+    labs(x = "Parameter Combination (folder_name)", 
+         y = "% Significant Positive Taxa",
+         fill = "Median Rho",
+         title = paste("MICOM Parameter Rankings for", subject),
+         subtitle = "Ranked by # Significant Positive - # Significant Negative Taxa
+         \n color = Median Rho"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "right")
+})
+
+# Name the plots with the subject id
+names(spearman_predictive_accuracy_plots) <- subjects
+```
+
+```{r}
+spearman_predictive_accuracy_plots$M02
+```
+
+```{r}
+M01_best_performing_condition <- spearman_results %>% 
+  filter(folder_name == "growth_M01_agora201_gurobi_wd_08")
+```
+
+```{r}
+F01_best_performing_condition <- spearman_results %>% 
+  filter(folder_name == "growth_F01_agora1_gurobi_wd_09")
+```
+
+```{r}
+M02_best_performing_condition <- spearman_results %>% 
+  filter(folder_name == "growth_M02_agora1_gurobi_vmhfat_07")
+```
