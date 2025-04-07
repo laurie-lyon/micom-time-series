@@ -2,13 +2,15 @@
 using time series data to test micom's ability to predict growth 
 
 ## To Do:
-  - [x] Recreate directory structure
-  - [x] Write thorough documentation about workflow
-  - [ ] Tidy up scripts
-  - [ ] Update documentation 
+  - [ ]Update simulate_growth_rates.py and simuate_growth_loop.py documentation
+  - [ ]Add generation of manifest file summary statistics for each folder of pickled models
+  - [ ]Generate list metabolites added to diet_sugg for each pickled model
+  - [ ]Clean up parameter_combo_testing.Rmd and make into executable R script
+  - [ ]Integrate workflow into snakemake 
+
 
 # Workflow
-![Alt text](./images/lucid-chart-workflow.png)
+![Alt text](./images/12_5_updated_flowchart.png)
 
 ## time_series_data_wrangling_w_parser.py
 - This script processes OTU tables and metadata for microbiome analysis by:

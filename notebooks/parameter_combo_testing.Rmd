@@ -27,7 +27,7 @@ Load in combined data generated from combine_sim_and_real_data.r (within data fo
 Choosing file generated from 50% prevalence value cutoff (taxon present in at least half of all sampling timepoints)
 
 ```{r}
-sim_real_data <- read.csv("./data/combined_sim_real_data.csv", sep = ",")
+sim_real_data <- read_csv("../data/combined_sim_real_data.csv")
 ```
 
 ## Measuring Spearman Correlation
@@ -180,9 +180,6 @@ spearman_performance_summary <- spearman_results %>%
                                     total_taxa)*100,
     percent_significant_negative = (significant_negative_taxa /
                                     total_taxa)*100,
-    pos_to_neg_ratio = significant_positive_taxa / (significant_negative_taxa + 1),
-    pos_fraction = significant_positive_taxa /
-                 (significant_positive_taxa + significant_negative_taxa),
     pos_minus_neg = significant_positive_taxa - significant_negative_taxa
   ) %>%
   #only want positive rho values
@@ -190,50 +187,50 @@ spearman_performance_summary <- spearman_results %>%
   arrange(desc(pos_minus_neg), desc(percent_significant_positive), desc(median_rho))
 ```
 
-### Graphing outcomes 
+### Graphing outcomes
 
 ```{r}
-#define the categories I want to cycle through
-#unique() returns a vector, df, or array like x but with duplicate elements removed
-subjects <- unique(spearman_performance_summary$subject_id)
-onset_timing <- unique(spearman_performance_summary$date_vs_onset_illness)
-
-#create and store the plots in a nested list like my data from earlier
-#expand.grid() creates a df from all combinations of supplied vectors 
-spearman_predictive_accuracy_plots <- expand.grid(subject = subjects, onset = onset_timing) %>% 
-#pmap maps in parallel 
-  pmap(function(subject, onset) {
-    spearman_performance_summary %>% 
-      filter(subject_id == subject, 
-             date_vs_onset_illness == onset,
-             pos_minus_neg > 0) %>% 
-      ggplot(aes(x = reorder(folder_name, significant_positive_taxa), 
-                 y = pos_minus_neg, 
-                 fill = median_rho)) +
-      #makes bar plot with actual data values (percent_significant_positive)
-      #default is stat = "counts"
-      geom_bar(stat = "identity", color = "black") +
-      #put folder names on the side for easier readability
-      coord_flip() +
-      scale_fill_gradient(low = "lightyellow",
-                          high = "darkgreen") +
-      labs(x = "Parameter Combination (folder_name)", 
-        y = "# Significant Positive Taxa - Significant Negative Taxa",
-        fill = "Median Rho",
-        title = paste("MICOM Parameter Rankings for ", subject),
-        subtitle = paste("Time relative to illness onset: ", onset,
-                         "\nRanked by # Significant Positive Taxa; color = Median Rho")
-      ) +
-      theme_minimal() +
-      theme(legend.position = "right")
-    
-  })
-
-#name the plots
-names(spearman_predictive_accuracy_plots) <- expand.grid(
-  subject = subjects, onset = onset_timing) %>%
-  mutate(plot_name = paste(subject, onset, sep = "_")) %>%
-  pull(plot_name)
+# #define the categories I want to cycle through
+# #unique() returns a vector, df, or array like x but with duplicate elements removed
+# subjects <- unique(spearman_performance_summary$subject_id)
+# onset_timing <- unique(spearman_performance_summary$date_vs_onset_illness)
+# 
+# #create and store the plots in a nested list like my data from earlier
+# #expand.grid() creates a df from all combinations of supplied vectors 
+# spearman_predictive_accuracy_plots <- expand.grid(subject = subjects, onset = onset_timing) %>% 
+# #pmap maps in parallel 
+#   pmap(function(subject, onset) {
+#     spearman_performance_summary %>% 
+#       filter(subject_id == subject, 
+#              date_vs_onset_illness == onset,
+#              pos_minus_neg > 0) %>% 
+#       ggplot(aes(x = reorder(folder_name, significant_positive_taxa), 
+#                  y = pos_minus_neg, 
+#                  fill = median_rho)) +
+#       #makes bar plot with actual data values (percent_significant_positive)
+#       #default is stat = "counts"
+#       geom_bar(stat = "identity", color = "black") +
+#       #put folder names on the side for easier readability
+#       coord_flip() +
+#       scale_fill_gradient(low = "lightyellow",
+#                           high = "darkgreen") +
+#       labs(x = "Parameter Combination (folder_name)", 
+#         y = "# Significant Positive Taxa - Significant Negative Taxa",
+#         fill = "Median Rho",
+#         title = paste("MICOM Parameter Rankings for ", subject),
+#         subtitle = paste("Time relative to illness onset: ", onset,
+#                          "\nRanked by # Significant Positive Taxa; color = Median Rho")
+#       ) +
+#       theme_minimal() +
+#       theme(legend.position = "right")
+#     
+#   })
+# 
+# #name the plots
+# names(spearman_predictive_accuracy_plots) <- expand.grid(
+#   subject = subjects, onset = onset_timing) %>%
+#   mutate(plot_name = paste(subject, onset, sep = "_")) %>%
+#   pull(plot_name)
 ```
 
 ```{r}
@@ -246,7 +243,7 @@ spearman_predictive_accuracy_plots <- purrr::map(subjects, function(subject) {
     filter(subject_id == subject, 
            pos_minus_neg > 0) %>% 
     ggplot(aes(x = reorder(folder_name, pos_minus_neg), 
-               y = percent_significant_positive, 
+               y = pos_minus_neg, 
                fill = median_rho)) +
     geom_bar(stat = "identity", color = "black") +
     coord_flip() +
@@ -268,7 +265,7 @@ names(spearman_predictive_accuracy_plots) <- subjects
 ```
 
 ```{r}
-spearman_predictive_accuracy_plots$M02
+spearman_predictive_accuracy_plots$M01
 ```
 
 ```{r}
@@ -284,4 +281,119 @@ F01_best_performing_condition <- spearman_results %>%
 ```{r}
 M02_best_performing_condition <- spearman_results %>% 
   filter(folder_name == "growth_M02_agora1_gurobi_vmhfat_07")
+```
+
+## EXTRA STUFF FOR PRESENTATION
+
+```{r}
+M01_2nd_best_performing_condition <- spearman_results %>% 
+  filter(folder_name == "growth_M01_agora201_gurobi_wd_09")
+
+M01_3rd_best_performing_condition <- spearman_results %>% 
+  filter(folder_name == "growth_M01_agora201_gurobi_vmhavg_09")
+```
+
+```{r}
+M01_best_filter <- sim_real_data %>% 
+  filter(folder_name =="growth_M01_agora201_gurobi_wd_08")
+
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+
+# Filter for one genus
+taxon_to_plot <- "Collinsella"
+
+df_taxon <- M01_best_filter %>%
+  filter(taxon == taxon_to_plot)
+
+# Spearman correlation
+cor_test <- cor.test(df_taxon$growth_rate, df_taxon$clr_change_abund, method = "spearman", exact = FALSE)
+
+# Extract rho and p-value
+rho <- round(cor_test$estimate, 2)
+pval <- signif(cor_test$p.value, 2)
+
+# Make the plot
+ggplot(df_taxon, aes(x = growth_rate, y = clr_change_abund)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", color = "steelblue") +
+  labs(
+    title = paste("Spearman ρ =", rho, "| p =", pval),
+    x = "MICOM-predicted growth rate",
+    y = "Change in CLR abundance"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+taxon_to_plot <- "Collinsella"
+
+df_taxon <- M01_best_filter %>%
+  filter(taxon == taxon_to_plot, date_vs_onset_illness == "before")
+
+cor_test <- cor.test(df_taxon$growth_rate, df_taxon$clr_change_abund, method = "spearman", exact = FALSE)
+
+rho <- round(cor_test$estimate, 2)
+pval <- signif(cor_test$p.value, 2)
+
+ggplot(df_taxon, aes(x = growth_rate, y = clr_change_abund)) +
+  geom_point(size = 2, alpha = 0.7) +
+  geom_smooth(method = "lm", se = FALSE, linetype = "dashed", color = "steelblue") +
+  labs(
+    title = paste("Before illness | Spearman ρ =", rho, "| p =", pval),
+    x = "MICOM-predicted growth rate",
+    y = "Change in CLR abundance"
+  ) +
+  theme_minimal()
+```
+
+```{r}
+library(ggplot2)
+library(dplyr)
+library(purrr)
+
+# Filter to only "before" illness onset
+df_before <- M01_best_filter %>%
+  filter(date_vs_onset_illness == "before")
+
+# Create output directory if it doesn't exist
+if (!dir.exists("../images")) {
+  dir.create("../images", recursive = TRUE)
+}
+
+# Function to create and save one plot per taxon
+plot_and_save_taxon <- function(taxon_name) {
+  df_taxon <- df_before %>% filter(taxon == taxon_name)
+
+  if (nrow(df_taxon) < 3) return(NULL)  # Skip taxa with too few data points
+
+  # Spearman correlation
+  cor_test <- cor.test(df_taxon$growth_rate, df_taxon$clr_change_abund, method = "spearman", exact = FALSE)
+  rho <- round(cor_test$estimate, 2)
+  pval <- signif(cor_test$p.value, 2)
+
+  # Create plot
+  p <- ggplot(df_taxon, aes(x = growth_rate, y = clr_change_abund)) +
+    geom_point(size = 2, alpha = 0.7) +
+    geom_smooth(method = "lm", se = FALSE, linetype = "dashed", color = "steelblue") +
+    labs(
+      title = paste0("Taxon: ", taxon_name, "\nSpearman ρ = ", rho, ", p = ", pval),
+      x = "MICOM-predicted growth rate",
+      y = "Change in CLR abundance"
+    ) +
+    theme_minimal()
+
+  # Save plot
+  filename <- paste0("../images/", gsub("[ /]", "_", taxon_name), "_before.png")
+  ggsave(filename, plot = p, width = 6, height = 5, dpi = 300)
+}
+
+# Get list of unique taxa
+unique_taxa <- unique(df_before$taxon)
+
+# Generate and save all plots
+walk(unique_taxa, plot_and_save_taxon)
 ```
