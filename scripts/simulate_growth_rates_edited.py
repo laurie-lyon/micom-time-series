@@ -32,7 +32,7 @@ def load_subject_data(subject_id, qza_dir, collapse_on='genus'):
     
     return subject_micom
 
-def add_suggested_metabolites(diet_og, diet_sugg):
+def add_suggested_metabolites(diet_og, diet_sugg, output_folder):
     """
     This function takes in the original diet and the micom suggested (completed) diet 
     and returns a new diet that includes the suggested metabolites 
@@ -40,12 +40,11 @@ def add_suggested_metabolites(diet_og, diet_sugg):
     
     Inputs: 
     diet_og: pandas dataframe with the original diet
-    diet_sugg: pandas dataframe with the diet from micom complete_community_medium 
+    diet_sugg: pandas dataframe with the diet from micom complete_community_medium
+    output_folder: str, optional, directory where the added metabolites .csv file will be saved
 
     Returns:
     diet_new: pandas dataframe with the original and new nonzero elements of suggested diet
-
-    TO DO: add a printout for which metabolites were added to the new diet (where to output this? in what form?)
     """
 
     diet_og = diet_og.reset_index(drop=True)
@@ -56,6 +55,10 @@ def add_suggested_metabolites(diet_og, diet_sugg):
     added_metabolites = diet_merged[diet_merged["flux_diff"] > 0]
     added_metabolites = added_metabolites[["reaction", "metabolite", "global_id", "flux_sugg"]]
     added_metabolites = added_metabolites.rename(columns={"flux_sugg": "flux"})
+    #write the added metabolites to a csv file 
+    output_csv_fp = os.path.join(output_folder, "added_metabolites.csv")
+    added_metabolites.to_csv(output_csv_fp, index=False)
+    print(f"Added metabolites saved to {output_csv_fp}")
     #add added_metabolites to diet_og
     diet_new = pd.concat([diet_og, added_metabolites], ignore_index=True)
     #reindex diet_new
@@ -107,7 +110,9 @@ def main(subject_id, qza_dir,
                                         threads=threads)
     diet_sugg = diet_sugg.reset_index(drop=True)
 
-    diet_new = add_suggested_metabolites(diet_og, diet_sugg)
+    diet_new = add_suggested_metabolites(diet_og,
+                                         diet_sugg,
+                                         output_folder=pickled_gsmm_out)
 
     growth = grow(manifest, pickled_gsmm_out, 
                   medium=diet_new, tradeoff=tradeoff, 

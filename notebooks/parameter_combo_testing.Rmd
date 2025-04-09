@@ -27,7 +27,7 @@ Load in combined data generated from combine_sim_and_real_data.r (within data fo
 Choosing file generated from 50% prevalence value cutoff (taxon present in at least half of all sampling timepoints)
 
 ```{r}
-sim_real_data <- read_csv("../data/combined_sim_real_data.csv")
+sim_real_data <- read_csv("../data/combined_sim_real_data_50.csv")
 ```
 
 ## Measuring Spearman Correlation
@@ -87,11 +87,50 @@ nrow(spearman_results)
 # summary(spearman_results)
 ```
 
+```{r}
+pearson_results <- sim_real_data %>% 
+  #group by folder_name and taxon then perform spearman correlation tests systematically 
+  group_by(folder_name, taxon, subject_id, model_db, diet, tradeoff, date_vs_onset_illness) %>% 
+  #nest rows into a list-column of dfs, each unique group has its own df with all rows belonging to that group (data column)
+  nest() %>% 
+  #first filter groups with non-zero variance (was causing errors in several samples)
+  #map() applies a function to each element of a vector (map_dbl return a vector of type dbl)
+  mutate(
+    var_growth = map_dbl(data, ~ sd(.x$growth_rate, na.rm=TRUE)), 
+    var_abund = map_dbl(data, ~sd(.x$clr_change_abund, na.rm=TRUE))
+  ) %>% 
+  #removes zero variance cases
+  filter(var_growth > 0 & var_abund > 0) %>% 
+  mutate(
+    #map applies a function to each element of a vector
+    pearson = map(data, ~ cor.test(.x$growth_rate, 
+                                    .x$clr_change_abund, 
+                                    method = "pearson", 
+                                    #received warning about computing exact p-value with ties
+                                    #default to approx. p-values to deal with this
+                                    exact = FALSE)),
+    #extracts the rho and p-values from pearson with broom::tidy()
+    tidy_results = map(pearson, tidy)
+  ) %>% 
+  #extract tidy results into a new df 
+  unnest(tidy_results) %>% 
+  select(-data, -pearson, -var_growth, -var_abund)
+
+nrow(pearson_results)
+
+
+```
+
 But how many of these are statistically significant?
 
 -   in this example, just over 10% are statistically significant
 
 ```{r}
+pearson_significant_p <- pearson_results %>% 
+  filter(p.value < 0.05)
+
+nrow(pearson_significant_p)
+
 spearman_significant_p <- spearman_results %>% 
   filter(p.value < 0.05)
 
@@ -187,6 +226,40 @@ spearman_performance_summary <- spearman_results %>%
   arrange(desc(pos_minus_neg), desc(percent_significant_positive), desc(median_rho))
 ```
 
+```{r}
+pearson_performance_summary <- pearson_results %>% 
+  #add columns for significance and directionality
+  mutate(significant = p.value < 0.05, 
+         positive = estimate > 0, 
+         negative = estimate < 0,
+         significant_positive = significant & positive, 
+         significant_negative = significant & negative) %>% 
+  group_by(folder_name,
+           subject_id,
+           model_db,
+           diet,
+           tradeoff) %>%
+  summarise(
+    mean_rho = mean(estimate[significant_positive],
+                    na.rm = TRUE),
+    median_rho = median(estimate[significant_positive],
+                        na.rm = TRUE),
+    significant_taxa = sum(significant),
+    significant_positive_taxa = sum(significant_positive),
+    significant_negative_taxa = sum(significant_negative),
+    total_taxa = n(),
+    percent_significant = (significant_taxa / total_taxa)*100,
+    percent_significant_positive = (significant_positive_taxa /
+                                    total_taxa)*100,
+    percent_significant_negative = (significant_negative_taxa /
+                                    total_taxa)*100,
+    pos_minus_neg = significant_positive_taxa - significant_negative_taxa
+  ) %>%
+  #only want positive rho values
+  #filter(significant_positive_taxa > 0) %>%
+  arrange(desc(pos_minus_neg), desc(percent_significant_positive), desc(median_rho))
+```
+
 ### Graphing outcomes
 
 ```{r}
@@ -250,7 +323,7 @@ spearman_predictive_accuracy_plots <- purrr::map(subjects, function(subject) {
     scale_fill_gradient(low = "lightyellow",
                         high = "darkgreen") +
     labs(x = "Parameter Combination (folder_name)", 
-         y = "% Significant Positive Taxa",
+         y = "# Significant Positive - # Significant Negative Taxa",
          fill = "Median Rho",
          title = paste("MICOM Parameter Rankings for", subject),
          subtitle = "Ranked by # Significant Positive - # Significant Negative Taxa
@@ -271,6 +344,9 @@ spearman_predictive_accuracy_plots$M01
 ```{r}
 M01_best_performing_condition <- spearman_results %>% 
   filter(folder_name == "growth_M01_agora201_gurobi_wd_08")
+
+M01_best_pearson_condition <- pearson_results %>% 
+  filter(folder_name == "growth_M01_agora201_gurobi_wd_08")
 ```
 
 ```{r}
@@ -281,6 +357,43 @@ F01_best_performing_condition <- spearman_results %>%
 ```{r}
 M02_best_performing_condition <- spearman_results %>% 
   filter(folder_name == "growth_M02_agora1_gurobi_vmhfat_07")
+```
+
+```{r}
+# Define the unique subjects to iterate over
+subjects <- unique(pearson_performance_summary$subject_id)
+
+# Create and store the plots in a list using purrr::map
+pearson_predictive_accuracy_plots <- purrr::map(subjects, function(subject) {
+  pearson_performance_summary %>% 
+    filter(subject_id == subject, 
+           pos_minus_neg > 0) %>% 
+    ggplot(aes(x = reorder(folder_name, pos_minus_neg), 
+               y = pos_minus_neg, 
+               fill = median_rho)) +
+    geom_bar(stat = "identity", color = "black") +
+    coord_flip() +
+    scale_fill_gradient(low = "lightyellow",
+                        high = "darkgreen") +
+    labs(x = "Parameter Combination (folder_name)", 
+         y = "# Significant Positive - # Significant Negative Taxa",
+         fill = "Median Rho",
+         title = paste("MICOM Parameter Rankings for", subject),
+         subtitle = "Ranked by # Significant Positive - # Significant Negative Taxa
+         \n color = Median Rho"
+    ) +
+    theme_minimal() +
+    theme(legend.position = "right")
+})
+
+# Name the plots with the subject id
+names(pearson_predictive_accuracy_plots) <- subjects
+```
+
+```{r}
+pearson_predictive_accuracy_plots$M01
+# pearson_predictive_accuracy_plots$F01
+# pearson_predictive_accuracy_plots$M02
 ```
 
 ## EXTRA STUFF FOR PRESENTATION
