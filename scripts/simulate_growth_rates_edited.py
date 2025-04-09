@@ -65,6 +65,38 @@ def add_suggested_metabolites(diet_og, diet_sugg, output_folder):
     diet_new = diet_new.reset_index(drop=True)
     return diet_new
 
+def compute_manifest_summary(pickled_gsmm_out):
+    """
+    Reads the manifest.csv file generated in 'build' and computes summary statistics (mean, median, min, max, and std)
+    for the columns 'found_taxa', 'total_taxa', 'found_fraction', and 'found_abundance_fraction'.
+    Input:
+    pickled_gsmm_out (str): The path to the pickled GSMM output directory.
+    Output: 
+    manifest_summary.csv saved to the same folder as the manifest.csv
+    """
+    # Load the manifest.csv file
+    manifest_fp = os.path.join(pickled_gsmm_out, "manifest.csv")
+    manifest = pd.read_csv(manifest_fp)
+    # specify the columns to compute summary statistics for
+    summary_columns = ['found_taxa', 'total_taxa', 'found_fraction', 'found_abundance_fraction']
+    #initialize empty dictionary to store summary statistics
+    summary_stats = {}
+    #compute summary statistics for each column
+    for col in summary_columns:
+        summary_stats[col] = {
+            'mean': manifest[col].mean(),
+            'median': manifest[col].median(),
+            'min': manifest[col].min(),
+            'max': manifest[col].max(),
+            'std': manifest[col].std()
+        }
+    #convert summary statistics to pandas dataframe
+    summary_df = pd.DataFrame(summary_stats).transpose().reset_index().rename(columns={"index": "variable"})
+    #save summary statistics to csv file
+    summary_csv = os.path.join(pickled_gsmm_out, "manifest_summary.csv")
+    summary_df.to_csv(summary_csv, index=False)
+    print(f"Manifest summary statistics saved to {summary_csv}")
+    
 def unzip_to_folder(growth_out_fp, out_folder):
     """
     Unzips the growth output file to the specified folder.
