@@ -1,10 +1,15 @@
 #!/usr/bin/env bash
 
+## This script is being used to test the new functionalities of simulate_growth_rates_edited.py
+## e.g. the added_metabolites and manifest_summary output files
+## I also want to see if redoing the simulations with no other changes produces different results
+## e.g. will the same parameter combos be ranked the same way and will the same genera be best predicted 
+
 # Load diet shorthand mappings from config file
 source diet_config.sh
 
 # Define arrays of parameters
-SUBJECT_IDS=("F01" "M01" "M02")
+SUBJECT_IDS=("M01")
 DIETS=("vmh_eu_average_agora.qza" "western_diet_gut_agora.qza" "vmh_high_fiber_agora.qza" "vmh_high_fat_low_carb_agora.qza")
 
 # Define tradeoff values explicitly to prevent "00" issue
@@ -37,8 +42,9 @@ for SUBJECT_ID in "${SUBJECT_IDS[@]}"; do
             DIET_SHORT=$(get_diet_shorthand "$DIET")
 
             # Generate output filenames dynamically
-            PICKLED_OUT="${PICKLED_DIR}pickled_${SUBJECT_ID}_agora201_gurobi"
-            GROWTH_OUT="${GROWTH_OUT_DIR}growth_${SUBJECT_ID}_agora201_gurobi_${DIET_SHORT}_${TRADEOFF_SHORT}.zip"
+            #added a 2 at the end of these folder names to specify a 2nd run with same parameters as before 
+            PICKLED_OUT="${PICKLED_DIR}pickled_${SUBJECT_ID}_agora201_gurobi_2"
+            GROWTH_OUT="${GROWTH_OUT_DIR}growth_${SUBJECT_ID}_agora201_gurobi_${DIET_SHORT}_${TRADEOFF_SHORT}_2.zip"
 
             # Run the simulation
             echo "Running simulation for Subject: $SUBJECT_ID, Diet: $DIET_SHORT, Tradeoff: $TRADEOFF_SHORT"
