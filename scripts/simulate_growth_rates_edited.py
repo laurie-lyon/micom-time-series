@@ -132,6 +132,8 @@ def main(subject_id, qza_dir,
                     solver=solver,
                     threads=threads)
     
+    compute_manifest_summary(pickled_gsmm_out)
+    
     diet_sugg = complete_community_medium(manifest, 
                                         model_folder=pickled_gsmm_out, 
                                         medium=diet_og, 
