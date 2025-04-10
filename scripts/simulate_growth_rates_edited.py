@@ -32,7 +32,7 @@ def load_subject_data(subject_id, qza_dir, collapse_on='genus'):
     
     return subject_micom
 
-def add_suggested_metabolites(diet_og, diet_sugg, output_folder):
+def add_suggested_metabolites(diet_og, diet_sugg, added_metab_out="added_metabolites.csv"):
     """
     This function takes in the original diet and the micom suggested (completed) diet 
     and returns a new diet that includes the suggested metabolites 
@@ -56,9 +56,9 @@ def add_suggested_metabolites(diet_og, diet_sugg, output_folder):
     added_metabolites = added_metabolites[["reaction", "metabolite", "global_id", "flux_sugg"]]
     added_metabolites = added_metabolites.rename(columns={"flux_sugg": "flux"})
     #write the added metabolites to a csv file 
-    output_csv_fp = os.path.join(output_folder, "added_metabolites.csv")
-    added_metabolites.to_csv(output_csv_fp, index=False)
-    print(f"Added metabolites saved to {output_csv_fp}")
+    #print added_metabolites to a csv file
+    added_metabolites.to_csv(added_metab_out, index=False)
+    print(f"Added metabolites saved to {added_metab_out}")
     #add added_metabolites to diet_og
     diet_new = pd.concat([diet_og, added_metabolites], ignore_index=True)
     #reindex diet_new
@@ -113,7 +113,8 @@ def main(subject_id, qza_dir,
          model_name, model_dir,
          pickled_gsmm_out, solver, 
          threads, diet_fp, 
-         tradeoff, growth_out_fp):
+         tradeoff, growth_out_fp, 
+         added_metab_out_dir):
 
     
     model_fp = os.path.join(model_dir, model_name)
@@ -144,9 +145,14 @@ def main(subject_id, qza_dir,
                                         threads=threads)
     diet_sugg = diet_sugg.reset_index(drop=True)
 
+    # Added 20250410 - Build a unique filename for the added metabolites CSV
+    os.makedirs(added_metab_out_dir, exist_ok=True)
+    added_metab_filename = f"added_metabolites_{subject_id}_{Path(model_name).stem}_{Path(diet_fp).stem}.csv"
+    added_metab_file = os.path.join(added_metab_out_dir, added_metab_filename)
+    
     diet_new = add_suggested_metabolites(diet_og,
                                          diet_sugg,
-                                         output_folder=pickled_gsmm_out)
+                                         added_metab_out=added_metab_file)
 
     growth = grow(manifest, pickled_gsmm_out, 
                   medium=diet_new, tradeoff=tradeoff, 
@@ -192,6 +198,9 @@ if __name__ == "__main__":
     parser.add_argument("--growth_out_fp", 
                         required=True, 
                         help="Path for output growth.zip from micom grow()")
+    parser.add_argument("--added_metab_out_dir",
+                        required=True, 
+                        help="Directory to save the added metabolites .csv file")
     
 
     args = parser.parse_args()
@@ -200,5 +209,6 @@ if __name__ == "__main__":
         args.model_name, args.model_dir,
         args.pickled_gsmm_out, args.solver, 
         args.threads, args.diet_fp, 
-        args.tradeoff, args.growth_out_fp)
+        args.tradeoff, args.growth_out_fp, 
+        args.added_metab_out_dir)
 
