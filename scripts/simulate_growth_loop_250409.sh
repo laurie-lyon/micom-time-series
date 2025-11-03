@@ -9,7 +9,7 @@
 source diet_config.sh
 
 # Define arrays of parameters
-SUBJECT_IDS=("F01")
+SUBJECT_IDS=("M02")
 DIETS=("vmh_eu_average_agora.qza" "western_diet_gut_agora.qza" "vmh_high_fiber_agora.qza" "vmh_high_fat_low_carb_agora.qza")
 
 # Define tradeoff values explicitly to prevent "00" issue
@@ -59,7 +59,7 @@ for SUBJECT_ID in "${SUBJECT_IDS[@]}"; do
                 --diet_fp "${DIET_DIR}${DIET}" \
                 --tradeoff "$TRADEOFF" \
                 --growth_out_fp "$GROWTH_OUT" \
-                --added_metabolites_out_dir "$ADDED_METAB_DIR" 
+                --added_metab_out_dir "$ADDED_METAB_DIR" 
 
             echo "Completed: $GROWTH_OUT"
             echo "--------------------------------------"

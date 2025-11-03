@@ -1,0 +1,76 @@
+---
+title: "M01 Anaerostipes Focal Interactions"
+author: "Laurie Lyon"
+date: "2025-05-30"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(cowplot) # to plot grid
+library(glue) # to format and interpolate a string
+library(lme4) # for linear modeling 
+library(tidyverse) 
+library(ggh4x) # ggplot2 extension, includes nested facets
+library(broom)
+library(dplyr)
+library(ggplot2)
+```
+## Load in M01 Growth Data
+(from best performing MICOM Parameter condition)
+```{r}
+M01_growth_rates <- read.csv(file = "../data/growth_rates/growth_M01_agora201_gurobi_wd_08/growth_rates.csv")
+
+M01_exchanges <- read.csv(file = "../data/growth_rates/growth_M01_agora201_gurobi_wd_08/exchanges.csv")
+
+M01_annotations <- read.csv(file = "../data/growth_rates/growth_M01_agora201_gurobi_wd_08/annotations.csv")
+
+M01_anaerostipes_interactions <- read.csv("../data/micom_viz/anaerostipes_interactions_M01_agora201_gurobi_wd_08.csv")
+
+```
+
+What are the top metabolites from Anaerostipes received by Bacteroides?
+```{r}
+M01_ana_bac_ints <- M01_anaerostipes_interactions[M01_anaerostipes_interactions$partner == "g__Bacteroides", ]
+M01_ana_prev_ints <- M01_anaerostipes_interactions[M01_anaerostipes_interactions$partner == "g__Prevotella", ]
+
+M01_ana_to_bac <- M01_ana_bac_ints[M01_ana_bac_ints$class == "provided", 1:7] #leaving out some of the extra info
+M01_ana_to_prev <- M01_ana_prev_ints[M01_ana_prev_ints$class == "provided", 1:7]
+
+#choose top 10 based on median flux (could change how I'm calling top 10, this seems good for now)
+top_ana_to_bact <- M01_ana_to_bac %>%
+  group_by(name) %>% 
+  summarize(mean_flux = mean(flux)) %>% 
+  arrange(desc(mean_flux)) %>%
+  slice_head(n = 20) %>%  
+  pull(name)
+
+M01_sick_day <- 1203465600
+
+top_ana_bact_flux_df <- M01_ana_to_bac %>%
+  filter(name %in% top_ana_to_bact) %>%
+  mutate(log_flux = log10(flux + 1e-6)) %>% 
+  #mutate(name = factor(name, levels = top20_ana_to_bact[order(-match(top_ana_to_bact, unique(name)))]))
+  mutate(name = fct_reorder(name, flux, .fun = median)) %>% 
+  mutate(ill_onset = ifelse(sample_id < M01_sick_day, "Before", "After"))
+```
+
+# Plots
+## Anaerostipes to Bacteroides 
+```{r, width = 15, height = 25}
+p <- ggplot(top_ana_bact_flux_df, aes(x = log_flux, y = name)) +
+  geom_jitter(width = 0, height = 0.2, alpha = 0.6, size = 2) +
+  labs(
+    title = "Top Metabolites provided from Anaerostipes to Bacteroides",
+    x = "Log Flux",
+    y = "Metabolite"
+  ) +
+  theme(plot.title = element_text(size = 14))
+  theme_minimal(base_size = 14)
+
+
+p
+```

@@ -1,0 +1,156 @@
+---
+title: "Subdoligranulum_Faecalibacterium_positive_interactions"
+author: "Laurie Lyon"
+date: "2025-10-09"
+output: html_document
+---
+
+I have detected a significant positive interaction between genera Subdoligranulum and Faecalibacterium in M01 in multiple iterations of the TLC lagged regression analysis, so I want to make a figure from the micom grow output (AGORA2, wd, tradeoff=0.8) showing which metabolites have the highest flux from OTUj -> OTUi
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+Load in files from the MICOM growth output
+```{r}
+exchanges <- read_csv("./data/growth_rates/growth_M01_agora201_gurobi_wd_08/exchanges.csv")
+annotations <- read_csv("./data/growth_rates/growth_M01_agora201_gurobi_wd_08/annotations.csv")
+```
+First, merge the annotations with the exchanges 
+```{r}
+#select just metabolite and name columns 
+ann_names <- annotations %>% 
+  select(metabolite, name)
+
+#add annotation names to exchanges (and rename to compound)
+ann_exchanges <- exchanges %>% 
+  left_join(ann_names, by = "metabolite") %>% 
+  rename(compound = name)
+```
+
+Look at Subdoligranulum exports 
+```{r}
+subdo <- ann_exchanges %>% 
+  filter(taxon == "g__Subdoligranulum")
+
+subdo_ex <- subdo %>% 
+  filter(direction == "export")
+```
+ 
+Not sure if this does the same thing but I did the micom functions for calculating focal interactions and then getting only faecalibacterium partner?
+reading in that file 
+```{r}
+ints_summary <- read_csv("./data/interactions/ints_subdoligranulum_faecalibacterium.csv") 
+ints_2 <- read_csv("./data/interactions/ints_anaerostipes_fusicatenibacter.csv") 
+```
+```{r}
+subdo_provided_faecal <- ints_summary %>% 
+  filter(class == "provided") %>% 
+  select(name, sample_id, flux)
+
+print(unique(subdo_provided_faecal$name))
+```
+```{r}
+anaero_fusic_co <- ints_summary %>% 
+  filter(class == "co-consumed") %>% 
+  select(name, sample_id, flux)
+
+print(unique(anaero_fusic_co$name))
+```
+
+*Plot*
+```{r, fig.width=6.2, fig.height=5.5}
+drop_terms <- c("Water","proton","Carbon dioxide", "Clonazepam", "Nitrazepam, Benzalin, Neozepam", "7-Aminoclonazepam", "7-Amino Nitrozepam")
+df <- subdo_provided_faecal %>% 
+  filter(!(name %in% drop_terms))
+
+# ---- compute totals and medians ----
+flux_stats <- df %>%
+  group_by(name) %>%
+  summarise(
+    total_flux = sum(flux, na.rm = TRUE),
+    median_flux = median(flux, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# ---- reorder by total flux (descending) ----
+df <- df %>%
+  left_join(flux_stats, by = "name") %>%
+  mutate(name = fct_reorder(name, total_flux, .desc = FALSE))
+
+# ---- plot ----
+(subdo_to_faecali <- ggplot(df, aes(x = flux, y = name)) +
+  geom_boxplot(outlier.shape = NA, fill = "grey90", color = "grey60") +
+  geom_jitter(width = 0, height = 0.15, size = 3, alpha = 0.5) +
+  # add median flux labels
+  labs(
+    x = "Flux (mmol/(gDW*h)",
+    y = "Metabolite",
+    title = "Subdoligranulum to Faecalibacterium",
+    subtitle = "Ordered by total flux across samples"
+  ) +
+  theme_minimal(base_size = 18) +
+  theme(
+    panel.grid.minor = element_blank(),
+    plot.title.position = "plot"
+  ))
+```
+
+
+```{r, fig.width=6.2, fig.height=5.5}
+drop_terms <- c("Water","proton","Carbon dioxide", "O2", 
+                "Clonazepam", "Nitrazepam, Benzalin, Neozepam", 
+                "7-Aminoclonazepam", "7-Amino Nitrozepam", "Nitrosochloramphenicol")
+df2 <- anaero_fusic_co %>% 
+  filter(!(name %in% drop_terms))
+
+# ---- compute totals and medians ----
+flux_stats <- df2 %>%
+  group_by(name) %>%
+  summarise(
+    total_flux = sum(flux, na.rm = TRUE),
+    median_flux = median(flux, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# ---- keep only top 15 by total flux ----
+top <- flux_stats %>%
+  arrange(desc(total_flux)) %>%
+  slice_head(n = 20)
+
+# filter df2 to only those metabolites
+df2_top <- df2 %>%
+  semi_join(top, by = "name")
+
+# ---- reorder by total flux (descending) ----
+df2_top <- df2_top %>%
+  left_join(top, by = "name") %>%
+  mutate(name = fct_reorder(name, total_flux, .desc = FALSE))
+
+# ---- plot ----
+(anaero_fusica_coconsumed <- ggplot(df2_top, aes(x = flux, y = name)) +
+  geom_boxplot(outlier.shape = NA, fill = "grey90", color = "grey60") +
+  geom_jitter(width = 0, height = 0.15, size = 3, alpha = 0.5) +
+  # add median flux labels
+  labs(
+    x = "Flux (mmol/(gDW*h)",
+    y = "Metabolite",
+    title = "Co-consumed Anaerostipes-Fusicatenibacter",
+    subtitle = "Ordered by total flux across samples (Top 20)"
+  ) +
+  theme_minimal(base_size = 18) +
+  theme(
+    panel.grid.minor = element_blank(),
+    plot.title.position = "plot"
+  ))
+```
+**Save outputs**
+```{r}
+ggsave("../plots/micom_coconsumed_anaero_fusicaten_top20.png", anaero_fusica_coconsumed, width = 6.2, height = 6)
+ggsave("../plots/micom_subdoli_to_faecali.png",subdo_to_faecali, width = 6.2, height = 6)
+
+```
+

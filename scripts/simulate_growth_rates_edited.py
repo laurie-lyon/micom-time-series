@@ -147,7 +147,14 @@ def main(subject_id, qza_dir,
 
     # Added 20250410 - Build a unique filename for the added metabolites CSV
     os.makedirs(added_metab_out_dir, exist_ok=True)
-    added_metab_filename = f"added_metabolites_{subject_id}_{Path(model_name).stem}_{Path(diet_fp).stem}.csv"
+    # Get the stem for the diet file (e.g., "western_diet_gut_agora")
+    diet_stem = Path(diet_fp).stem
+    # Get the shorthand using the environment variable set in diet_config.sh.
+    # If the environment variable is not found, default to the original diet stem.
+    diet_shorthand = os.getenv(f"DIET_SHORTHAND_{diet_stem}", diet_stem)
+
+    # Build a unique and shorter filename using the shorthand
+    added_metab_filename = f"added_metabolites_{subject_id}_{Path(model_name).stem}_{diet_shorthand}.csv"
     added_metab_file = os.path.join(added_metab_out_dir, added_metab_filename)
     
     diet_new = add_suggested_metabolites(diet_og,
@@ -176,7 +183,8 @@ if __name__ == "__main__":
     parser.add_argument("--model_name", 
                         required=True, 
                         help="Name of .qza file for GSMM (e.g. agora103_genus.qza)")
-    parser.add_argument("--pickled_gsmm_out", 
+    parser.add_argument("--pickled_gsmm_out",
+                        default="../data/pickled_models/", 
                         required=True, 
                         help="Output directory for GSMM .pickle files generated during build()")
     parser.add_argument("--solver", 

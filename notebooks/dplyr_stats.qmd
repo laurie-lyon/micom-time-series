@@ -1,0 +1,63 @@
+---
+title: "dplyr stats"
+format: html
+editor: visual
+---
+
+```{r}
+library(broom)
+library(dplyr)
+library(magrittr)
+library(readr)
+```
+
+You can add options to executable code like this
+
+```{r}
+mydata <- read_csv("./data/combined_sim_real_data.csv")
+head(mydata)
+```
+
+```{r}
+lm_results <- mydata %>% 
+  group_by(taxon, subject_id, tradeoff, diet, model_db) %>% 
+  do(tidy(lm(clr_change_abund ~ growth_rate, data=.)))
+
+anova_results <- mydata %>% 
+  group_by(subject_id, tradeoff, diet, model_db) %>% 
+  do(tidy(lm(growth_rate ~ taxon, data=.)))
+```
+
+```{r}
+lm_results %>% 
+  filter(term == "growth_rate",
+         !(is.na(p.value))) %>% 
+  ungroup() %>% 
+  group_by(subject_id, diet) %>% 
+  mutate(p.value.adjusted = p.adjust(p.value, method="fdr"),
+         is_signif = p.value.adjusted <= 0.05,
+         bad_slope = estimate < 0) %>% 
+  filter(is_signif) %>% 
+  ggplot(aes(y = taxon, x = -log(p.value.adjusted), color=log10(estimate))) +
+    geom_vline(xintercept = -log(0.05), color="red") +
+    geom_point(size = 0.5) +
+    facet_grid(subject_id~diet, scales = "free_y", space = "free") +
+    scale_color_gradient2()
+ 
+```
+
+```{r}
+lm_results %>% 
+  filter(term == "growth_rate",
+         !(is.na(p.value))) %>% 
+  ungroup() %>% 
+  group_by(subject_id, diet) %>% 
+  mutate(p.value.adjusted = p.adjust(p.value, method="fdr"),
+         is_signif = p.value.adjusted <= 0.05) %>% 
+  filter(is_signif) %>% 
+  ggplot(aes(y = taxon, x = log10(estimate+0.0001))) +
+    geom_vline(xintercept = 0, color="red") +
+    geom_point(size = 0.5) +
+    facet_grid(subject_id~diet, scales = "free_y", space = "free") +
+    scale_color_gradient2()
+```
